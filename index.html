@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 var version = localStorage.getItem('version');
 
-if(version != '2.0.1'){
+if(version != '0.0.1'){
   console.log('Latest update is not ready.')
   window.location.href = "update.html";
 }
@@ -28,7 +28,7 @@ if(version != '2.0.1'){
   (function($){
 $(document).ready(function() {
 
-var consent = localStorage.getItem('cookie-consent');
+var consent = localStorage.getItem('setup');
 
 if(consent != 'true'){
   $('#cookie').fadeIn();
@@ -36,9 +36,9 @@ if(consent != 'true'){
 }
 
 $('#cookie-ok').click(function(event){
-  localStorage.setItem('cookie-consent', 'true');
   $('#cookie').fadeOut();
   confetti.stop()
+  window.location.replace("setup.html");
 });
 
 });
@@ -53,7 +53,7 @@ $('#cookie-ok').click(function(event){
   <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
   <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
   <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
-  <title>SnailFM</title>
+  <title>StreamBop</title>
   <style>
     
     html, body {
@@ -80,9 +80,7 @@ h1  {
 }
 
 body {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
     box-sizing: border-box;
       margin: 0;
       padding: 20px;
@@ -91,17 +89,6 @@ body {
       text-align: center;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
 
     #notification {
       position: fixed;
@@ -159,6 +146,10 @@ body {
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
+}
+
+.white  {
+  color: white;
 }
 
 /* Position and style the close button (top right corner) */
@@ -221,16 +212,22 @@ body {
 
   <div id="cookie">
     <div id="cookie-wrapper">
-      <div id="cookie-content" class="h1">Welcome to SnailFM! <p>For more infomation, visit https://snaildos.com/snailfm</p>Hit the let's go button too start using this software!</div>
+      <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
         <button id="cookie-ok">Let's go!</button>
     </div>
 </div>
-  
-  <h1>SnailFM</h1>
-  <button type="button" class="settings" data-toggle="modal" data-target="#myModal">Settings</button>
+<button type="button" class="settings" data-toggle="modal" data-target="#myModal">Settings</button>
+  <div class="welcome">
+  <h1>StreamBop</h1>
   <h4>Powered by <b>SnailDOS</b> team</h4>
+  <h2 class="w3-center">What are we doing today?</h2>
+  <div>
+    <button class="w3-center w3-button w3-black w3-round-xlarge"><h1 class="white">die</h1></button>
+    <button class="w3-center w3-button w3-black w3-round-xlarge"><h1 class="white">Extra die</h1></button>
+  </div>
 
   <p id="version"></p>
+</div>
   <div id="notification" class="hidden">
     <p id="message"></p>
     <button id="close-button" onClick="closeNotification()">
@@ -276,48 +273,7 @@ body {
   </script>
 <p>
 </p>
-  <video
-    id="vid1"
-    class="hidden"
-    width="0" height="0"
-    poster="play.png"
-    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=x-tFIrmh32s"}] }'
-  >
-  </video>
-  <script>
-    videojs("vid1", {
-    controlBar: {
-      fullscreenToggle: false
-    }
-});
-  </script>
-                  <form action="">
-                    <h2>Pause/Play:</h2>
-                    <input type="button" id="4" class="w3-btn w3-black" value="PLAY"
-                           onclick="toggle2();">
-                    </form>
 
-                    <script>
-                      var player = videojs('vid1');
-                      function toggle2()
-                      {
-                        if(document.getElementById("4").value=="PLAY"){
-                         document.getElementById("4").value="PAUSE";
-                         player.play()}
-                      
-                        else if(document.getElementById("4").value=="PAUSE"){
-                         document.getElementById("4").value="PLAY";
-                         player.pause()}
-                      }
-                                    </script>
-    <p id='nowPlaying' class="nowplay">Fetching data...</p>
-<script>
-   setInterval(()=>{
-    axios.get('http://api.snaildos.com/now/playing').then((value) => {
-      document.getElementById('nowPlaying').innerText = value.data.playing || 'Nothing'
-    })
-  },5000);
-</script>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -342,11 +298,11 @@ body {
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title"><h2>SnailFM Settings</h2></h4>
+            <h4 class="modal-title"><h2>StreamBop Settings</h2></h4>
           </div>
           <div class="modal-body">
             <h4>Please click what settings you want to change.</h4>
-            <h4>If you don't want to change SnailFM settings, press the "More Settings" to change Account settings, encoder settings, and more.</h4>
+            <h4>If you don't want to change StreamBop settings, press the "More Settings" to change Account settings, encoder settings, and more.</h4>
             <span class="hiddentext" style="font-size:20px;cursor:pointer;color:red;display:none;" onclick="openNav()">&#9776; More settings</span>
             <button onclick="window.location.reload();" class="w3-btn w3-black">Reload</button>
             <p></p>

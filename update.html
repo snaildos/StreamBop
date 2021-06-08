@@ -5,31 +5,29 @@
 	<script>
 		    window.jQuery = window.$ = require('jquery');
 	</script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<title>Resetting SnailFM... </title>
+<link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+<script src="https://cdn.snaildos.com/jquery.min.js"></script>
+<script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+	<title>Updating StreamBop...</title>
 	<style type="text/css">
 		.bs-example{
-			margin: 20px;
 		}
 		</style>
     <style>
 body {
-	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	background: linear-gradient(-45deg, #000000, #383838, #918f8f, #dddddd);
+	animation: gradient 12s ease infinite;
 }
 
 @keyframes gradient {
 	0% {
-		background-position: 0% 50%;
+		background-position: 100% 50%;
 	}
 	50% {
 		background-position: 100% 50%;
 	}
 	100% {
-		background-position: 0% 50%;
+		background-position: 100% 50%;
 	}
 }
     </style>
@@ -39,12 +37,10 @@ body {
 		console.log("Let's clear localstorage first...")
 		localStorage.removeItem('cookie-consent', 'true');
 		console.log("Just wait a bit...")
-		console.log("Update true. Setting now.")
-		localStorage.setItem('version', '2.0.1');
-		// import rest of stuff here
+		localStorage.setItem('version', '0.0.1');
 	</script>
 	<div class="bs-example">
-		<h2>Updating SnailFM libs...</h2>
+		<h2 class="w3-center">Updating StreamBop!</h2>
 		<div class="progress">
 			<div class="progress-bar" id="bar">
 				<span class="sr-only">src</span>

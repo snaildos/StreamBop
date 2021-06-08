@@ -33,13 +33,12 @@ let loadingScreen;
 const createLoadingScreen = () => {
   loadingScreen = new BrowserWindow(
     Object.assign({
-      width: 700,
-      height: 120,
+      width: 800,
+      height: 600,
       alwaysOnTop: true,
       frame: false,
       fullscreen: false,
-      show: true,
-      transparent: true
+      show: false
     })
   );
   loadingScreen.setResizable(false);
@@ -71,6 +70,7 @@ function createWindow () {
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
+  wait(4000)
   mainWindow.webContents.on('did-finish-load', () => {
     if (loadingScreen) {
       loadingScreen.close();
@@ -139,7 +139,8 @@ autoUpdater.on('update-downloaded', () => {
 });
 
 ipcMain.on('relaunch', () => {
-  mainWindow.close();
+  mainWindow.relaunch()
+  mainWindow.exit()
 });
 
 ipcMain.on('restart_app', () => {

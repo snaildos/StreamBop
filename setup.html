@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>StreamBop - Setup</title>
+        <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+        <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+        <script src="https://cdn.snaildos.com/jquery.min.js"></script>
+        <script
+  src="https://cdn.snaildos.com/jquery.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+        <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+        <style>
+            body {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+        </style>
+    </head>
+    <body>
+        <script>
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+            $('body').fadeOut(2)
+            $('.cls1').fadeOut(2)
+            $('.cls2').fadeOut(2)
+            $('.cls3').fadeOut(2)
+            $('.cls4').fadeOut(2)
+            welcome()
+
+            async function welcome()  {
+                sleep(1000)
+                $('body').fadeIn(1000)
+            }
+            $(document).ready(function () {
+                $(".divs div").each(function (e) {
+                    if (e != 0)
+                        $(this).fadeOut(50);
+                });
+    
+                $("#1").click(function () {
+                    $('.cls1').fadeOut(50)
+                    
+                    $('.cls2').fadeIn(2000)
+                });
+    
+                $("#2").click(function () {
+                    $('.cls2').fadeOut(50)
+                    $('.cls3').fadeIn(2000)
+                });
+    
+                $("#3").click(function () {
+
+                });
+    
+                $("#prev").click(function () {
+                   
+            });
+        });
+
+        function dark()  {
+            localStorage.setItem("theme", true);
+            $('.cls3').fadeOut(50)
+            $('.cls4').fadeIn(2000)
+
+        }
+        </script>
+            <style>
+            main  {
+                font-size: 50px;
+            }
+            body {
+                background-color: #320585;
+            }
+    
+            .hidden  {
+                opacity: 0.0;
+            }
+    
+            h1,h2,h3,h4,h5,h6,a,button  {
+                color: white;
+                
+            }
+            .ctrl {
+                color: white;
+                font-size: 35px;
+            }
+            </style>
+            <script>
+                function complete()  {
+                localStorage.setItem("setup", true);
+                localStorage.setItem("firstime", true);
+                window.location.href = "index.html"
+                }
+    
+                function next(){
+                    complete()
+                }
+            </script>
+        </head>
+        <body>
+            <div class="divs">
+                <center>
+                <div class="cls1"><h2 class="main" class="w3-center">Welcome to the setup of StreamBop!<p><p><button id="1" class="ctrl w3-center w3-light-blue w3-center">Let's setup!</button><h2 class="hidden">h</h2></p></h2></div>
+                <div class="cls2"><h2 class="main" class="w3-center">This software is alpha, and may not function correctly..<p><button id="2" class="ctrl w3-center w3-light-blue w3-center">Ok!</button><p></p><h2 class="hidden">h</h2></p></h2> <p></div>
+                <div class="cls3"><h4 class="main" class="w3-center"><h2 class="w3-center">Customization Time:</h2>
+                    <h3 class="w3-center"> What mode do YOU want? </h3>
+
+                    <button class="w3-center w3-black w3-button w3-round-large" onclick="dark()">Dark Mode</button>
+                </div>
+
+                    <div class="cls4"><h4 class="main" class="w3-center">Let's get start!<p></p><p>
+                        <button id="3" class="ctrl w3-center w3-white w3-center cls4" onclick="next()">Start</button>
+                    </p></h4></div>
+            </div>
+            <div class="w3-center">
+                
+                <h1 class="hidden">h<p>h<p>h</p></h1>
+            </div>
+        </center>
+    </body>
+</html>
