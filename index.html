@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<head>
+  <script>
+    window.jQuery = window.$ = require('jquery');
+    const axios = require('axios')
+</script>
+    <script>
+    // Needs window render
+    require('./renderer.js')
+  </script>
+<script>
+  // update check
+  (function($){
+$(document).ready(function() {
+
+var version = localStorage.getItem('version');
+
+if(version != '2.0.1'){
+  console.log('Latest update is not ready.')
+  window.location.href = "update.html";
+}
+
+});
+})(jQuery);
+</script>
+<script>
+  // oobe
+  (function($){
+$(document).ready(function() {
+
+var consent = localStorage.getItem('cookie-consent');
+
+if(consent != 'true'){
+  $('#cookie').fadeIn();
+  confetti.start()
+}
+
+$('#cookie-ok').click(function(event){
+  localStorage.setItem('cookie-consent', 'true');
+  $('#cookie').fadeOut();
+  confetti.stop()
+});
+
+});
+})(jQuery);
+</script>
+</script>
+<script src="./lib/confetti.min.js"></script>
+  <link rel="icon" href="snailfm.png">
+  <script src="./YoutubeJS/video.js"></script>
+  <link href="./YoutubeJS/video-js.css" rel="stylesheet">
+  <script src="./YoutubeJS/Youtube.js"></script>
+  <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+  <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+  <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+  <title>SnailFM</title>
+  <style>
+    
+    html, body {
+  width: 100%;
+  height:100%;
+}
+
+.center { margin: 0 auto; width: 400px; }
+
+h1  {
+  color: black;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    box-sizing: border-box;
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background-color: #ffffff;
+      text-align: center;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+    #notification {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    }
+    .hidden {
+      display: none;
+    }
+
+    .video-stream html5-main-video  {
+      display: none;
+    }
+
+    .hiddentext {
+      text-indent: -9999px; 
+    }
+
+    .settings {
+  position: absolute;
+  top: 30px;
+  right: 16px;
+  font-size: 18px;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.nowplay  {
+  font-size: 25px;
+}
+
+#cookie{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(167, 23, 23); /* Fallback color */
+}
+    #cookie-wrapper{
+        display: flex;
+        flex-direction: row;
+        padding: .6rem 0;
+    }
+
+        #cookie-content{
+            border-right: 1px solid #1e67af;
+        }
+
+        #cookie-ok{
+            border: 0;
+            background: none;
+            color: rgb(255, 0, 212);
+        }
+    }
+}
+  </style>
+</head>
+<body>
+
+  <div id="cookie">
+    <div id="cookie-wrapper">
+      <div id="cookie-content" class="h1">Welcome to SnailFM! <p>For more infomation, visit https://snaildos.com/snailfm</p>Hit the let's go button too start using this software!</div>
+        <button id="cookie-ok">Let's go!</button>
+    </div>
+</div>
+  
+  <h1>SnailFM</h1>
+  <button type="button" class="settings" data-toggle="modal" data-target="#myModal">Settings</button>
+  <h4>Powered by <b>SnailDOS</b> team</h4>
+
+  <p id="version"></p>
+  <div id="notification" class="hidden">
+    <p id="message"></p>
+    <button id="close-button" onClick="closeNotification()">
+      Close
+    </button>
+    <button id="restart-button" onClick="restartApp()" class="hidden">
+      Restart
+    </button>
+  </div>
+  <script>
+    const { ipcRenderer } = require('electron');
+    const version = document.getElementById('version');
+    const notification = document.getElementById('notification');
+    const message = document.getElementById('message');
+    const restartButton = document.getElementById('restart-button');
+    
+    ipcRenderer.send('app_version');
+    ipcRenderer.on('app_version', (event, arg) => {
+      ipcRenderer.removeAllListeners('app_version');
+      version.innerText = 'Version ' + arg.version;
+    });
+
+    ipcRenderer.on('update_available', () => {
+      ipcRenderer.removeAllListeners('update_available');
+      message.innerText = 'A new update is available. Downloading now...';
+      notification.classList.remove('hidden');
+    });
+
+    ipcRenderer.on('update_downloaded', () => {
+      ipcRenderer.removeAllListeners('update_downloaded');
+      message.innerText = 'Update Downloaded. It will be installed on restart. Restart now?';
+      restartButton.classList.remove('hidden');
+      notification.classList.remove('hidden');
+    });
+
+    function closeNotification() {
+      notification.classList.add('hidden');
+    }
+    
+    function restartApp() {
+      ipcRenderer.send('restart_app');
+    }
+  </script>
+<p>
+</p>
+  <video
+    id="vid1"
+    class="hidden"
+    width="0" height="0"
+    poster="play.png"
+    data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=x-tFIrmh32s"}] }'
+  >
+  </video>
+  <script>
+    videojs("vid1", {
+    controlBar: {
+      fullscreenToggle: false
+    }
+});
+  </script>
+                  <form action="">
+                    <h2>Pause/Play:</h2>
+                    <input type="button" id="4" class="w3-btn w3-black" value="PLAY"
+                           onclick="toggle2();">
+                    </form>
+
+                    <script>
+                      var player = videojs('vid1');
+                      function toggle2()
+                      {
+                        if(document.getElementById("4").value=="PLAY"){
+                         document.getElementById("4").value="PAUSE";
+                         player.play()}
+                      
+                        else if(document.getElementById("4").value=="PAUSE"){
+                         document.getElementById("4").value="PLAY";
+                         player.pause()}
+                      }
+                                    </script>
+    <p id='nowPlaying' class="nowplay">Fetching data...</p>
+<script>
+   setInterval(()=>{
+    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+      document.getElementById('nowPlaying').innerText = value.data.playing || 'Nothing'
+    })
+  },5000);
+</script>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="myaccount.html">My Account</a>
+</div>
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    $('#myModal').modal('hide');
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    $('#myModal').modal('show');
+  }
+  </script>
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title"><h2>SnailFM Settings</h2></h4>
+          </div>
+          <div class="modal-body">
+            <h4>Please click what settings you want to change.</h4>
+            <h4>If you don't want to change SnailFM settings, press the "More Settings" to change Account settings, encoder settings, and more.</h4>
+            <span class="hiddentext" style="font-size:20px;cursor:pointer;color:red;display:none;" onclick="openNav()">&#9776; More settings</span>
+            <button onclick="window.location.reload();" class="w3-btn w3-black">Reload</button>
+            <p></p>
+              <a style="font-size:20px;cursor:pointer;color:red" href="reset.html">&#9776; ResetSnailFM</a>
+            <h2>SnailFM Settings</h2>
+              <body>
+<h3>Soon!</h3>
+<h1 class="hiddentext">
+hi
+</h1>
+</body>
+</html>

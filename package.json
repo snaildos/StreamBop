@@ -1,0 +1,33 @@
+{
+  "name": "StreamBop",
+  "version": "0.0.1",
+  "description": "StreamBop allows you to stream and have this application automatically play music and credit them for you!",
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snaildos/StreamBop.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-builder build --win --linux appimage --publish never",
+    "snap": "electron-builder build --linux snap --publish never",
+    "deploy": "electron-builder build --win --linux appimage --publish always"
+  },
+  "author": "SnailDOS",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "13.1.1",
+    "electron-builder": "22.10.5"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "bufferutil": "^4.0.3",
+    "discord-rpc": "^3.1.4",
+    "electron-updater": "^4.0.6",
+    "internet-available": "^1.0.0",
+    "isdev": "^1.0.1",
+    "jquery": "^3.6.0",
+    "utf-8-validate": "^5.0.4"
+  }
+}
