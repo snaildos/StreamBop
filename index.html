@@ -177,6 +177,16 @@ body {
   font-size: 25px;
 }
 
+.sus  {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: rgb(255, 255, 255); /* Just to visualize the extent */
+}
+
 #cookie{
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -207,9 +217,38 @@ body {
     }
 }
   </style>
+  <script>
+    const Store = require('electron-store');
+    const store = new Store();
+    store.set('ison', 'yes');
+  </script>
+  <script>
+          setTimeout(function(){
+            $('.button').slideToggle(1000)
+            $('.sus').slideToggle(2000)
+            $('.button').slideToggle(1000)
+},1000);  
+
+
+      setTimeout(function(){
+        $('.streaming').slideUp(100)
+},500);  
+  </script>
+    <script>
+    function streaming()  {
+      $('.1').hide()
+      $('.welcome').slideToggle(4000)
+      $('.streaming').slideDown(4000)
+    }
+
+    function startstream()  {
+      console.log("Prepare")
+      ipcRenderer.send('strm');
+    }
+  </script>
 </head>
 <body>
-
+<div id="sus" class="sus"><h1>Page loading...</h1></div>
   <div id="cookie">
     <div id="cookie-wrapper">
       <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
@@ -222,12 +261,23 @@ body {
   <h4>Powered by <b>SnailDOS</b> team</h4>
   <h2 class="w3-center">What are we doing today?</h2>
   <div>
-    <button class="w3-center w3-button w3-black w3-round-xlarge"><h1 class="white">die</h1></button>
-    <button class="w3-center w3-button w3-black w3-round-xlarge"><h1 class="white">Extra die</h1></button>
+    <button class="w3-center w3-button w3-black w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
+    <button class="w3-center w3-button w3-black w3-round-xlarge 1"><h1 class="white">Extra die</h1></button>
   </div>
 
   <p id="version"></p>
 </div>
+
+
+
+<div id="streaming" class="streaming">
+  <h1>Welcome to the streaming panel!</h1>
+  <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
+  <button class="w3-center w3-button w3-black w3-roundxlarge 2"><h3>Customize</h3></button>
+  <button class="w3-center w3-button w3-black w3-roundxlarge 2"><h3>Guide</h3></button>
+</div>
+
+
   <div id="notification" class="hidden">
     <p id="message"></p>
     <button id="close-button" onClick="closeNotification()">

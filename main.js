@@ -101,8 +101,6 @@ internetAvailable({
     autoUpdater.checkForUpdatesAndNotify();
     console.log("Update checked. Let's see what happens!");
   });
-
-  
   
   mainWindow.on('closed', function () {
     mainWindow = null;
@@ -110,6 +108,39 @@ internetAvailable({
 }
 
 console.log("Main screen ready.");
+
+// strm
+/// create a global var, wich will keep a reference to out loadingScreen window
+let strm;
+const createNewstrm = () => {
+  strm = new BrowserWindow(
+    Object.assign({
+      width: 800,
+      setResizable: false,
+      isClosable: false,
+      minimizable: false,
+      height: 600,
+      alwaysOnTop: false,
+      frame: true,
+      fullscreen: false,
+      show: false
+    })
+  );
+  strm.setResizable(false);
+  strm.loadFile('strm.html');
+  strm.isMovable(false)
+  strm.setMenuBarVisibility(false)
+  strm.on('closed', () => (loadingScreen = null));
+};
+
+
+
+
+app.on('ready', () => {
+console.log("strm red");
+createNewstrm();
+})
+
 
 app.on('ready', () => {
   createLoadingScreen();
@@ -119,6 +150,7 @@ app.on('ready', () => {
     createWindow();
   }, 3000);
 })
+
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') {
@@ -145,5 +177,9 @@ ipcMain.on('relaunch', () => {
 
 ipcMain.on('restart_app', () => {
   autoUpdater.quitAndInstall();
+});
+
+ipcMain.on('strm', () => {
+  strm.show()
 });
 
