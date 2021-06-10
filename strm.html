@@ -1,7 +1,12 @@
 <html>
     <head>
         <title>StreamBop Viewer! Select me as a source in OBS!</title>
-        <Script>
+        <script>
+const Store = require('electron-store');
+
+const config = new Store();
+
+
             function Minimize()
 {
 window.innerWidth = 100;
@@ -11,10 +16,34 @@ window.screenY = screen.height;
 alwaysLowered = true;
 }
 
+function checkStart() {
+    if(config.get('on') == true) {
+       console.log("ok time to wake up, we are ready.")
+       alert("bruh")
+    } else {
+      console.log("Waiting for thumbs up... I am bored...")
+      window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
+    }
+}
+checkStart();
 
-        </Script>
+
+
+function checkStop() {
+    if(config.get('on') == false) {
+        alert("ok i died")
+    } else {
+      console.log("stop prot waiting...")
+      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+    }
+}
+checkStop();
+        </script>
     </head>
 <body>
-    <h1>snail</h1>
+    <h1>Welcome to StreamBop viewer</h1>
+    <h1>This should only be visable on OBS, if you see this...</h1>
+    <h2><b>ITS NOT YOUR CONTORL PANEL.</b> Please move this window away, DO NOT minimize it or close it, just move it away. :)</h2>
+    <h2>Once done, go to the control panel and press "Start"!</h2>
 </body>
 </html>

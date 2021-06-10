@@ -5,6 +5,11 @@ const { watchFile } = require('fs');
 // Notify
 const { Notification } = require('electron')
 
+const Store = require('electron-store');
+
+const config = new Store();
+
+
 function neterr() {
   const notification = {
     title: 'SnailPortal',
@@ -53,7 +58,7 @@ console.log("Loading screen ready.");
 // Start the main program
 let mainWindow;
 
-function createWindow () {
+function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
@@ -66,16 +71,16 @@ function createWindow () {
       contextIsolation: false
     },
   });
+  console.log("More configuration is being sent now.")
   mainWindow.setMenuBarVisibility(false)
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(4000)
-  mainWindow.webContents.on('did-finish-load', () => {
-    if (loadingScreen) {
-      loadingScreen.close();
-    }
-    var isDev = require('isdev')
+  console.log("debug.lin.75")
+  console.log("Loaded sucess.")
+  loadingScreen.close();
+  var isDev = require('isdev')
 
 if(isDev) {
   console.log("In Development!")
@@ -100,12 +105,7 @@ internetAvailable({
     console.log("Ok! Window init, let's check for updates...")
     autoUpdater.checkForUpdatesAndNotify();
     console.log("Update checked. Let's see what happens!");
-  });
-  
-  mainWindow.on('closed', function () {
-    mainWindow = null;
-  });
-}
+  };
 
 console.log("Main screen ready.");
 
@@ -123,7 +123,11 @@ const createNewstrm = () => {
       alwaysOnTop: false,
       frame: true,
       fullscreen: false,
-      show: false
+      show: false,
+      webPreferences: {
+        nodeIntegration: true,
+        contextIsolation: false
+      },
     })
   );
   strm.setResizable(false);
@@ -147,6 +151,7 @@ app.on('ready', () => {
   console.log("Send check for updates signal...");
   console.log("Alright, lets go!");
   setTimeout(() => {
+    console.log("Main WIN.REQ has been sent now.")
     createWindow();
   }, 3000);
 })
@@ -181,5 +186,13 @@ ipcMain.on('restart_app', () => {
 
 ipcMain.on('strm', () => {
   strm.show()
+});
+
+ipcMain.on('strm.hide', () => {
+  strm.hide()
+});
+
+ipcMain.on('strm.start', () => {
+  config.set("on", true);
 });
 
