@@ -220,6 +220,7 @@ body {
     const config = new Store();
      // config
      config.set('test', true)
+     config.set('on', false)
 </script>
 
   <script>
@@ -256,6 +257,12 @@ body {
     function strmstart32()  {
       ipcRenderer.send('strm.start');
       $('.nt3').hide()
+      $('.nt4').show()
+    }
+
+    function strmstop32()  {
+      ipcRenderer.send('strm.stop');
+      $('.nt3').show()
       $('.nt4').hide()
     }
   </script>

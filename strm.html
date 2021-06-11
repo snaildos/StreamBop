@@ -1,6 +1,39 @@
 <html>
     <head>
         <title>StreamBop Viewer! Select me as a source in OBS!</title>
+        <style>
+            .gr3  {
+                animation: coe 30s infinite;
+                user-select: none; /* supported by Chrome and Opera */
+            }
+
+            .bck1  {
+                background-color: green;
+            }
+
+            .emboss-txt  {
+                animation: color-change 1s infinite;
+            }
+
+            @keyframes color-change {
+  0% { color: red; }
+  50% { color: blue; }
+  100% { color: red; }
+}
+
+@keyframes coe  {
+  0% { background-color: red; }
+  50% { background-color: blue; }
+  100% { background-color: red; }
+}
+    </style>
+      <script>
+        window.jQuery = window.$ = require('jquery');
+        const axios = require('axios')
+    </script>
+      <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+      <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+      <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
         <script>
 const Store = require('electron-store');
 
@@ -19,7 +52,10 @@ alwaysLowered = true;
 function checkStart() {
     if(config.get('on') == true) {
        console.log("ok time to wake up, we are ready.")
-       alert("bruh")
+       $( "#g33" ).removeClass( "gr3" )
+       $('.bck1').slideDown(1000)
+       $('.waiting').slideUp(1000)
+       checkStop()
     } else {
       console.log("Waiting for thumbs up... I am bored...")
       window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
@@ -31,7 +67,11 @@ checkStart();
 
 function checkStop() {
     if(config.get('on') == false) {
-        alert("ok i died")
+        console.log("Service stopped.")
+        $( "#g33" ).addClass( "gr3" )
+        $('.waiting').slideDown(1000)
+        $('.bck1').slideUp(1000)
+        checkStart()
     } else {
       console.log("stop prot waiting...")
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
@@ -41,9 +81,22 @@ checkStop();
         </script>
     </head>
 <body>
+<div id="g33" class="gr3">
+    <div id="waiting" class="waiting">
     <h1>Welcome to StreamBop viewer</h1>
     <h1>This should only be visable on OBS, if you see this...</h1>
     <h2><b>ITS NOT YOUR CONTORL PANEL.</b> Please move this window away, DO NOT minimize it or close it, just move it away. :)</h2>
     <h2>Once done, go to the control panel and press "Start"!</h2>
+    <h1>Waiting for start button to be pressed...</h1>
+    </div>
+    <div id="bck1" class="bck1">
+    <div id="working" class="working">
+    <h1 class="w3-center emboss-txt 1" id="1">Loading Info...</h1>
+    <h2 class="w3-center np" id="np">PS.L</h2>
+    <h2 class="w3-center npvs" id="npvs">SONG N/A</h2>
+    <h1 class="w3-center err" id="err"> ERROR LOADING INFO BELOW </h1>
+    </div>
+    </div>
+</div>
 </body>
 </html>

@@ -142,6 +142,7 @@ const createNewstrm = () => {
 
 app.on('ready', () => {
 console.log("strm red");
+config.set("on", false);
 createNewstrm();
 })
 
@@ -193,6 +194,12 @@ ipcMain.on('strm.hide', () => {
 });
 
 ipcMain.on('strm.start', () => {
+  console.log("on")
   config.set("on", true);
+});
+
+ipcMain.on('strm.stop', () => {
+  console.log("off")
+  config.set("on", false);
 });
 
