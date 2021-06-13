@@ -57,6 +57,7 @@ $('#cookie-ok').click(function(event){
   <style>
     
     html, body {
+  user-select: none; /* supported by Chrome and Opera */
   width: 100%;
   height:100%;
 }
@@ -265,6 +266,16 @@ body {
       $('.nt3').show()
       $('.nt4').hide()
     }
+
+    // Main funny moments
+    setInterval(()=>{
+    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+      np3 = value.data.playing
+      name = value.data.playing
+    })
+    console.log(name)
+    config.set('song', name)
+  },1000);
   </script>
 </head>
 <body>

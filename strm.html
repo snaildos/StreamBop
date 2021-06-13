@@ -2,6 +2,10 @@
     <head>
         <title>StreamBop Viewer! Select me as a source in OBS!</title>
         <style>
+          body {
+            user-select: none; /* supported by Chrome and Opera */
+          }
+          
             .gr3  {
                 animation: coe 30s infinite;
                 user-select: none; /* supported by Chrome and Opera */
@@ -14,6 +18,16 @@
             .emboss-txt  {
                 animation: color-change 1s infinite;
             }
+
+            .sus  {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background: rgb(255, 255, 255); /* Just to visualize the extent */
+}
 
             @keyframes color-change {
   0% { color: red; }
@@ -55,6 +69,8 @@ function checkStart() {
        $( "#g33" ).removeClass( "gr3" )
        $('.bck1').slideDown(1000)
        $('.waiting').slideUp(1000)
+       $(".1").hide()
+       $(".err").hide()
        checkStop()
     } else {
       console.log("Waiting for thumbs up... I am bored...")
@@ -71,6 +87,8 @@ function checkStop() {
         $( "#g33" ).addClass( "gr3" )
         $('.waiting').slideDown(1000)
         $('.bck1').slideUp(1000)
+        $(".1").show()
+        $(".err").show()
         checkStart()
     } else {
       console.log("stop prot waiting...")
@@ -78,9 +96,22 @@ function checkStop() {
     }
 }
 checkStop();
+
+setTimeout(function(){
+        $('.sus').slideUp(100)
+        $('.bck1').slideUp(100)
+},800); 
+
+
+setInterval(()=>{
+  var np3 = config.get('song')
+  console.log(np3)
+  document.getElementById('npvs').innerText = np3 || 'Nothing'
+  },100);
         </script>
     </head>
 <body>
+  <div id="sus" class="sus"><h1>Page loading...</h1></div>
 <div id="g33" class="gr3">
     <div id="waiting" class="waiting">
     <h1>Welcome to StreamBop viewer</h1>
