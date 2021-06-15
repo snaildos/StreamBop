@@ -65,7 +65,7 @@ function sleep(ms) {
             });
         });
 
-        function dark()  {
+        function light()  {
             localStorage.setItem("theme", true);
             $('.cls3').fadeOut(50)
             $('.cls4').fadeIn(2000)
@@ -113,7 +113,7 @@ function sleep(ms) {
                 <div class="cls3"><h4 class="main" class="w3-center"><h2 class="w3-center">Customization Time:</h2>
                     <h3 class="w3-center"> What mode do YOU want? </h3>
 
-                    <button class="w3-center w3-black w3-button w3-round-large" onclick="dark()">Dark Mode</button>
+                    <button class="w3-center w3-white w3-button w3-round-large" onclick="light()">Light Mode!</button>
                 </div>
 
                     <div class="cls4"><h4 class="main" class="w3-center">Let's get start!<p></p><p>

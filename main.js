@@ -58,6 +58,7 @@ console.log("Loading screen ready.");
 // Start the main program
 let mainWindow;
 
+
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
@@ -75,6 +76,7 @@ function createWindow() {
   mainWindow.setMenuBarVisibility(false)
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
+  mainWindow.on('closed', () => (strm.close()))
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(4000)
   console.log("debug.lin.75")
@@ -133,6 +135,7 @@ const createNewstrm = () => {
   strm.setResizable(false);
   strm.loadFile('strm.html');
   strm.isMovable(false)
+  strm.on('closed', () => (mainWindow.close()))
   strm.setMenuBarVisibility(false)
   strm.on('closed', () => (loadingScreen = null));
 };

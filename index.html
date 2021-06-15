@@ -276,6 +276,13 @@ body {
     console.log(name)
     config.set('song', name)
   },1000);
+
+  function storenam()  {
+    var username = $('#name').val();
+config.set("name", username);
+$("#cookie-ok").click()
+return false;
+  }
   </script>
 </head>
 <body>
@@ -283,7 +290,17 @@ body {
   <div id="cookie">
     <div id="cookie-wrapper">
       <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
-        <button id="cookie-ok">Let's go!</button>
+        <p></p>
+        <h1>Enter your Channel name, or the name you want to be known under...</h1>
+        <p></p>
+        <h2>
+        <h>Press enter when complete.</h>
+        <p></p>
+      </p><form class="" onsubmit="storenam(); return false;"> 
+        <input class="name" id="name" name="name" type="name" id="email" required="true" placeholder="" />
+        </form>
+      </h2>
+        <button class="hidden" id="cookie-ok">Let's go!</button>
     </div>
 </div>
 <button type="button" class="settings" data-toggle="modal" data-target="#myModal">Settings</button>
@@ -301,7 +318,7 @@ body {
   <h2 class="w3-center">What are we doing today?</h2>
   <div>
     <button class="w3-center w3-button w3-black w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
-    <button class="w3-center w3-button w3-black w3-round-xlarge 1"><h1 class="white">Extra die</h1></button>
+    <button class="w3-center w3-button w3-black w3-round-xlarge 1"><h1 class="white">[PlaceHolder]</h1></button>
   </div>
 
   <p id="version"></p>
