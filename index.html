@@ -280,7 +280,7 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
 
     function strmstop32()  {
       ipcRenderer.send('strm.stop');
-      player.stop()
+      player.pause()
       $('.nt3').show()
       $('.nt4').hide()
     }
