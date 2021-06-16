@@ -76,7 +76,6 @@ function createWindow() {
   mainWindow.setMenuBarVisibility(false)
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
-  mainWindow.on('closed', () => (strm.close()))
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(4000)
   console.log("debug.lin.75")

@@ -35,10 +35,18 @@ body {
 </head>
 <body>
 	<script>
+			const fs = require('fs');
+		    const Store = require('electron-store');
+    const config = new Store();
 		console.log("Let's clear localstorage first...")
-		localStorage.removeItem('cookie-consent', 'true');
+		localStorage.removeItem('firstime', 'true');
+		localStorage.removeItem('setup', 'true');
+		localStorage.removeItem('theme', 'true');
+		localStorage.removeItem('version');
 		console.log("Just wait a bit...")
-		// import rest of stuff here
+		// if all above fails, lets do some ensurement.
+		fs.unlinkSync(config.path)
+
 	</script>
 	<div class="bs-example">
 		<h2>Resetting SnailBop...</h2>
