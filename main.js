@@ -121,6 +121,7 @@ const createNewstrm = () => {
       isClosable: false,
       minimizable: false,
       height: 600,
+      backgroundThrottling: false,
       alwaysOnTop: false,
       frame: true,
       fullscreen: false,
