@@ -263,6 +263,10 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
       $('.streaming').slideDown(4000)
     }
 
+    function reload()  {
+      location.reload();
+    }
+
     function startstream()  {
       console.log("Prepare")
       ipcRenderer.send('strm');
@@ -359,6 +363,7 @@ return false;
   Once done, press "start" here.
   <p>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
 </div>
 
