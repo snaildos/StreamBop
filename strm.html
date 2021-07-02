@@ -128,6 +128,9 @@ function checkStart() {
        $('.bck1').slideUp(1000)
        $('.working').slideUp(1000)
        checkStop()
+       setTimeout(function(){
+        noti()
+    }, 10000);
     } else {
       console.log("Waiting for thumbs up... I am bored...")
       window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
