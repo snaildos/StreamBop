@@ -261,6 +261,7 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
 },800);  
   </script>
     <script>
+    const loudness = require('loudness')
     function streaming()  {
       $('.1').hide()
       $('.welcome').slideToggle(4000)
@@ -292,6 +293,11 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
       $('.nt3').show()
       $('.nt4').hide()
     }
+
+    function updateTextInput(val) {
+          document.getElementById('textInput').value=val; 
+          loudness.setVolume(val)
+        }
 
     function setup34()  {
       player.pause()
@@ -374,7 +380,13 @@ return false;
   Please create a application monitor in your software and select "Stream Bop Visualizer!"
   Once created, add a filter for "green screen"
   Once done, press "start" here.
+  <h1>System Wide volume</h1>
   <p>
+    <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
+    Current Volume:
+    <input type="text" id="textInput" value="">
+<p></p>
+<h1 class="hidden">h</h1>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
