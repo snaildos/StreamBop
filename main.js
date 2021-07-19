@@ -206,3 +206,14 @@ ipcMain.on('strm.stop', () => {
   config.set("on", false);
 });
 
+ipcMain.on('strm.setup', () => {
+  console.log("redr")
+  config.set("on", false);
+  config.set("setupan", true);
+});
+
+ipcMain.on('strm.reload', () => {
+  strm.reload();
+});
+
+

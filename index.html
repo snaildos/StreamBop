@@ -222,13 +222,14 @@ body {
      // config
      config.set('test', true)
      config.set('on', false)
+     config.set("setupan", false);
 </script>
 <video class="hidden"
 id="vid1"
 class="hidden"
 width="0" height="0"
 poster="play.png"
-data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=efq3i_opnsw"}] }'
+data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=o6BczfCweSk"}] }'
 >
 </video>
   <script>
@@ -247,7 +248,10 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
             $('.isstrm').slideToggle(2000)
             $('.button').slideToggle(1000)
             $('.sus').slideToggle(2000)
-            ipcRenderer.send('strm.hide');
+            ipcRenderer.send('strm.hide')
+            ipcRenderer.send('strm.reload')
+            config.set('setupan', false)
+            $('.set').slideToggle(4)
             $('.button').slideToggle(1000)
 },1000);  
 
@@ -271,7 +275,7 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
       console.log("Prepare")
       ipcRenderer.send('strm');
       $('.nt3').show()
-      $('.streaming').slideUp(4000)
+      $('.streaming').slideUp(100)
       $('.isstrm').slideToggle(2000)
     }
 
@@ -287,6 +291,15 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
       player.pause()
       $('.nt3').show()
       $('.nt4').hide()
+    }
+
+    function setup34()  {
+      player.pause()
+      $('.nt3').hide()
+      $('.nt4').hide()
+      $('.isstrm').slideUp(4)
+      $('.set').slideToggle(4)
+      ipcRenderer.send('strm.setup');
     }
 
     // Main funny moments
@@ -365,7 +378,24 @@ return false;
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
+  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
 </div>
+
+<div id="set" class="set">
+  <h1>Welcome!</h1>
+  <p></p>
+  Let's setup StreamBop,
+  First, create a window capture in OBS, and select "StreamBop Viewer!"
+  After doing that, you will want to press filters, Color key, then select green and adjust the similarity to your preference.
+  Once complete, apply the changes, and move the StreamBop window, into the sides or corners of the screen. When complete, press done.
+  The setup can be viewed anytime you want.
+  <p>
+    <button class="w3-button w3-black" onclick="reload()">Done</button>
+  </p>
+
+  <p>
+  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+</button>
 
 
   <div id="notification" class="hidden">
