@@ -1,6 +1,6 @@
 {
   "name": "streambop",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "StreamBop allows you to stream and have this application automatically play music and credit them for you! No copyright music too!",
   "main": "main.js",
   "repository": {
@@ -11,6 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "build": "electron-builder build --win --linux appimage --publish never",
+    "windows": "electron-builder build --win --publish never",
     "snap": "electron-builder build --linux snap --publish never",
     "deploy": "electron-builder build --win --linux appimage --publish always"
   },
@@ -25,7 +26,7 @@
     "bufferutil": "^4.0.3",
     "electron-store": "^8.0.0",
     "discord-rpc": "^4.0.0",
-    "loudness": "^0.4.1",
+    "mwl-loudness": "^0.3.0",
     "electron-updater": "^4.0.6",
     "internet-available": "^1.0.0",
     "isdev": "^1.0.1",

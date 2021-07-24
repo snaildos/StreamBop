@@ -2,6 +2,8 @@ const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { watchFile } = require('fs');
+// is dev
+  var isDev = require('isdev')
 // Notify
 const { Notification } = require('electron')
 
@@ -9,6 +11,19 @@ const Store = require('electron-store');
 
 const config = new Store();
 
+function die() {
+mainWindow.removeAllListeners('closed');
+strm.removeAllListeners('closed');
+strm.close()
+app.quit()
+}
+
+function strmex() {
+app.removeAllListeners('window-all-closed');
+mainWindow.removeAllListeners('closed');
+mainWindow.close()
+app.quit()
+}
 
 function neterr() {
   const notification = {
@@ -58,7 +73,6 @@ console.log("Loading screen ready.");
 // Start the main program
 let mainWindow;
 
-
 function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
@@ -69,6 +83,7 @@ function createWindow() {
     icon: 'snailfm.ico',
     webPreferences: {
       nodeIntegration: true,
+      devTools: isDev,
       contextIsolation: false
     },
   });
@@ -81,7 +96,10 @@ function createWindow() {
   console.log("debug.lin.75")
   console.log("Loaded sucess.")
   loadingScreen.close();
-  var isDev = require('isdev')
+
+mainWindow.on('closed', () => (
+die()
+));
 
 if(isDev) {
   console.log("In Development!")
@@ -113,6 +131,7 @@ console.log("Main screen ready.");
 // strm
 /// create a global var, wich will keep a reference to out loadingScreen window
 let strm;
+
 const createNewstrm = () => {
   strm = new BrowserWindow(
     Object.assign({
@@ -128,6 +147,7 @@ const createNewstrm = () => {
       show: false,
       webPreferences: {
         nodeIntegration: true,
+        devTools: isDev,
         contextIsolation: false
       },
     })
@@ -135,12 +155,9 @@ const createNewstrm = () => {
   strm.setResizable(false);
   strm.loadFile('strm.html');
   strm.isMovable(false)
-  strm.on('closed', () => (mainWindow.close()))
   strm.setMenuBarVisibility(false)
-  strm.on('closed', () => (loadingScreen = null));
+  strm.on('closed', () => (strmex()));
 };
-
-
 
 
 app.on('ready', () => {
@@ -162,6 +179,7 @@ app.on('ready', () => {
 
 
 app.on('window-all-closed', function () {
+  die()
   if (process.platform !== 'darwin') {
     app.quit();
   }
@@ -215,5 +233,4 @@ ipcMain.on('strm.setup', () => {
 ipcMain.on('strm.reload', () => {
   strm.reload();
 });
-
 
