@@ -2,3 +2,4 @@ node_modules
 dist
 .vscode/settings.json
 package-lock.json
+electron-builder.yml
