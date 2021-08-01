@@ -160,14 +160,13 @@ function checkStart() {
        $(".1").hide()
        $(".err").hide()
        $(".bock").show()
-       checkStop()
        $('.bck1').slideUp(1000)
        $('.working').slideUp(1000)
     async function nots() {
-    await timeout(10000);
+    await timeout(25000);
     console.log("Start.")
     await noti()
-    await timeout(10000);
+    await timeout(5000);
     }
     nots()
   } else {
@@ -180,12 +179,13 @@ checkStart();
 
 
 function checkAlwaysOn() {
-  if(config.get('alwayson') == true) {
+  if(config.get('alwayson')) {
   $('.bck1').slideDown(1000)
   $('.working').slideDown(1000)
       window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
     } else {
       console.log("Not required...")
+      window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
     }
 }
 checkAlwaysOn();
@@ -208,10 +208,10 @@ function checkStop() {
         $(".1").show()
         $(".err").show()
         $(".bock").hide()
+      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
         checkStart()
         $('.bck1').slideUp(1000)
         $('.working').slideUp(1000)
-        window.setTimeout(checkStop, 200); /* this checks the flag every 100 milliseconds*/
     } else {
       console.log("stop prot waiting...")
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
@@ -242,6 +242,9 @@ setTimeout(function(){
         $('.bck1').slideUp(100)
         $('.setup').slideUp(100)
         $(".bock").hide()
+        $("#fireset").hide()
+        $("#erset").hide()
+        $("#blueset").hide()
 },800);
 
 setInterval(()=>{
@@ -262,7 +265,7 @@ setInterval(()=>{
   console.log(np3)
   document.getElementById('npvs').innerText = np3 || 'Error.'
 }
-},100);
+},500);
 
 setInterval(()=>{
   var npv3 = config.get('name')
@@ -284,7 +287,9 @@ setInterval(()=>{
     </div>
 <div class="bock">
     <div id="bck1" class="box bck1">
-      <object class="fire" data="./svg/er.svg"></object>
+      <object class="" data="./svg/fire.svg" id="fireset"></object>
+      <object class="" data="./svg/er.svg" id="erset"></object>
+      <object class="" data="./svg/h.svg" id="blueset"></object>
     </div>
     <div id="working" class="box working">
     <h1 class="w3-center emboss-txt 1" id="1">Loading Info...</h1>
@@ -300,7 +305,7 @@ setInterval(()=>{
 
 <div class="setup">
   <div id="bck3" class="box bck3">
-    <object class="fire" data="./svg/h.svg"></object>
+    
   </div>
   <div id="working3" class="working3">
   <p>.</p>
@@ -313,14 +318,20 @@ setInterval(()=>{
 </div>
 </body>
 <script>
+setTimeout(function(){
   // Onload, we need to see what theme the user wants...
 if(config.get('theme') == "fire") {
-$(".fire").prop("data","./svg/fire.svg");
+$("#fireset").show()
+("#fireset").addClass("fire");
 } else {
 if(config.get('theme') == "blue") {
-    $(".fire").prop("data","./svg/h.svg");
+$("#blueset").show()
+("#blueset").addClass("fire");
 } else {
+$("#erset").show()
+("#erset").addClass("fire");
   alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
 }}
+}, 1000)
 </script>
 </html>

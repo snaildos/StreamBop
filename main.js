@@ -199,7 +199,6 @@ autoUpdater.on('update-downloaded', () => {
 
 ipcMain.on('relaunch', () => {
   mainWindow.close()
-  strm.close()
 });
 
 ipcMain.on('restart_app', () => {
