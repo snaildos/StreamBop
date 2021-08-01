@@ -146,6 +146,24 @@ body {
   transition: 0.3s;
 }
 
+/* HIDE RADIO */
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* IMAGE STYLES */
+[type=radio] + img {
+  cursor: pointer;
+}
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  outline: 2px solid #f00;
+}
+
+
+
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
@@ -217,6 +235,32 @@ body {
             background: none;
             color: rgb(255, 0, 212);
         }
+
+.fga {
+  margin: auto;
+  margin: 10px;
+}
+
+/* Dashed border */
+hr.dashed {
+  border-top: 3px dashed #bbb;
+}
+
+/* Dotted border */
+hr.dotted {
+  border-top: 3px dotted #bbb;
+}
+
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
+
+/* Rounded border */
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
   </style>
   <script>
     const Store = require('electron-store');
@@ -250,6 +294,7 @@ document.getElementById('id01').style.display='block'
   <script>
           setTimeout(function(){
             $('.nt4').hide()
+            $('.custom').slideToggle(2)
             $('.nt3').hide()
             $('.isstrm').slideToggle(2000)
             $('.button').slideToggle(1000)
@@ -330,6 +375,32 @@ config.set("name", username);
 $("#cookie-ok").click()
 return false;
   }
+
+  function costume()  {
+    console.log("Customizer init...")
+    $('.streaming').fadeOut(1)
+    $('.custom').fadeIn(1)
+  }
+
+  function savetheme() { 
+            if(document.getElementById('fire').checked) {
+                document.getElementById("disp").innerHTML
+                    = "Fire theme set.";
+                config.set("theme", "fire")
+                console.log("Saved.")
+            }
+            else if(document.getElementById('blue').checked) {
+                document.getElementById("disp").innerHTML
+                    = "Blue theme set.";  
+                    config.set("theme", "blue")
+                    console.log("Saved.")
+            }
+            else {
+                document.getElementById("disp").innerHTML
+                    = "Can't save, none selected!";
+            }
+        }
+
   </script>
 </head>
 <body>
@@ -366,7 +437,7 @@ return false;
   <h2 class="w3-center">What are we doing today?</h2>
   <div>
     <button class="w3-center w3-button w3-black w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
-    <button class="w3-center w3-button w3-black w3-round-xlarge 1"><h1 class="white">ComingSoon...</h1></button>
+    <button class="w3-center w3-button w3-black w3-round-xlarge 1 hidden"><h1 class="white">ComingSoon...</h1></button>
   </div>
 
   <p id="version"></p>
@@ -377,9 +448,33 @@ return false;
 <div id="streaming" class="streaming">
   <h1>Welcome to the streaming panel!</h1>
   <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
-  <button class="w3-center w3-button w3-black w3-roundxlarge 2"><h3>Customize</h3></button>
+  <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="costume()"><h3>Customize</h3></button>
 </div>
 
+<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+unselectable="on"
+onselectstart="return false;" >
+<h1 class="w3-center">Welcome to the customizer!</h1>
+<hr class="rounded">
+<centered>
+  <label>
+    <input type="radio" name="test" value="Fire" id="fire">
+    <img src="./ui/1.png" width="120" height="100" class="fga">
+  </label>
+
+  <label>
+    <input type="radio" name="test" value="Blue" id="blue">
+    <img src="./ui/2.png" width="120" height="100" class="fga">
+  </label>
+  <div id="disp" style="color:yellow; font-size:18px; font-weight:bold;">Please select what theme you want!
+</div>
+
+<button class="w3-button w3-black" onclick="savetheme()">Save Theme</button>
+<p>
+<hr class="rounded">
+</centered>
+
+</div>
 <div id="isstrm" class="isstrm">
   <h1>Welcome to the streaming panel!</h1>
   Welcome to the streaming panel. 
@@ -392,6 +487,15 @@ return false;
     Current Volume:
     <input type="text" id="textInput" value="Drag Slider!" readonly="readonly">
 <p></p>
+<h1 class="hidden">h</h1>
+<p id='nowPlaying' class="w3-center nowplay">Fetching data...</p>
+<script>
+   setInterval(()=>{
+    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+      document.getElementById('nowPlaying').innerText = value.data.playing || 'Nothing'
+    })
+  },5000);
+</script>
 <h1 class="hidden">h</h1>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>

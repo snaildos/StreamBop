@@ -138,6 +138,9 @@ const config = new Store();
   config.set('testVariable', "kk")
 </script>
 <script>
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
             function Minimize()
 {
@@ -157,18 +160,35 @@ function checkStart() {
        $(".1").hide()
        $(".err").hide()
        $(".bock").show()
+       checkStop()
        $('.bck1').slideUp(1000)
        $('.working').slideUp(1000)
-       checkStop()
-       setTimeout(function(){
-        noti()
-    }, 10000);
-    } else {
+    async function nots() {
+    await timeout(10000);
+    console.log("Start.")
+    await noti()
+    await timeout(10000);
+    }
+    nots()
+  } else {
       console.log("Waiting for thumbs up... I am bored...")
       window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
     }
 }
 checkStart();
+
+
+
+function checkAlwaysOn() {
+  if(config.get('alwayson') == true) {
+  $('.bck1').slideDown(1000)
+  $('.working').slideDown(1000)
+      window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
+    } else {
+      console.log("Not required...")
+    }
+}
+checkAlwaysOn();
 
 function noti()  {
   $('.bck1').slideDown(1000)
@@ -191,6 +211,7 @@ function checkStop() {
         checkStart()
         $('.bck1').slideUp(1000)
         $('.working').slideUp(1000)
+        window.setTimeout(checkStop, 200); /* this checks the flag every 100 milliseconds*/
     } else {
       console.log("stop prot waiting...")
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
@@ -209,7 +230,7 @@ function checkSetup() {
        $('.working').slideUp(1000)
       $('.setup').slideDown(100)
     } else {
-      console.log("no pan.")
+      console.log("No setup event...")
       window.setTimeout(checkSetup, 100); /* this checks the flag every 100 milliseconds*/
     }
 }
@@ -217,13 +238,17 @@ checkSetup();
 
 
 setTimeout(function(){
-        $('.sus').slideUp(100)
+  $('.sus').slideUp(100)
         $('.bck1').slideUp(100)
         $('.setup').slideUp(100)
         $(".bock").hide()
 },800);
 
 setInterval(()=>{
+  if (config.get("alwayson")) {
+    console.log("We won't check, since we are always on!")
+  } else {
+  console.log("Checking!")
   var np3 = config.get('song');
 
   config.set('testVariable', config.get('song'));
@@ -234,10 +259,10 @@ setInterval(()=>{
   config.set('oldVariable', config.get('song'));
   noti()
 }
-
   console.log(np3)
-  document.getElementById('npvs').innerText = np3 || 'Nothing'
-},500);
+  document.getElementById('npvs').innerText = np3 || 'Error.'
+}
+},100);
 
 setInterval(()=>{
   var npv3 = config.get('name')
@@ -259,7 +284,7 @@ setInterval(()=>{
     </div>
 <div class="bock">
     <div id="bck1" class="box bck1">
-      <object class="fire" data="./svg/fire.svg"></object>
+      <object class="fire" data="./svg/er.svg"></object>
     </div>
     <div id="working" class="box working">
     <h1 class="w3-center emboss-txt 1" id="1">Loading Info...</h1>
@@ -287,4 +312,15 @@ setInterval(()=>{
 </div>
 </div>
 </body>
+<script>
+  // Onload, we need to see what theme the user wants...
+if(config.get('theme') == "fire") {
+$(".fire").prop("data","./svg/fire.svg");
+} else {
+if(config.get('theme') == "blue") {
+    $(".fire").prop("data","./svg/h.svg");
+} else {
+  alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
+}}
+</script>
 </html>
