@@ -21,6 +21,31 @@
                 animation: color-change 1s infinite;
             }
 
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1000000000000;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+
             .sus  {
   position: fixed;
   top: 0;
@@ -120,6 +145,37 @@ body::-webkit-scrollbar {
     z-index: 100;
 }
     </style>
+<div class="hidden" id="temp"></div>
+<script>
+var nva = document.getElementById('temp')
+function openNav() {
+  nva.style.width = "100%";
+}
+
+function closeNav() {
+  nva.style.width = "0%";
+  timeleft = 70;
+}
+</script>
+<script>
+var xr = 3
+var timeleft = 70;
+var downloadTimer = setInterval(function(){
+ if (config.get('on')) {
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    xr.innerHTML = "Loaded!";
+    closeNav()
+  } else {
+    openNav()
+    xr.innerHTML = timeleft + " load time remaining...";
+  }
+  timeleft -= 1;
+  } else {
+  console.log("Waiting for timer...")
+  }
+}, 1000);
+</script>
       <script>
         window.jQuery = window.$ = require('jquery');
         const axios = require('axios')
@@ -158,6 +214,7 @@ function checkStart() {
        $('.bck1').slideDown(1000)
        $('.waiting').slideUp(1000)
        $(".1").hide()
+       openNav()
        $(".err").hide()
        $(".bock").show()
        $('.bck1').slideUp(1000)
@@ -211,6 +268,7 @@ function checkStop() {
         $('.waiting').slideDown(1000)
         $('.bck1').slideUp(1000)
         $(".1").show()
+        closeNav()
         $(".err").show()
         $(".bock").hide()
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
@@ -283,6 +341,16 @@ setInterval(()=>{
     </head>
 <body>
   <div id="sus" class="sus"><h1>Page loading...</h1></div>
+<div id="myNav" class="overlay">
+    <div class="overlay-content">
+    <h1 class="w3-center">Loading...</h1>
+    <b>ETA startup time:</b>
+    <h2><div id="countdown"></div></h2>  
+  </div>
+</div>
+<script>
+var nva = document.getElementById('myNav')
+</script>
 <div id="g33" class="gr3">
     <div id="waiting" class="waiting">
     <h1>Welcome to StreamBop viewer</h1>
@@ -339,5 +407,15 @@ $("#erset").show()
   alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
 }}
 }, 1000)
+
+xr = document.getElementById('countdown'); 
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
 </script>
 </html>

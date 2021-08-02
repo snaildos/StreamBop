@@ -290,6 +290,19 @@ function arel() {
 document.getElementById('id01').style.display='block'
 }
   </script>
+var contvar = 3
+function strtcont()  {
+var timeleft = 70;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    contvar.innerHTML = "Loaded!";
+  } else {
+    contvar.innerHTML = timeleft + " load time remaining...";
+  }
+  timeleft -= 1;
+}, 1000);
+}
 
   <script>
           setTimeout(function(){
@@ -533,18 +546,7 @@ onselectstart="return false;" >
 ETA startup time:</b>
 <h2><div id="countdown"></div></h2>
 <script>
-function strtcont()  {
-var timeleft = 70;
-var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    document.getElementById("countdown").innerHTML = "Loaded!";
-  } else {
-    document.getElementById("countdown").innerHTML = timeleft + " load time remaining...";
-  }
-  timeleft -= 1;
-}, 1000);
-}
+var contvar = document.getElementById("countdown")
 </script>
 </div>
 
