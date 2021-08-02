@@ -336,6 +336,7 @@ document.getElementById('id01').style.display='block'
       player.play()
       $('.nt3').hide()
       $('.nt4').show()
+      strtcont()
     }
 
     function strmstop32()  {
@@ -343,6 +344,7 @@ document.getElementById('id01').style.display='block'
       player.pause()
       $('.nt3').show()
       $('.nt4').hide()
+      clearInterval(downloadTimer);
     }
 
     function updateTextInput(val) {
@@ -451,6 +453,21 @@ return false;
   <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="costume()"><h3>Customize</h3></button>
 </div>
 
+<script>
+// toggle always on
+function toggle(button) {
+  if (button.value == "OFF") {
+    button.value = "ON";
+    alert("Enabled Always on!")
+    config.set("alwayson", true)
+  } else {
+    button.value = "OFF";
+    alert("Disabled Always on!")
+    config.set("alwayson", false)
+  }
+}
+</script>
+
 <div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
 unselectable="on"
 onselectstart="return false;" >
@@ -472,6 +489,14 @@ onselectstart="return false;" >
 <button class="w3-button w3-black" onclick="savetheme()">Save Theme</button>
 <p>
 <hr class="rounded">
+<h1 class="w3-center>Always ON</h1>
+<p class="w3-center">Always on disables all animation and shows the current song playing at ALL times...</p>
+<form action="">
+<input type="button" id="3" value="ON" style="color:blue"
+       onclick="toggle(this);">
+</form>
+<hr class="rounded">
+<button class="w3-center w3-black w3-button" onclick="location.reload()">Exit Customization!</button>
 </centered>
 
 </div>
@@ -501,7 +526,28 @@ onselectstart="return false;" >
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
   <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
+<p>
+</p>
+<h1 class="hidden">sus</h1>
+<b>When pressing start, it may look like the software is broken, however, It's not. The start process is a heafty thing and may cause animation to open and close for a minuete until it loads up totally.
+ETA startup time:</b>
+<h2><div id="countdown"></div></h2>
+<script>
+function strtcont()  {
+var timeleft = 70;
+var downloadTimer = setInterval(function(){
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Loaded!";
+  } else {
+    document.getElementById("countdown").innerHTML = timeleft + " load time remaining...";
+  }
+  timeleft -= 1;
+}, 1000);
+}
+</script>
 </div>
+
 
 <div id="set" class="set">
   <h1>Welcome!</h1>

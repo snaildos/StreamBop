@@ -182,6 +182,11 @@ function checkAlwaysOn() {
   if(config.get('alwayson')) {
   $('.bck1').slideDown(1000)
   $('.working').slideDown(1000)
+   setInterval(()=>{
+    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+      document.getElementById('npvs').innerText = value.data.playing || 'Nothing'
+    })
+  },5000);
       window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
     } else {
       console.log("Not required...")
@@ -229,6 +234,7 @@ function checkSetup() {
        $('.bck1').slideUp(1000)
        $('.working').slideUp(1000)
       $('.setup').slideDown(100)
+      window.setTimeout(checkSetup, 100);
     } else {
       console.log("No setup event...")
       window.setTimeout(checkSetup, 100); /* this checks the flag every 100 milliseconds*/
@@ -305,7 +311,7 @@ setInterval(()=>{
 
 <div class="setup">
   <div id="bck3" class="box bck3">
-    
+          <object class="" data="./svg/h.svg" id="blueset"></object>
   </div>
   <div id="working3" class="working3">
   <p>.</p>
