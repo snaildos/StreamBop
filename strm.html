@@ -156,7 +156,7 @@ function openNav() {
 
 function closeNav() {
   nva.style.width = "0%";
-  timeleft = 70;
+  timeleft = 10;
 }
 </script>
 <script>
@@ -215,7 +215,7 @@ async function checkStart() {
        console.log("ok time to wake up, we are ready.")
        $( "#g33" ).removeClass( "gr3" )
        $('.bck1').slideDown(1000)
-       config.set('stop.lock', false)
+       config.set('stop.lock', true)
        $('.waiting').slideUp(1000)
        $(".1").hide()
        openNav()
@@ -228,6 +228,7 @@ async function checkStart() {
     await timeout(11000);
     console.log("Start.")
     await noti()
+    config.set('cal', true)
     noti()
     await timeout(5000);
     }
@@ -268,7 +269,7 @@ function noti()  {
 }
 
 async function checkStop() {
-    if(config.get('stop.lock') == false) {
+    if(config.get('stop.lock')) {
     if(config.get('on') == false) {
         config.set('stop.lock', true)
         console.log("Service stopped.")
@@ -404,6 +405,7 @@ var nva = document.getElementById('myNav')
 <script>
 setTimeout(function(){
 if(config.get('cal')) {
+  config.get('cal', true)
   // Onload, we need to see what theme the user wants...
 if(config.get('theme') == "fire") {
 $("#fireset").show()
@@ -423,7 +425,7 @@ $("#erset").removeClass("fire");
 config.set('cal', false)
   alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
 }}}
-}, 1000)
+}, 200)
 
 xr = document.getElementById('countdown'); 
 
@@ -434,5 +436,29 @@ function openNav() {
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
+
+setTimeout(function(){
+    config.get('cal', true)
+    config.get('cal', true)
+  // Onload, we need to see what theme the user wants...
+if(config.get('theme') == "fire") {
+$("#fireset").show()
+$("#fireset").addClass("fire");
+$("#fireset").removeClass("fire");
+config.set('cal', false)
+} else {
+if(config.get('theme') == "blue") {
+$("#blueset").show()
+$("#blueset").addClass("fire");
+$("#blueset").removeClass("fire");
+config.set('cal', false)
+} else {
+$("#erset").show()
+$("#erset").addClass("fire");
+$("#erset").removeClass("fire");
+config.set('cal', false)
+  alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
+}}
+}, 5000);
 </script>
 </html>
