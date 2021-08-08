@@ -159,26 +159,6 @@ function closeNav() {
   timeleft = 10;
 }
 </script>
-<script>
-const { ipcRenderer } = require('electron');
-var xr = 3
-var timeleft = 10;
-var downloadTimer = setInterval(function(){
- if (config.get('on')) {
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    xr.innerHTML = "Loaded!";
-    closeNav()
-  } else {
-    openNav()
-    xr.innerHTML = timeleft + " load time remaining...";
-  }
-  timeleft -= 1;
-  } else {
-  console.log("Waiting for timer...")
-  }
-}, 1000);
-</script>
       <script>
         window.jQuery = window.$ = require('jquery');
         const axios = require('axios')
@@ -191,10 +171,30 @@ var downloadTimer = setInterval(function(){
 const Store = require('electron-store');
 
 const config = new Store();
+ config.set('on', false)
 </script>
 <script>
   config.set('oldVariable', "test")
   config.set('testVariable', "kk")
+</script>
+<script>
+const { ipcRenderer } = require('electron');
+var xr = 3
+var timeleft = 10;
+var downloadTimer = setInterval(function(){
+ if (config.get('on')) {
+  if(timeleft <= 0){
+    xr.innerHTML = "Loaded!";
+    closeNav()
+    clearInterval(downloadTimer);
+  } else {
+    xr.innerHTML = timeleft + " load time remaining...";
+  }
+  timeleft -= 1;
+  } else {
+  console.log("Waiting for timer...")
+  }
+}, 1000);
 </script>
 <script>
 function timeout(ms) {
@@ -209,13 +209,16 @@ window.screenX = screen.width;
 window.screenY = screen.height;
 alwaysLowered = true;
 }
-
+config.set('stoplock', false)
+config.set('onlock', true)
+config.set('on', false)
 async function checkStart() {
-    if(config.get('on') == true) {
+    if (config.get('on') == true) {
+    if (config.get('onlock')) {
        console.log("ok time to wake up, we are ready.")
        $( "#g33" ).removeClass( "gr3" )
        $('.bck1').slideDown(1000)
-       config.set('stop.lock', true)
+       config.set('stoplock', true)
        $('.waiting').slideUp(1000)
        $(".1").hide()
        openNav()
@@ -224,6 +227,9 @@ async function checkStart() {
        config.set('cal', true)
        $('.bck1').slideUp(1000)
        $('.working').slideUp(1000)
+       config.set('cal', true)
+       preparegraphic()
+    config.set('onlock', false)
     async function nots() {
     await timeout(11000);
     console.log("Start.")
@@ -233,12 +239,13 @@ async function checkStart() {
     await timeout(5000);
     }
     nots()
-  } else {
-      console.log("Waiting for thumbs up... I am bored...")
-      window.setTimeout(checkStart, 1000); /* this checks the flag every 100 milliseconds*/
     }
-}
-checkStart();
+      window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+      console.log("Waiting for thumbs up... I am bored...")
+      window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
+    }}
+checkStart()
 
 
 
@@ -269,27 +276,29 @@ function noti()  {
 }
 
 async function checkStop() {
-    if(config.get('stop.lock')) {
     if(config.get('on') == false) {
-        config.set('stop.lock', true)
+    if(config.get('stoplock')) {
         console.log("Service stopped.")
         $( "#g33" ).addClass( "gr3" )
         $('.waiting').slideDown(1000)
         $('.bck1').slideUp(1000)
         $(".1").show()
-        closeNav()
+       config.set('onlock', true)
+       closeNav()
        config.set('cal', true)
         $(".err").show()
         $(".bock").hide()
-      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
         checkStart()
         $('.bck1').slideUp(1000)
         $('.working').slideUp(1000)
+        config.set('stoplock', false)
+        config.set('onlock', true)
+      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+    }
     } else {
       console.log("stop prot waiting...")
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
-    }
-}}
+    }}
 checkStop();
 
 function checkSetup() {
@@ -403,8 +412,9 @@ var nva = document.getElementById('myNav')
 </div>
 </body>
 <script>
-setTimeout(function(){
+function preparegraphic() {
 if(config.get('cal')) {
+  $("#bck1").show()
   config.get('cal', true)
   // Onload, we need to see what theme the user wants...
 if(config.get('theme') == "fire") {
@@ -423,9 +433,10 @@ $("#erset").show()
 $("#erset").addClass("fire");
 $("#erset").removeClass("fire");
 config.set('cal', false)
-  alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
+    alert("Fetch Error! Your streambop instance has been repaired.")
+  config.set('theme', "fire")
 }}}
-}, 200)
+}
 
 xr = document.getElementById('countdown'); 
 
@@ -436,29 +447,5 @@ function openNav() {
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
-
-setTimeout(function(){
-    config.get('cal', true)
-    config.get('cal', true)
-  // Onload, we need to see what theme the user wants...
-if(config.get('theme') == "fire") {
-$("#fireset").show()
-$("#fireset").addClass("fire");
-$("#fireset").removeClass("fire");
-config.set('cal', false)
-} else {
-if(config.get('theme') == "blue") {
-$("#blueset").show()
-$("#blueset").addClass("fire");
-$("#blueset").removeClass("fire");
-config.set('cal', false)
-} else {
-$("#erset").show()
-$("#erset").addClass("fire");
-$("#erset").removeClass("fire");
-config.set('cal', false)
-  alert("Fetch Error! Your streambop instance is corrupted! Please reinstall!")
-}}
-}, 5000);
 </script>
 </html>
