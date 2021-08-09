@@ -278,10 +278,9 @@ function noti()  {
 }
 
 async function checkStop() {
-    window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+    window.setTimeout(checkStop, 500); /* this checks the flag every 100 milliseconds*/
     if(config.get('on')) {
       console.log("stop prot waiting...")
-      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
     } else {
         if(config.get('stoplock')) {
         console.log("Service stopped.")
@@ -298,7 +297,7 @@ async function checkStop() {
         $('.working').slideUp(1000)
         config.set('stoplock', false)
         config.set('onlock', true)
-      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+      window.setTimeout(checkStop, 600); /* this checks the flag every 100 milliseconds*/
      }
     }}
 checkStop();
