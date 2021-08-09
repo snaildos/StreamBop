@@ -229,6 +229,7 @@ async function checkStart() {
        $('.working').slideUp(1000)
        config.set('cal', true)
        preparegraphic()
+           config.set('stoplock', true)
     config.set('onlock', false)
     async function nots() {
     await timeout(11000);
@@ -236,6 +237,7 @@ async function checkStart() {
     await noti()
     config.set('cal', true)
     noti()
+    config.set('stoplock', true)
     await timeout(5000);
     }
     nots()
@@ -276,14 +278,17 @@ function noti()  {
 }
 
 async function checkStop() {
-    if(config.get('on') == false) {
-    if(config.get('stoplock')) {
+    window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+    if(config.get('on')) {
+      console.log("stop prot waiting...")
+      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+    } else {
+        if(config.get('stoplock')) {
         console.log("Service stopped.")
         $( "#g33" ).addClass( "gr3" )
         $('.waiting').slideDown(1000)
         $('.bck1').slideUp(1000)
         $(".1").show()
-       config.set('onlock', true)
        closeNav()
        config.set('cal', true)
         $(".err").show()
@@ -294,10 +299,7 @@ async function checkStop() {
         config.set('stoplock', false)
         config.set('onlock', true)
       window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
-    }
-    } else {
-      console.log("stop prot waiting...")
-      window.setTimeout(checkStop, 100); /* this checks the flag every 100 milliseconds*/
+     }
     }}
 checkStop();
 
