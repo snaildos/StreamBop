@@ -88,7 +88,7 @@ body {
       margin: 0;
       padding: 20px;
       font-family: sans-serif;
-      background-color: #818181;
+      background-color: #000000;
       text-align: center;
 }
 
@@ -141,7 +141,7 @@ body {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #6D6D6D;
+  color: #000000;
   display: block;
   transition: 0.3s;
 }
@@ -170,7 +170,7 @@ body {
 }
 
 .white  {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 /* Position and style the close button (top right corner) */
@@ -251,6 +251,10 @@ hr.dotted {
   border-top: 3px dotted #bbb;
 }
 
+p,h1,h2,h3,h4,h5,h6,b  {
+  color: white;
+}
+
 /* Solid border */
 hr.solid {
   border-top: 3px solid #bbb;
@@ -260,6 +264,10 @@ hr.solid {
 hr.rounded {
   border-top: 8px solid #bbb;
   border-radius: 5px;
+}
+
+button {
+  color: black;
 }
   </style>
   <script>
@@ -437,7 +445,7 @@ return false;
         <button class="hidden" id="cookie-ok">Let's go!</button>
     </div>
 </div>
-<button type="button" class="settings" onclick="arel()" data-target="#myModal">Settings</button>
+<button type="button" class="settings w3-button w3-white" onclick="arel()" data-target="#myModal">Settings</button>
   <div class="welcome">
     <svg width="328" height="63" viewBox="0 0 328 63" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M28.75 34.8438C28.75 38.8646 27.2916 42 24.375 44.25C21.4583 46.5 17.5 47.625 12.5 47.625C7.08335 47.625 2.91667 46.9271 0 45.5312V40.4062C1.875 41.1979 3.91667 41.8229 6.125 42.2812C8.33335 42.7396 10.5209 42.9688 12.6875 42.9688C16.2292 42.9688 18.8959 42.3021 20.6875 40.9688C22.4792 39.6146 23.375 37.7396 23.375 35.3438C23.375 33.7604 23.052 32.4688 22.4062 31.4688C21.7812 30.4479 20.7188 29.5104 19.2188 28.6562C17.7395 27.8021 15.4792 26.8333 12.4375 25.75C8.18745 24.2292 5.14583 22.4271 3.3125 20.3438C1.5 18.2604 0.59375 15.5417 0.59375 12.1875C0.59375 8.6667 1.91667 5.8646 4.5625 3.7812C7.20835 1.6979 10.7084 0.6562 15.0625 0.6562C19.6042 0.6562 23.7812 1.4896 27.5938 3.1562L25.9375 7.7812C22.1667 6.1979 18.5 5.4062 14.9375 5.4062C12.1251 5.4062 9.92705 6.0104 8.34375 7.2188C6.76045 8.4271 5.96875 10.1042 5.96875 12.25C5.96875 13.8333 6.26042 15.1354 6.84375 16.1562C7.42705 17.1562 8.40625 18.0833 9.78125 18.9375C11.177 19.7708 13.302 20.6979 16.1562 21.7188C20.948 23.4271 24.2395 25.2604 26.0312 27.2188C27.8438 29.1771 28.75 31.7188 28.75 34.8438ZM48.375 43.3438C49.2916 43.3438 50.1771 43.2812 51.0312 43.1562C51.8854 43.0104 52.5625 42.8646 53.0625 42.7188V46.6875C52.5 46.9583 51.6666 47.1771 50.5625 47.3438C49.4791 47.5312 48.5 47.625 47.625 47.625C41 47.625 37.6875 44.1354 37.6875 37.1562V16.7812H32.7812V14.2812L37.6875 12.125L39.875 4.8125H42.875V12.75H52.8125V16.7812H42.875V36.9375C42.875 39 43.3646 40.5833 44.3438 41.6875C45.3229 42.7917 46.6666 43.3438 48.375 43.3438ZM75.5624 12.125C77.0833 12.125 78.448 12.25 79.6562 12.5L78.9374 17.3125C77.5208 17 76.2708 16.8438 75.1874 16.8438C72.4166 16.8438 70.0416 17.9688 68.0624 20.2188C66.1041 22.4688 65.1251 25.2708 65.1251 28.625V47H59.9375V12.75H64.2188L64.8124 19.0938H65.0624C66.3333 16.8646 67.8645 15.1458 69.6562 13.9375C71.448 12.7292 73.4166 12.125 75.5624 12.125ZM100.531 47.625C95.4688 47.625 91.4688 46.0833 88.5312 43C85.6145 39.9167 84.1562 35.6354 84.1562 30.1562C84.1562 24.6354 85.5105 20.25 88.2188 17C90.948 13.75 94.6041 12.125 99.1872 12.125C103.479 12.125 106.875 13.5417 109.375 16.375C111.875 19.1875 113.125 22.9062 113.125 27.5312V30.8125H89.5312C89.6355 34.8333 90.6458 37.8854 92.5624 39.9688C94.5 42.0521 97.2182 43.0938 100.718 43.0938C104.406 43.0938 108.052 42.3229 111.656 40.7812V45.4062C109.823 46.1979 108.083 46.7604 106.437 47.0938C104.812 47.4479 102.844 47.625 100.531 47.625ZM99.1253 16.4688C96.3751 16.4688 94.177 17.3646 92.5312 19.1562C90.9062 20.9479 89.948 23.4271 89.6562 26.5938H107.562C107.562 23.3229 106.833 20.8229 105.375 19.0938C103.916 17.3438 101.833 16.4688 99.1253 16.4688ZM143.062 47L142.031 42.125H141.781C140.073 44.2708 138.364 45.7292 136.656 46.5C134.968 47.25 132.854 47.625 130.312 47.625C126.916 47.625 124.25 46.75 122.312 45C120.396 43.25 119.437 40.7604 119.437 37.5312C119.437 30.6146 124.968 26.9896 136.031 26.6562L141.844 26.4688V24.3438C141.844 21.6562 141.26 19.6771 140.094 18.4062C138.948 17.1146 137.104 16.4688 134.562 16.4688C131.708 16.4688 128.479 17.3438 124.875 19.0938L123.281 15.125C124.968 14.2083 126.812 13.4896 128.812 12.9688C130.833 12.4479 132.854 12.1875 134.875 12.1875C138.958 12.1875 141.979 13.0938 143.937 14.9062C145.916 16.7188 146.906 19.625 146.906 23.625V47H143.062ZM131.344 43.3438C134.573 43.3438 137.104 42.4583 138.937 40.6875C140.791 38.9167 141.718 36.4375 141.718 33.25V30.1562L136.531 30.375C132.406 30.5208 129.427 31.1667 127.594 32.3125C125.781 33.4375 124.875 35.1979 124.875 37.5938C124.875 39.4688 125.437 40.8958 126.562 41.875C127.708 42.8542 129.302 43.3438 131.344 43.3438ZM201.281 47V24.7188C201.281 21.9896 200.698 19.9479 199.531 18.5938C198.364 17.2188 196.552 16.5312 194.094 16.5312C190.864 16.5312 188.479 17.4583 186.937 19.3125C185.396 21.1667 184.625 24.0208 184.625 27.875V47H179.437V24.7188C179.437 21.9896 178.854 19.9479 177.687 18.5938C176.521 17.2188 174.698 16.5312 172.218 16.5312C168.968 16.5312 166.583 17.5104 165.062 19.4688C163.562 21.4062 162.812 24.5938 162.812 29.0312V47H157.625V12.75H161.844L162.687 17.4375H162.937C163.916 15.7708 165.291 14.4688 167.062 13.5312C168.854 12.5938 170.854 12.125 173.062 12.125C178.416 12.125 181.916 14.0625 183.562 17.9375H183.812C184.833 16.1458 186.312 14.7292 188.25 13.6875C190.187 12.6458 192.396 12.125 194.875 12.125C198.75 12.125 201.646 13.125 203.562 15.125C205.5 17.1042 206.468 20.2812 206.468 24.6562V47H201.281ZM217.968 1.3125H230.875C236.937 1.3125 241.323 2.2188 244.031 4.0312C246.739 5.8438 248.094 8.7083 248.094 12.625C248.094 15.3333 247.333 17.5729 245.812 19.3438C244.312 21.0938 242.114 22.2292 239.218 22.75V23.0625C246.156 24.25 249.625 27.8958 249.625 34C249.625 38.0833 248.239 41.2708 245.468 43.5625C242.718 45.8542 238.864 47 233.906 47H217.968V1.3125ZM223.281 20.875H232.031C235.781 20.875 238.479 20.2917 240.125 19.125C241.771 17.9375 242.594 15.9479 242.594 13.1562C242.594 10.5938 241.677 8.75 239.844 7.625C238.01 6.4792 235.094 5.9062 231.094 5.9062H223.281V20.875ZM223.281 25.375V42.4688H232.812C236.5 42.4688 239.271 41.7604 241.125 40.3438C243 38.9062 243.937 36.6667 243.937 33.625C243.937 30.7917 242.979 28.7083 241.062 27.375C239.166 26.0417 236.271 25.375 232.375 25.375H223.281ZM288.25 29.8438C288.25 35.4271 286.844 39.7917 284.031 42.9375C281.218 46.0625 277.333 47.625 272.375 47.625C269.312 47.625 266.594 46.9062 264.218 45.4688C261.844 44.0312 260.01 41.9688 258.718 39.2812C257.427 36.5938 256.781 33.4479 256.781 29.8438C256.781 24.2604 258.177 19.9167 260.968 16.8125C263.76 13.6875 267.635 12.125 272.594 12.125C277.385 12.125 281.187 13.7188 284 16.9062C286.833 20.0938 288.25 24.4062 288.25 29.8438ZM262.156 29.8438C262.156 34.2188 263.031 37.5521 264.781 39.8438C266.531 42.1354 269.104 43.2812 272.5 43.2812C275.896 43.2812 278.468 42.1458 280.218 39.875C281.989 37.5833 282.875 34.2396 282.875 29.8438C282.875 25.4896 281.989 22.1875 280.218 19.9375C278.468 17.6667 275.875 16.5312 272.437 16.5312C269.041 16.5312 266.479 17.6458 264.75 19.875C263.021 22.1042 262.156 25.4271 262.156 29.8438ZM313.312 47.625C311.083 47.625 309.041 47.2188 307.187 46.4062C305.354 45.5729 303.812 44.3021 302.562 42.5938H302.187C302.437 44.5938 302.562 46.4896 302.562 48.2812V62.375H297.375V12.75H301.594L302.312 17.4375H302.562C303.896 15.5625 305.448 14.2083 307.218 13.375C308.989 12.5417 311.021 12.125 313.312 12.125C317.854 12.125 321.354 13.6771 323.812 16.7812C326.291 19.8854 327.531 24.2396 327.531 29.8438C327.531 35.4688 326.271 39.8438 323.75 42.9688C321.25 46.0729 317.771 47.625 313.312 47.625ZM312.562 16.5312C309.062 16.5312 306.531 17.5 304.968 19.4375C303.406 21.375 302.604 24.4583 302.562 28.6875V29.8438C302.562 34.6562 303.364 38.1042 304.968 40.1875C306.573 42.25 309.146 43.2812 312.687 43.2812C315.646 43.2812 317.958 42.0833 319.625 39.6875C321.312 37.2917 322.156 33.9896 322.156 29.7812C322.156 25.5104 321.312 22.2396 319.625 19.9688C317.958 17.6771 315.604 16.5312 312.562 16.5312Z" fill="url(#paint0_linear)"/>
@@ -452,8 +460,8 @@ return false;
   <h4>Powered by <b>SnailDOS</b> team</h4>
   <h2 class="w3-center">What are we doing today?</h2>
   <div>
-    <button class="w3-center w3-button w3-black w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
-    <button class="w3-center w3-button w3-black w3-round-xlarge 1 hidden"><h1 class="white">ComingSoon...</h1></button>
+    <button class="w3-center w3-button w3-grey w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
+    <button class="w3-center w3-button w3-grey w3-round-xlarge 1 hidden"><h1 class="white">Coming Soon...</h1></button>
   </div>
 
   <p id="version"></p>
@@ -463,8 +471,8 @@ return false;
 
 <div id="streaming" class="streaming">
   <h1>Welcome to the streaming panel!</h1>
-  <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
-  <button class="w3-center w3-button w3-black w3-roundxlarge 2" onclick="costume()"><h3>Customize</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge 2" onclick="costume()"><h3>Customize</h3></button>
 </div>
 
 <script>
@@ -510,21 +518,21 @@ onselectstart="return false;" >
        onclick="toggle(this);">
 </form>
 <hr class="rounded">
-<button class="w3-center w3-black w3-button" onclick="location.reload()">Exit Customization!</button>
+<button class="w3-center w3-white w3-button" onclick="location.reload()">Exit Customization!</button>
 </centered>
 
 </div>
 <div id="isstrm" class="isstrm">
   <h1>Welcome to the streaming panel!</h1>
-  Welcome to the streaming panel. 
+  <p>Welcome to the streaming panel. 
   Please create a application monitor in your software and select "Stream Bop Visualizer!"
   Once created, add a filter for "green screen"
-  Once done, press "start" here.
+  Once done, press "start" here.</p>
   <h1>System Wide volume</h1>
   <p>
     <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
     Current Volume:
-    <input type="text" id="textInput" value="Drag Slider!" readonly="readonly">
+    <input type="text" id="textInput" class="w3-black" value="Drag Slider!" readonly>
 <p></p>
 <h1 class="hidden">h</h1>
 <p id='nowPlaying' class="w3-center nowplay">Fetching data...</p>
@@ -536,10 +544,10 @@ onselectstart="return false;" >
   },5000);
 </script>
 <h1 class="hidden">h</h1>
-  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
-  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
-  <button class="w3-center w3-button w3-black w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
-  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
 <p>
 </p>
 <h1 class="hidden">sus</h1>
@@ -555,17 +563,19 @@ var contvar = document.getElementById("countdown")
 <div id="set" class="set">
   <h1>Welcome!</h1>
   <p></p>
+</p>
+  <p class="white">
   Let's setup StreamBop,
   First, create a window capture in OBS, and select "StreamBop Viewer!"
   After doing that, you will want to press filters, Color key, then select green and adjust the similarity to your preference.
   Once complete, apply the changes, and move the StreamBop window, into the sides or corners of the screen. When complete, press done.
-  The setup can be viewed anytime you want.
-  <p>
-    <button class="w3-button w3-black" onclick="reload()">Done</button>
+  The setup can be viewed anytime you want.</p>
+  </p>
+    <button class="w3-button w3-white" onclick="reload()">Done</button>
   </p>
 
   <p>
-  <button class="w3-center w3-button w3-black w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <button class="w3-center w3-button w3-grey w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
 </button>
 </div>
 
@@ -635,12 +645,12 @@ var contvar = document.getElementById("countdown")
   </script>
 
   <div id="id01" class="w3-modal">
-    <div class="w3-modal-content">
-      <div class="w3-container">
+    <div class="w3-modal-content" style="background-color: rgb(70, 70, 70);">
+      <div class="w3-container" style="background-color: rgb(70, 70, 70);">
             <button type="button" class="close" onclick="document.getElementById('id01').style.display='none'">&times;</button>
             <h4 class="modal-title"><h2>StreamBop Settings</h2></h4>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="background-color: rgb(70, 70, 70);">
             <h4>Please click what settings you want to change.</h4>
             <h4>If you don't want to change StreamBop settings, press the "More Settings" to change Account settings, encoder settings, and more.</h4>
             <span class="hiddentext" style="font-size:20px;cursor:pointer;color:red;display:none;" onclick="openNav()">&#9776; More settings</span>
