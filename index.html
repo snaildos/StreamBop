@@ -91,8 +91,6 @@ body {
       background-color: #000000;
       text-align: center;
 }
-
-
     #notification {
       position: fixed;
       bottom: 20px;
@@ -103,6 +101,7 @@ body {
       background-color: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
+
     .hidden {
       display: none;
     }
@@ -161,8 +160,6 @@ body {
 [type=radio]:checked + img {
   outline: 2px solid #f00;
 }
-
-
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
@@ -392,7 +389,7 @@ var downloadTimer = setInterval(function(){
     })
     console.log(name)
     config.set('song', name)
-  },1000);
+  },10000);
 
   function storenam()  {
     trackEvent('streambop.started', 'Setup completed sucessfully');
@@ -540,7 +537,7 @@ onselectstart="return false;" >
   Once done, press "start" here.</p>
   <h1>System Wide volume</h1>
   <p>
-    <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);">
+    <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23">
     Current Volume:
     <input type="text" id="textInput" class="w3-black" value="Drag Slider!" readonly>
 <p></p>
@@ -566,6 +563,12 @@ ETA startup time:</b>
 <h2><div id="countdown"></div></h2>
 <script>
 var contvar = document.getElementById("countdown")
+async function changeVolumeToCurrent() {
+  var vol = await loudness.getVolume()
+  document.getElementById("volu23").value = vol;
+  document.getElementById("textInput").value = vol;
+}
+changeVolumeToCurrent()
 </script>
 </div>
 

@@ -1,5 +1,8 @@
 <html>
 <head>
+  <script src="https://cdn.snaildos.com/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+  <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
   <title>Loading...</title>
   <style>
     
@@ -59,9 +62,91 @@ body {
    -o-animation: flickerAnimation 1s infinite;
     animation: flickerAnimation 1s infinite;
 }
+
+#progress-bar {
+  width: 300px;
+  margin: 50px;
+}
+.progress {
+  height: 25px;
+  width: 300px;
+}
+.progress-info {
+    color: rgb(255, 238, 0);
+    text-align: center;
+    font-weight: bold;
+}
+#inner1 {
+   float:left; 
+}
+
+#inner2{
+   float:left; 
+   clear: left;
+}
   </style>
   </head>
   <body>
-    <div class="animate-flicker cont1"><img src="./ui/SnailDOS.png" height="100" width="420"></img></div>
+    <div id="wrapper">
+    <div class="animate-flicker cont1 inner1"><img src="./ui/SnailDOS.png" height="80" width="420"></img></div>
+    <p></p>
+    <div id="progress-bar" class="inner2">
+      <progress class="progress progress-striped progress-success" value="1" max="100">
+        <div class="progress">
+          <span class="progress-bar" style="width: 1%;">1%</span>
+        </div>
+      </progress>
+      <div class="progress-info">init</div>
+    </div>
+  </div>
   </body>
+  <script>
+    var progressBarContainer = $('#progress-bar');
+var progressBar = {
+    chain: [],
+    progress: progressBarContainer.children('progress'),
+    progressBar: progressBarContainer.find('.progress-bar'),
+    progressInfo: progressBarContainer.children('.progress-info'),
+    set: function(value, info, noPush) {
+        if(!noPush) {
+            this.chain.push(value);
+        }
+        if(this.chain[0] == value) {
+            this.go(value, info);
+        }
+        else {
+            var self = this;
+            setTimeout(function() {
+                self.set(value, info, true)
+            }, 200);
+        }
+    },
+    go: function(value, info) {
+        this.progressInfo.text(info);
+        var self = this;
+        var interval = setInterval(function() {
+            var curr = self.progress.attr('value');
+            if(curr >= value) {
+                clearInterval(interval);
+                self.progress.attr('value', value);
+                self.progressBar.css('width', value + '%');
+                self.chain.shift()
+            }
+            else {
+                self.progress.attr('value', ++curr);
+                self.progressBar.css('width', curr + '%');
+            }
+        }, 50)
+    }
+};
+
+progressBar.set(5, 'some init stuff');
+progressBar.set(12, 'checking things');
+progressBar.set(22, 'having a beer');
+progressBar.set(52, 'loading obs');
+progressBar.set(82, 'hacking something');
+progressBar.set(96, 'streaming cat pics');
+progressBar.set(98, 'launching a bomb');
+progressBar.set(100, 'complete');
+</script>
   </html>

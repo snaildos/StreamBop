@@ -20,6 +20,8 @@
             .emboss-txt  {
                 animation: color-change 1s infinite;
             }
+
+
             .stopan {
 animation-play-state: paused;
 }
@@ -46,8 +48,6 @@ animation-play-state: paused;
   margin-top: 30px;
 }
 
-
-
             .sus  {
   position: fixed;
   top: 0;
@@ -69,7 +69,6 @@ animation-play-state: paused;
         margin: 18px;
         color: black;
     }
-
 
             @keyframes color-change {
   0% { color: red; }
@@ -259,7 +258,7 @@ function checkAlwaysOn() {
     axios.get('http://api.snaildos.com/now/playing').then((value) => {
       document.getElementById('npvs').innerText = value.data.playing || 'Nothing'
     })
-  },5000);
+  },10000);
       window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
     } else {
       console.log("Not required...")
