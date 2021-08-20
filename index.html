@@ -334,6 +334,7 @@ var downloadTimer = setInterval(function(){
 },800);  
   </script>
     <script>
+    const { trackEvent } = require('./lib/analytics.js');
     const loudness = require('mwl-loudness')
     function streaming()  {
       $('.1').hide()
@@ -394,6 +395,7 @@ var downloadTimer = setInterval(function(){
   },1000);
 
   function storenam()  {
+    trackEvent('Setup', 'Setup completed sucessfully');
     var username = $('#name').val();
 config.set("name", username);
 $("#cookie-ok").click()
@@ -407,19 +409,22 @@ return false;
   }
 
   function savetheme() { 
-            if(document.getElementById('fire').checked) {
+            if (document.getElementById('fire').checked) {
                 document.getElementById("disp").innerHTML
                     = "Fire theme set.";
                 config.set("theme", "fire")
                 console.log("Saved.")
-            }
-            else if(document.getElementById('blue').checked) {
+            } else if (document.getElementById('blue').checked) {
                 document.getElementById("disp").innerHTML
                     = "Blue theme set.";  
                     config.set("theme", "blue")
                     console.log("Saved.")
-            }
-            else {
+            } else if(document.getElementById('yellow').checked) {
+      		document.getElementById("disp").innerHTML
+      		   = "Yellow theme set.";  
+                   config.set("theme", "yellow")
+                   console.log("Saved.")
+            } else {
                 document.getElementById("disp").innerHTML
                     = "Can't save, none selected!";
             }
@@ -438,8 +443,8 @@ return false;
         <h2>
         <h>Press enter when complete.</h>
         <p></p>
-      </p><form class="" onsubmit="storenam(); return false;"> 
-        <input class="name" id="name" name="name" type="name" maxlength="16" id="email" required="true" placeholder="" />
+      </p><form class="" onsubmit="storenam(); return false;" style="background-color: grey;"> 
+        <input class="name" style="background-color: grey;" id="name" name="name" type="name" maxlength="16" id="email" required="true" placeholder="" />
         </form>
       </h2>
         <button class="hidden" id="cookie-ok">Let's go!</button>
@@ -505,10 +510,15 @@ onselectstart="return false;" >
     <input type="radio" name="test" value="Blue" id="blue">
     <img src="./ui/2.png" width="120" height="100" class="fga">
   </label>
+
+  <label>
+    <input type="radio" name="test" value="Yellow" id="yellow">
+    <img src="./ui/3.png" width="120" height="100" class="fga">
+  </label>
   <div id="disp" style="color:yellow; font-size:18px; font-weight:bold;">Please select what theme you want!
 </div>
 
-<button class="w3-button w3-black" onclick="savetheme()">Save Theme</button>
+<button class="w3-button w3-white" onclick="savetheme()">Save Theme</button>
 <p>
 <hr class="rounded">
 <h1 class="w3-center>Always ON</h1>

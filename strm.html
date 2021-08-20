@@ -330,6 +330,7 @@ setTimeout(function(){
         $("#fireset").hide()
         $("#erset").hide()
         $("#blueset").hide()
+        $("#yellowset").hide()
 },800);
 
 setInterval(()=>{
@@ -384,7 +385,8 @@ var nva = document.getElementById('myNav')
     <div id="bck1" class="box bck1">
       <object class="" data="./svg/fire.svg" id="fireset"></object>
       <object class="" data="./svg/er.svg" id="erset"></object>
-      <object class="" data="./svg/h.svg" id="blueset"></object>
+      <object class="" data="./svg/blue.svg" id="blueset"></object>
+      <object class="" data="./svg/yellow.svg" id="yellowset"></object>
     </div>
     <div id="working" class="box working">
     <h1 class="w3-center emboss-txt 1" id="1">Loading Info...</h1>
@@ -400,7 +402,7 @@ var nva = document.getElementById('myNav')
 
 <div class="setup">
   <div id="bck3" class="box bck3">
-          <object class="" data="./svg/h.svg" id="blueset"></object>
+          <object class="" data="./svg/blue.svg" id="blueset"></object>
   </div>
   <div id="working3" class="working3">
   <p>.</p>
@@ -418,16 +420,20 @@ if(config.get('cal')) {
   $("#bck1").show()
   config.get('cal', true)
   // Onload, we need to see what theme the user wants...
-if(config.get('theme') == "fire") {
+if (config.get('theme') == "fire") {
 $("#fireset").show()
 $("#fireset").addClass("fire");
 $("#fireset").removeClass("fire");
 config.set('cal', false)
-} else {
-if(config.get('theme') == "blue") {
+} else if(config.get('theme') == "blue") {
 $("#blueset").show()
 $("#blueset").addClass("fire");
 $("#blueset").removeClass("fire");
+config.set('cal', false)
+} else if(config.get('theme') == "yellow") {
+$("#yellowset").show()
+$("#yellowset").addClass("fire");
+$("#yellowset").removeClass("fire");
 config.set('cal', false)
 } else {
 $("#erset").show()
@@ -436,7 +442,7 @@ $("#erset").removeClass("fire");
 config.set('cal', false)
     alert("Fetch Error! Your streambop instance has been repaired.")
   config.set('theme', "fire")
-}}}
+}}
 }
 
 xr = document.getElementById('countdown'); 
