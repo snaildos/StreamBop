@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 var version = localStorage.getItem('version');
 
-if(version == '0.0.3'){
+if(version == '1.0.0'){
 console.log("Update Ready")
 } else {
 console.log('Latest update is not ready.')
@@ -395,7 +395,7 @@ var downloadTimer = setInterval(function(){
   },1000);
 
   function storenam()  {
-    trackEvent('Setup', 'Setup completed sucessfully');
+    trackEvent('streambop.started', 'Setup completed sucessfully');
     var username = $('#name').val();
 config.set("name", username);
 $("#cookie-ok").click()

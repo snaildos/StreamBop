@@ -1,6 +1,7 @@
 const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
+const { trackEvent } = require('./lib/analytics.js');
 const { watchFile } = require('fs');
 // is dev
   var isDev = require('isdev')
@@ -88,12 +89,14 @@ function createWindow() {
     },
   });
   console.log("More configuration is being sent now.")
+  console.log("We are going to send a google analytics streambop.started event")
+  trackEvent('streambop.started', 'StreamBop sucessfully started!');
+  console.log("We just sent the event. Now let's continue loading")
   mainWindow.setMenuBarVisibility(false)
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(4000)
-  console.log("debug.lin.75")
   console.log("Loaded sucess.")
   loadingScreen.close();
 
