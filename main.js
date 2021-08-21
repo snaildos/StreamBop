@@ -13,6 +13,9 @@ const Store = require('electron-store');
 const config = new Store();
 
 function die() {
+console.log("Unloading temp variables...");
+config.set('oldVariable', "null")
+config.set('testVariable', "null")
 mainWindow.removeAllListeners('closed');
 strm.removeAllListeners('closed');
 strm.close()

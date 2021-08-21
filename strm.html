@@ -185,7 +185,7 @@ var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     xr.innerHTML = "Loaded!";
     closeNav()
-    clearInterval(downloadTimer);
+    timeleft == 10
   } else {
     xr.innerHTML = timeleft + " load time remaining...";
   }
@@ -218,6 +218,7 @@ async function checkStart() {
        $( "#g33" ).removeClass( "gr3" )
        $('.bck1').slideDown(1000)
        config.set('stoplock', true)
+       var timeleft = 10
        $('.waiting').slideUp(1000)
        $(".1").hide()
        openNav()
@@ -290,6 +291,7 @@ async function checkStop() {
        closeNav()
        config.set('cal', true)
         $(".err").show()
+        timeleft == 10;
         $(".bock").hide()
         checkStart()
         $('.bck1').slideUp(1000)
