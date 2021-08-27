@@ -9,3 +9,7 @@ Linux: Use Snap
 
 ```
 snap install streambop
+```
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsnaildos%2FStreamBop.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fsnaildos%2FStreamBop?ref=badge_large)
