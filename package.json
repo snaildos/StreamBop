@@ -13,13 +13,15 @@
     "build": "electron-builder build --win --linux appimage --publish never",
     "windows": "electron-builder build --win --publish never",
     "snap": "electron-builder build --linux snap --publish never",
+    "changelog": "gitmoji-changelog",
     "deploy": "electron-builder build --win --linux appimage --publish always"
   },
   "author": "SnailDOS",
   "license": "ISC",
   "devDependencies": {
     "electron": "13.2.3",
-    "electron-builder": "22.11.7"
+    "electron-builder": "22.11.7",
+    "gitmoji-changelog": "2.2.1"
   },
   "dependencies": {
     "axios": "0.21.1",
@@ -33,6 +35,6 @@
     "mwl-loudness": "0.3.0",
     "universal-analytics": "0.4.23",
     "utf-8-validate": "^5.0.4",
-    "uuidv4": "6.2.12"
+    "uuidv4": "6.2.12",
   }
 }
