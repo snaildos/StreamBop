@@ -256,7 +256,7 @@ function checkAlwaysOn() {
   $('.bck1').slideDown(1000)
   $('.working').slideDown(1000)
    setInterval(()=>{
-    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+    axios.get('http://api.snaildos.com/radio').then((value) => {
       document.getElementById('npvs').innerText = value.data.playing || 'Nothing'
     })
   },10000);

@@ -382,7 +382,7 @@ var downloadTimer = setInterval(function(){
 
     // Main funny moments
     setInterval(()=>{
-    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+    axios.get('http://api.snaildos.com/radio').then((value) => {
       np3 = value.data.playing
       name = value.data.playing
     })
@@ -546,7 +546,7 @@ onselectstart="return false;" >
 <p id='nowPlaying' class="w3-center nowplay">Fetching data...</p>
 <script>
    setInterval(()=>{
-    axios.get('http://api.snaildos.com/now/playing').then((value) => {
+    axios.get('http://api.snaildos.com/radio').then((value) => {
       document.getElementById('nowPlaying').innerText = value.data.playing || 'Nothing'
     })
   },5000);
