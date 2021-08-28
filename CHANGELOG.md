@@ -1,10 +1,21 @@
 # Changelog
 
 <a name="1.0.0"></a>
-## 1.0.0 (2021-08-20)
+## 1.0.0 (2021-08-28)
 
 ### Miscellaneous
 
+-  Fix some changelog errors [[8f764e7](https://github.com/snaildos/StreamBop/commit/8f764e7b2bc2f21a9303ad1c715a929922dd7add)]
+-  Update to the new endpoint [[af2432e](https://github.com/snaildos/StreamBop/commit/af2432ec7aaed9cf7ec43339b287eb3e44d7ccef)]
+-  Merge pull request [#19](https://github.com/snaildos/StreamBop/issues/19) from snaildos/renovate/electron-13.x [[4a7549d](https://github.com/snaildos/StreamBop/commit/4a7549dabfa97bcf5114d0ed6052148fa7157a67)]
+-  Update dependency electron to v13.2.3 [[67d045b](https://github.com/snaildos/StreamBop/commit/67d045b3297f63dc2c5f88f5e6e45f549fcc3120)]
+-  Update README.md [[38c1214](https://github.com/snaildos/StreamBop/commit/38c12146d1f1987b282fe9ed745defa932d3df01)]
+-  Merge pull request [#18](https://github.com/snaildos/StreamBop/issues/18) from snaildos/renovate/electron-13.x [[64bc375](https://github.com/snaildos/StreamBop/commit/64bc375734eadde98177f6733d1c3e997a240c59)]
+-  Update dependency electron to v13.2.2 [[9f8360e](https://github.com/snaildos/StreamBop/commit/9f8360ead03ecb4d6ecab5a37b6874490c9ed277)]
+-  Add a space [[a2976cc](https://github.com/snaildos/StreamBop/commit/a2976cc8e061ad211c8043b1070b4b0df822a7a8)]
+-  Fix the crash on start error. It now generates a proper UUID. [[8245471](https://github.com/snaildos/StreamBop/commit/82454713358a2ea64da359a0895de3458e9f1e65)]
+-  Small Lil bug fixes! [[e15761c](https://github.com/snaildos/StreamBop/commit/e15761c5952a7b7fa5f85013f77df76b38cc7011)]
+-  Add changelog! [[36be8c4](https://github.com/snaildos/StreamBop/commit/36be8c4abd4a7a3340455fb597bc92d2b315e0b7)]
 -  White on white? No thank you! [[1ed79dd](https://github.com/snaildos/StreamBop/commit/1ed79dd06e41fe3eb041fdbd4bbf16917d800df2)]
 -  Merge pull request [#14](https://github.com/snaildos/StreamBop/issues/14) from snaildos/renovate/electron-13.x [[5eebd56](https://github.com/snaildos/StreamBop/commit/5eebd56c7e1cf068471e8df0e380b20f6f12e108)]
 -  Merge pull request [#15](https://github.com/snaildos/StreamBop/issues/15) from snaildos/renovate/discord-rpc-4.x [[984b107](https://github.com/snaildos/StreamBop/commit/984b1070b6824fbac2c2f01a5366d80426e9359c)]
