@@ -1,5 +1,17 @@
 # Changelog
 
+<a name="1.1.0"></a>
+## 1.1.0 (2021-09-05)
+
+### Miscellaneous
+
+-  Insane Amount of Bug Fixes. [[f07b1c2](https://github.com/snaildos/StreamBop/commit/f07b1c23d4df629eaa6c48c108e689b6d4a88432)]
+-  Merge pull request [#20](https://github.com/snaildos/StreamBop/issues/20) from snaildos/renovate/axios-0.x [[0df853d](https://github.com/snaildos/StreamBop/commit/0df853d3cb3b6c4a717c15b1fbb755220a57c4d9)]
+-  Merge pull request [#22](https://github.com/snaildos/StreamBop/issues/22) from snaildos/renovate/electron-14.x [[c5869b2](https://github.com/snaildos/StreamBop/commit/c5869b25f212d724ab83cdf632f7d426b6260364)]
+-  Update dependency electron to v14 [[4508806](https://github.com/snaildos/StreamBop/commit/45088069c6c35b76b7395db770d5c686ce5bebca)]
+-  Update dependency axios to v0.21.3 [[74e7e61](https://github.com/snaildos/StreamBop/commit/74e7e61d5a2a34f8857dcb62e22f3307bb82a680)]
+
+
 <a name="1.0.0"></a>
 ## 1.0.0 (2021-08-28)
 
