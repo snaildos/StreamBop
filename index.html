@@ -15,7 +15,7 @@ $(document).ready(function() {
 
 var version = localStorage.getItem('version');
 
-if(version == '1.0.0'){
+if(version == '1.1.0'){
 console.log("Update Ready")
 } else {
 console.log('Latest update is not ready.')
@@ -279,7 +279,7 @@ id="vid1"
 class="hidden"
 width="0" height="0"
 poster="play.png"
-data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=PHLIsIAhQtc"}] }'
+data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=vce-j1f6CVQ"}] }'
 >
 </video>
   <script>
@@ -546,9 +546,7 @@ onselectstart="return false;" >
 <p id='nowPlaying' class="w3-center nowplay">Fetching data...</p>
 <script>
    setInterval(()=>{
-    axios.get('http://api.snaildos.com/radio').then((value) => {
-      document.getElementById('nowPlaying').innerText = value.data.playing || 'Nothing'
-    })
+      document.getElementById('nowPlaying').innerText = config.get('song') || 'Nothing'
   },5000);
 </script>
 <h1 class="hidden">h</h1>

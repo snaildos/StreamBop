@@ -256,9 +256,7 @@ function checkAlwaysOn() {
   $('.bck1').slideDown(1000)
   $('.working').slideDown(1000)
    setInterval(()=>{
-    axios.get('http://api.snaildos.com/radio').then((value) => {
-      document.getElementById('npvs').innerText = value.data.playing || 'Nothing'
-    })
+      document.getElementById('npvs').innerText = config.get('song') || 'Nothing'
   },10000);
       window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
     } else {

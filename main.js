@@ -88,6 +88,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true,
       devTools: isDev,
+      nativeWindowOpen: true,
       contextIsolation: false
     },
   });
@@ -102,7 +103,6 @@ function createWindow() {
   wait(4000)
   console.log("Loaded sucess.")
   loadingScreen.close();
-
 mainWindow.on('closed', () => (
 die()
 ));
@@ -154,6 +154,7 @@ const createNewstrm = () => {
       webPreferences: {
         nodeIntegration: true,
         devTools: isDev,
+        nativeWindowOpen: true,
         contextIsolation: false
       },
     })
