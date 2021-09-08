@@ -102,9 +102,33 @@ body {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
 
+#containermixer{
+  margin: 0;
+  width: 300px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
     .hidden {
       display: none;
     }
+
+.sysvolume{
+  width: 150px;
+  height: 170px;
+  float: left;
+}
+.streamvolume{
+  width: 150px;
+  height: 170px;
+  float: right;
+}
+
+input.vertical {
+	-webkit-appearance: slider-vertical;
+	writing-mode: bt-lr;
+}
 
     .video-stream html5-main-video  {
       display: none;
@@ -541,7 +565,6 @@ onselectstart="return false;" >
   Please create a application monitor in your software and select "Stream Bop Visualizer!"
   Once created, add a filter for "green screen"
   Once done, press "start" here.</p>
-  <h1>System Wide volume</h1>
   <p>
 <p></p>
 <h1 class="hidden">h</h1>
@@ -559,7 +582,7 @@ onselectstart="return false;" >
 <p>
 </p>
 <h1 class="hidden">s</h1>
-<b>When pressing start, it may look like the software is broken, however, It's not. The start process is a heafty thing and may cause animation to open and close for a minuete until it loads up totally.
+<b>Software takes 10 seconds to load...
 ETA startup time:</b>
 <h2><div id="countdown"></div></h2>
 <script>
@@ -572,14 +595,24 @@ async function changeVolumeToCurrent() {
 </script>
 <p>
 </p>
-    <input type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23">
-    Current Volume:
-    <input type="text" id="textInput" class="w3-black" value="Drag Slider!" readonly>
+<h3 class="w3-center">Mixer</h3>
 <p>
-    <input type="range" name="rangeInput" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar">
-    Current Volume:
-    <input type="text" id="systemvol" class="w3-black" value="Drag Slider!" readonly>
+<div class="w3-center mixer" id="containermixer">
+<div class="w3-center streamvolume">
+    <input class="vertical" type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
+    <input type="text" id="textInput" style="font-size:10px;" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
+    <b>Music Volume</b>
+<p>
 </div>
+<div class="w3-center sysvolume">
+    <input class="vertical" type="range" name="rangeInput" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
+    <input type="text" style="font-size:10px;" id="systemvol" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
+   <b>System Volume!</b>
+</div>
+</div>
+</div>
+</div>
+
 <script>
 // mixer presets
 // Refresher
