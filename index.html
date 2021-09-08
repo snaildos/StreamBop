@@ -367,8 +367,8 @@ var downloadTimer = setInterval(function(){
     }
 
     function updateTextInput(val) {
-          document.getElementById('textInput').value=val; 
-          loudness.setVolume(val)
+          document.getElementById('textInput').value=val;
+          player.volume(val / 100)
         }
 
     function setup34()  {
