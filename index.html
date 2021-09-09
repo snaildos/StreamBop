@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <script>
+    const { ipcRenderer } = require('electron');
     window.jQuery = window.$ = require('jquery');
     const axios = require('axios')
 </script>
@@ -653,7 +654,6 @@ document.getElementById('textInput').value=100;
     </button>
   </div>
   <script>
-    const { ipcRenderer } = require('electron');
     const version = document.getElementById('version');
     const notification = document.getElementById('notification');
     const message = document.getElementById('message');
