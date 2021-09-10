@@ -6,7 +6,15 @@
             user-select: none; /* supported by Chrome and Opera */
             background-color: magenta;
           }
-          
+          .flipped {
+    transform: scale(-1, 1);
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -khtml-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+}
+
             .gr3  {
                 animation: coe 30s infinite;
                 background-color: magenta;
@@ -232,7 +240,7 @@ async function checkStart() {
            config.set('stoplock', true)
     config.set('onlock', false)
     async function nots() {
-    await timeout(11000);
+    await timeout(13000);
     console.log("Start.")
     await noti()
     config.set('cal', true)
@@ -442,6 +450,12 @@ config.set('cal', false)
     alert("Fetch Error! Your streambop instance has been repaired.")
   config.set('theme', "fire")
 }}
+
+if (config.get('ori') == "left") {
+  console.log("Already Done.")
+} else {
+  $('.bck1').addClass('flipped');
+}
 }
 
 xr = document.getElementById('countdown'); 

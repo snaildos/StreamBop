@@ -104,6 +104,7 @@ const config = new Store();
                 function complete()  {
                 localStorage.setItem("setup", true);
                 config.set("alwayson", false)
+                config.set("ori", "left")
                 config.set("theme", "fire")
                 localStorage.setItem("firstime", true);
                 config.set("stop.lock", true)

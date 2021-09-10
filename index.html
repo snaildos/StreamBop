@@ -83,6 +83,133 @@ h1  {
     }
 }
 
+.range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 200px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  margin-top: 10px;
+  transform: translate(-50%, -50%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  background: rgba(59,173,227,1);
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
+  background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+  height: 2px;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  -moz-appearance: none;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  background: rgba(59,173,227,1);
+  background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
+  background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+  height: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: 2px solid;
+  border-radius: 50%;
+  height: 25px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #1d1c25;
+  cursor: -webkit-grab;
+
+  -webkit-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+input[type=range]::-moz-range-thumb {
+  -moz-appearance: none;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 25px;
+  height: 25px;
+  width: 25px;
+  max-width: 80px;
+  position: relative;
+  bottom: 11px;
+  background-color: #1d1c25;
+  cursor: -moz-grab;
+  -moz-transition: border 1000ms ease;
+  transition: border 1000ms ease;
+}
+
+
+
+.range.blue::-webkit-slider-thumb {
+   border-color: rgb(28, 36, 39);
+}
+
+.range.ltpurple::-webkit-slider-thumb {
+   border-color: rgb(44, 60, 139);
+}
+
+.range.purple::-webkit-slider-thumb {
+   border-color: rgb(152,68,183);
+}
+
+.range.pink::-webkit-slider-thumb {
+   border-color: rgb(255,53,127);
+}
+
+.range.blue::-moz-range-thumb {
+   border-color: rgb(191, 227, 59);
+}
+
+.range.ltpurple::-moz-range-thumb {
+   border-color: rgb(60, 75, 148);
+}
+
+.range.purple::-moz-range-thumb {
+   border-color: rgb(152,68,183);
+}
+
+.range.pink::-moz-range-thumb {
+   border-color: rgb(255,53,127);
+}
+
+input[type=range]::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
+}
+
+input[type=range]::-moz-range-thumb:active {
+  cursor: -moz-grabbing;
+}
+
 body {
     background-size: 400% 400%;
     box-sizing: border-box;
@@ -227,7 +354,7 @@ input.vertical {
   bottom: 0;
   right: 0;
   overflow: auto;
-  background: #00008B; /* Just to visualize the extent */
+  background: #000000; /* Just to visualize the extent */
 }
 
 #cookie{
@@ -600,13 +727,13 @@ async function changeVolumeToCurrent() {
 <p>
 <div class="w3-center mixer" id="containermixer">
 <div class="w3-center streamvolume">
-    <input class="vertical" type="range" name="rangeInput" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
+    <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
     <input type="text" id="textInput" style="font-size:10px;" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
     <b>Music Volume</b>
 <p>
 </div>
 <div class="w3-center sysvolume">
-    <input class="vertical" type="range" name="rangeInput" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
+    <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
     <input type="text" style="font-size:10px;" id="systemvol" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
    <b>System Volume!</b>
 </div>
