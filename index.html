@@ -83,6 +83,12 @@ h1  {
     }
 }
 
+.inline {
+  display: inline-block;
+  text-align: center !important;
+  float: left; margin-right: 4%; width: 46%;
+}
+
 .range {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -674,14 +680,19 @@ onselectstart="return false;" >
 <h1 class="w3-center">Always ON</h1>
 <p class="w3-center">Always on disables all animation and shows the current song playing at ALL times...</p>
 <form action="">
-<input type="button" id="3" value="ON" style="color:blue"
+<input class="w3-button w3-white" type="button" id="3" value="ON" style="color:blue"
        onclick="toggle(this);">
 </form>
 <hr class="rounded">
 <h1 class="w3-center">Orientation</h1>
-<button class="w3-center w3-white w3-button" onclick="config.set('ori', 'left')">Left</button>
+<button class="w3-center w3-white w3-button inline" onclick="config.set('ori', 'left')">Left</button>
 <p></p>
-<button class="w3-center w3-white w3-button" onclick="config.set('ori', 'right')">Right</button>
+<button class="w3-center w3-white w3-button inline" onclick="config.set('ori', 'right')">Right</button>
+<p>
+  <p>
+  </p>
+</p>
+<h1 class="hidden hide">h</h1>
 <hr class="rounded">
 <button class="w3-center w3-white w3-button" onclick="location.reload()">Exit Customization!</button>
 </centered>
@@ -731,13 +742,13 @@ async function changeVolumeToCurrent() {
 <div class="w3-center streamvolume">
     <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
     <input type="text" id="textInput" style="font-size:10px;" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
-    <b>Music Volume</b>
+    <b>(%) Music Volume</b>
 <p>
 </div>
 <div class="w3-center sysvolume">
     <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
     <input type="text" style="font-size:10px;" id="systemvol" class="w3-black mixerdialogue" value="Drag Slider!" readonly></input>
-   <b>System Volume!</b>
+   <b>(%) System Volume!</b>
 </div>
 </div>
 </div>
