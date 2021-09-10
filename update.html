@@ -34,6 +34,9 @@ body {
 </head>
 <body>
 	<script>
+					const fs = require('fs');
+		    const Store = require('electron-store');
+    const config = new Store();
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
 		config.set("ori", "left")
