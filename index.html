@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 var version = localStorage.getItem('version');
 
-if(version == '1.1.0'){
+if(version == '1.3.0'){
 console.log("Update Ready")
 } else {
 console.log('Latest update is not ready.')
@@ -674,12 +674,17 @@ onselectstart="return false;" >
 <button class="w3-button w3-white" onclick="savetheme()">Save Theme</button>
 <p>
 <hr class="rounded">
-<h1 class="w3-center>Always ON</h1>
+<h1 class="w3-center">Always ON</h1>
 <p class="w3-center">Always on disables all animation and shows the current song playing at ALL times...</p>
 <form action="">
 <input type="button" id="3" value="ON" style="color:blue"
        onclick="toggle(this);">
 </form>
+<hr class="rounded">
+<h1 class="w3-center">Orientation</h1>
+<button class="w3-center w3-white w3-button" onclick="config.set('ori', 'left')">Left</button>
+<p></p>
+<button class="w3-center w3-white w3-button" onclick="config.set('ori', 'right')">Right</button>
 <hr class="rounded">
 <button class="w3-center w3-white w3-button" onclick="location.reload()">Exit Customization!</button>
 </centered>
