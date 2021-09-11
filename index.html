@@ -715,18 +715,18 @@ onselectstart="return false;" >
 <script>
   // toggle orientation
   function toggleori(button) {
-    if (button.value == "Left") {
+    if (button.value == "Right") {
       button.value = "Right";
       config.set("ori", "Right")
       document.getElementById("orid").innerHTML
-      		   = "Orientation is on Right.";
+      		   = "Orientation set to Right";
       $("#143").prop('value', 'Left');
       alert("Orientation is set to Right.")
     } else {
       button.value = "Left";
       config.set("ori", "Left")
       document.getElementById("orid").innerHTML
-      		   = "Orientation is on Left.";
+      		   = "Orientation is set to Left.";
       $("#143").prop('value', 'Right');
       alert("Orientation is set to Left.")
     }
