@@ -476,6 +476,7 @@ var downloadTimer = setInterval(function(){
             config.set('setupan', false)
             $('.set').slideToggle(4)
             $('.button').slideToggle(1000)
+            settingsload()
 },1500);  
 
 
@@ -586,6 +587,7 @@ return false;
             } else {
                 document.getElementById("disp").innerHTML
                     = "Can't save, none selected!";
+                    console.log("Saved.")
             }
         }
 
@@ -646,10 +648,14 @@ function toggle(button) {
     button.value = "ON";
     alert("Enabled Always on!")
     config.set("alwayson", true)
+          document.getElementById("alwaysonid").innerHTML
+      		   = "Always ON is currently ON.";
   } else {
     button.value = "OFF";
     alert("Disabled Always on!")
     config.set("alwayson", false)
+    document.getElementById("alwaysonid").innerHTML
+      		   = "Always ON is currently off.";
   }
 }
 </script>
@@ -674,7 +680,7 @@ onselectstart="return false;" >
     <input type="radio" name="test" value="Yellow" id="yellow">
     <img src="./ui/3.png" width="120" height="100" class="fga">
   </label>
-  <div id="disp" style="color:yellow; font-size:18px; font-weight:bold;">Please select what theme you want!
+  <div id="disp" style="color:yellow; font-size: 18px; font-weight: bold;"> Please select what theme you want!
 </div>
 
 <button class="w3-button w3-white" onclick="savetheme()">Save Theme</button>
@@ -686,11 +692,16 @@ onselectstart="return false;" >
 <input class="w3-button w3-white" type="button" id="3" value="ON" style="color:blue"
        onclick="toggle(this);">
 </form>
+<div id="alwaysonid" style="color:yellow; font-size: 18px; font-weight: bold;">  Settings cant be read.
+</div>
 <hr class="rounded">
 <h1 class="w3-center">Orientation</h1>
-<button class="w3-center w3-white w3-button inline" onclick="config.set('ori', 'left')">Left</button>
-<p></p>
-<button class="w3-center w3-white w3-button inline" onclick="config.set('ori', 'right')">Right</button>
+<form action="">
+  <input class="w3-button w3-white" type="button" id="143" value="Left" style="color:blue"
+         onclick="toggleori(this);">
+  </form>
+  <div id="orid" style="color:yellow; font-size: 18px; font-weight: bold;"> Settings cant be read.
+  </div>
 <p>
   <p>
   </p>
@@ -701,6 +712,63 @@ onselectstart="return false;" >
 </centered>
          
 
+<script>
+  // toggle orientation
+  function toggleori(button) {
+    if (button.value == "Left") {
+      button.value = "Right";
+      config.set("ori", "Right")
+      document.getElementById("orid").innerHTML
+      		   = "Orientation is on Right.";
+      alert("Orientation is set to Right.")
+      settingsload()
+    } else {
+      button.value = "Left";
+      config.set("ori", "Left")
+      document.getElementById("orid").innerHTML
+      		   = "Orientation is on Left.";
+      alert("Orientation is set to Left.")
+    }
+  }
+  </script>
+
+<script>
+  // initial settings loadup
+  function settingsload() {
+    if (config.get("theme") == "fire") {
+      $("#fire").prop("checked", true);
+      document.getElementById("disp").innerHTML
+      		   = "Fire theme currently set.";
+    }
+    if (config.get("theme") == "blue") {
+      $("#blue").prop("checked", true);
+      document.getElementById("disp").innerHTML
+      		   = "Blue theme currently set.";
+    }
+    if (config.get("theme") == "yellow") {
+      $("#yellow").prop("checked", true);
+      document.getElementById("disp").innerHTML
+      		   = "Yellow theme currently set.";
+    }
+    if (config.get("alwayson") == "on") {
+      $("#3").prop('value', 'OFF');
+      document.getElementById("alwaysonid").innerHTML
+      		   = "Always ON is currently on.";
+    } else {
+      document.getElementById("alwaysonid").innerHTML
+      		   = "Always ON is currently off.";
+    }
+    if (config.get("ori") == "Right") {
+      $("#143").prop('value', 'Left');
+      document.getElementById("orid").innerHTML
+      		   = "Orientation is on Right.";
+    } else {
+      document.getElementById("orid").innerHTML
+      		   = "Orientation is on Left.";
+    }
+  }
+
+</script>
 
 </div>
 <div id="isstrm" class="isstrm">
