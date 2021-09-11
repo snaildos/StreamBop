@@ -188,6 +188,7 @@ app.on('ready', () => {
 app.on('window-all-closed', function () {
   die()
   if (process.platform !== 'darwin') {
+    die()
     app.quit();
   }
 });
