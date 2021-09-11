@@ -1,5 +1,32 @@
 # Changelog
 
+<a name="1.2.0"></a>
+## 1.2.0 (2021-09-11)
+
+### Miscellaneous
+
+-  Basic bug fixes for launch [[4fea295](https://github.com/snaildos/StreamBop/commit/4fea295e3ba0a6f240a20aafddcd9705fa1a0f09)]
+-  Settings button should be round I guess? [[1b63e18](https://github.com/snaildos/StreamBop/commit/1b63e1889dca8a4109f5981bd9251d8eb25daabf)]
+-  Fix orientation error [[857c567](https://github.com/snaildos/StreamBop/commit/857c5674aace0d3b396ad43b2586055335668582)]
+-  Fix Orientation [[233f5f6](https://github.com/snaildos/StreamBop/commit/233f5f6155f5b01eca1f798def583c92394940b1)]
+-  Add settings loader [[49320db](https://github.com/snaildos/StreamBop/commit/49320dba9022ce4b380796ac75ef37ce37a12ee7)]
+-  Fix broken loading times [[aea808f](https://github.com/snaildos/StreamBop/commit/aea808fb77ad81db3843d776bb4a9ba4d0db4752)]
+-  Small Improvments [[a59c23e](https://github.com/snaildos/StreamBop/commit/a59c23e6b736147c5cfc53061d6361a594a91cb1)]
+-  Fix ugly mixer padding [[740f2b6](https://github.com/snaildos/StreamBop/commit/740f2b62fb52b716d9053d6c6b282114821e8a16)]
+-  Fix infinite update [[eb095f8](https://github.com/snaildos/StreamBop/commit/eb095f85e3b05e1494d1cd6c3a6e15b4c80119be)]
+-  Add orientation to the menu [[5cd32e2](https://github.com/snaildos/StreamBop/commit/5cd32e2f89c0971fafa9305a1fd5d49463418254)]
+-  Add Orientation [[1b7340d](https://github.com/snaildos/StreamBop/commit/1b7340d35319fc166aa41a387a0a525bab48b1ab)]
+-  Update index.html [[1a11650](https://github.com/snaildos/StreamBop/commit/1a11650df018bfe5d1f417a1a1616695dea97189)]
+-  Merge branch &#x27;main&#x27; of https://github.com/snaildos/StreamBop into main [[7ad83c8](https://github.com/snaildos/StreamBop/commit/7ad83c8badb7f152315be45f23457766291b3357)]
+-  Add mixer 2/2 [[825418c](https://github.com/snaildos/StreamBop/commit/825418cc40bb298271182d884f04e6f7fd8e5965)]
+-  Merge pull request [#23](https://github.com/snaildos/StreamBop/issues/23) from snaildos/renovate/axios-0.x [[98eca87](https://github.com/snaildos/StreamBop/commit/98eca871258451654ed31bca49c65b3a9edb621f)]
+-  1/2 Mixer Rollout [[ec5bf92](https://github.com/snaildos/StreamBop/commit/ec5bf9200e2530eec212f8270279176602be3ae9)]
+-  Not system wide volume anymore [[35a4d0f](https://github.com/snaildos/StreamBop/commit/35a4d0f9e3e11d7935a006d3d3cd2b9399cf5a15)]
+-  Update YouTube JS [[7066acf](https://github.com/snaildos/StreamBop/commit/7066acfd884db156074c943c183decc49bc82baf)]
+-  Update package.json [[e8bbe00](https://github.com/snaildos/StreamBop/commit/e8bbe002a37002e0ec0f30ca20db21e7fed9dd66)]
+-  Update dependency axios to v0.21.4 [[f6a43dd](https://github.com/snaildos/StreamBop/commit/f6a43dd6c6f2344f14ff4b1a5823d2ff141871f5)]
+
+
 <a name="1.1.0"></a>
 ## 1.1.0 (2021-09-05)
 
