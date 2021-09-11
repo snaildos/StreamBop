@@ -5,6 +5,8 @@
 
 ### Miscellaneous
 
+-  Darwin fix [[8e62851](https://github.com/snaildos/StreamBop/commit/8e62851fad9fd0e80124d7ebc2098f892dcb1a5b)]
+-  Add the 1.2.0 changelog [[c4faad3](https://github.com/snaildos/StreamBop/commit/c4faad3bfcfc220b7fe730800337821f79a3374d)]
 -  Basic bug fixes for launch [[4fea295](https://github.com/snaildos/StreamBop/commit/4fea295e3ba0a6f240a20aafddcd9705fa1a0f09)]
 -  Settings button should be round I guess? [[1b63e18](https://github.com/snaildos/StreamBop/commit/1b63e1889dca8a4109f5981bd9251d8eb25daabf)]
 -  Fix orientation error [[857c567](https://github.com/snaildos/StreamBop/commit/857c5674aace0d3b396ad43b2586055335668582)]
