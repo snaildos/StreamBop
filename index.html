@@ -469,20 +469,23 @@ var downloadTimer = setInterval(function(){
             $('.nt4').hide()
             $('.custom').slideToggle(2)
             $('.nt3').hide()
-            $('.isstrm').slideToggle(2000)
+            $('.isstrm').slideToggle(1000)
             $('.button').slideToggle(1000)
-            $('.sus').slideToggle(2000)
             ipcRenderer.send('strm.hide')
             ipcRenderer.send('strm.reload')
             config.set('setupan', false)
             $('.set').slideToggle(4)
             $('.button').slideToggle(1000)
-},1000);  
+},1500);  
 
 
-      setTimeout(function(){
+setTimeout(function(){
         $('.streaming').slideUp(100)
 },800);  
+
+setTimeout(function(){
+$('.sus').slideToggle(2000)
+},2000); 
   </script>
     <script>
     const { trackEvent } = require('./lib/analytics.js');
