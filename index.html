@@ -720,13 +720,14 @@ onselectstart="return false;" >
       config.set("ori", "Right")
       document.getElementById("orid").innerHTML
       		   = "Orientation is on Right.";
+      $("#143").prop('value', 'Left');
       alert("Orientation is set to Right.")
-      settingsload()
     } else {
       button.value = "Left";
       config.set("ori", "Left")
       document.getElementById("orid").innerHTML
       		   = "Orientation is on Left.";
+      $("#143").prop('value', 'Right');
       alert("Orientation is set to Left.")
     }
   }
