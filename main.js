@@ -98,21 +98,20 @@ function createWindow() {
   mainWindow.setResizable(false)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
-  wait(4000)
+  wait(6000)
   console.log("Loaded sucess.")
   loadingScreen.close();
 mainWindow.on('closed', () => (
 die()
 ));
-
+// Don't tell me my code is messy, I know it is.
 if(isDev) {
   console.log("In Development!")
 } else {
   console.log("Not in Development!")
 }
-
-    var internetAvailable = require("internet-available");
-
+// This is the final part of the StreamBop boot-up.
+var internetAvailable = require("internet-available");
 // Set a timeout and a limit of attempts to check for connection
 internetAvailable({
     timeout: 2000,
@@ -127,9 +126,10 @@ internetAvailable({
     mainWindow.show();
     console.log("Ok! Window init, let's check for updates...")
     autoUpdater.checkForUpdatesAndNotify();
-    console.log("Update checked. Let's see what happens!");
+    console.log("Checking for updates... Waiting for a reply back...");
   };
 
+// After Preload
 console.log("Main screen ready.");
 
 // strm
