@@ -68,9 +68,7 @@ const createLoadingScreen = () => {
   loadingScreen.setResizable(false);
   loadingScreen.loadFile('splash.html');
   loadingScreen.on('closed', () => (loadingScreen = null));
-  loadingScreen.webContents.on('did-finish-load', () => {
-    loadingScreen.show();
-  });
+  loadingScreen.show();
 };
 console.log("Loading screen ready.");
 
