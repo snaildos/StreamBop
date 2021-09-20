@@ -1,5 +1,23 @@
 # Changelog
 
+<a name="1.2.1"></a>
+## 1.2.1 (2021-09-17)
+
+### Miscellaneous
+
+-  Button Render wrong ID [[cd348be](https://github.com/snaildos/StreamBop/commit/cd348be215e4091abed4ff7b73f78a299dd0d78b)]
+-  We don&#x27;t use green screens anymore [[1e82b14](https://github.com/snaildos/StreamBop/commit/1e82b14af65e0a3489eeb8a6f5e19bb1f8ffa5a4)]
+-  Fix the fat dot [[c06941c](https://github.com/snaildos/StreamBop/commit/c06941c8e43117c230539b357aa24dd62721fabb)]
+-  Color theory ngl [[7934f66](https://github.com/snaildos/StreamBop/commit/7934f669f6cd79b2f393965babd0730ac87b8643)]
+-  Boot changes [[32342a3](https://github.com/snaildos/StreamBop/commit/32342a3350ab34d10ca35989daa08cf24aadea42)]
+-  Merge pull request [#25](https://github.com/snaildos/StreamBop/issues/25) from snaildos/renovate/electron-store-8.x [[26bd096](https://github.com/snaildos/StreamBop/commit/26bd0963ca6ca14673144fd8c692f45e716fbded)]
+-  Merge pull request [#24](https://github.com/snaildos/StreamBop/issues/24) from snaildos/renovate/electron-14.x [[08c7cd4](https://github.com/snaildos/StreamBop/commit/08c7cd48b467955a9e53913c6bc1a4b25274c399)]
+-  Fix loading screen not showing sometimes [[1a5adec](https://github.com/snaildos/StreamBop/commit/1a5adec5f60ef0444cb5c6eacb6bd4bef406c722)]
+-  Update dependency electron-store to v8.0.1 [[2e43e6a](https://github.com/snaildos/StreamBop/commit/2e43e6a4012bfce4c751b59ba953ee5d66d083ba)]
+-  Update dependency electron to v14.0.1 [[7f2053b](https://github.com/snaildos/StreamBop/commit/7f2053b502496f57a9774555f269311c5ed22ab5)]
+-  Update nonet.html [[60b799c](https://github.com/snaildos/StreamBop/commit/60b799c102dc2b4c5edf7878e9e603239adc7d77)]
+
+
 <a name="1.2.0"></a>
 ## 1.2.0 (2021-09-11)
 
