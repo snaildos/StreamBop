@@ -1,10 +1,14 @@
 # Changelog
 
 <a name="1.2.1"></a>
-## 1.2.1 (2021-09-17)
+## 1.2.1 (2021-09-22)
 
 ### Miscellaneous
 
+-  Merge pull request [#26](https://github.com/snaildos/StreamBop/issues/26) from snaildos/renovate/electron-15.x [[95c4ee9](https://github.com/snaildos/StreamBop/commit/95c4ee97d2ffef32b7718bb9750d295586b87637)]
+-  Update dependency electron to v15 [[bf317ea](https://github.com/snaildos/StreamBop/commit/bf317ea6a758ddcb7eb24df1cf1e6fc567772656)]
+-  Update CHANGELOG.md [[ae4ba9c](https://github.com/snaildos/StreamBop/commit/ae4ba9c693802c0fc7404e2843953c7e2081e23e)]
+-  Delete &quot;SONG&quot; off RPC. [[43ed63b](https://github.com/snaildos/StreamBop/commit/43ed63b7aa0c072127578e59b9d640eb8d1224c6)]
 -  Button Render wrong ID [[cd348be](https://github.com/snaildos/StreamBop/commit/cd348be215e4091abed4ff7b73f78a299dd0d78b)]
 -  We don&#x27;t use green screens anymore [[1e82b14](https://github.com/snaildos/StreamBop/commit/1e82b14af65e0a3489eeb8a6f5e19bb1f8ffa5a4)]
 -  Fix the fat dot [[c06941c](https://github.com/snaildos/StreamBop/commit/c06941c8e43117c230539b357aa24dd62721fabb)]
