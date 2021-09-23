@@ -39,10 +39,7 @@ body {
 		    const Store = require('electron-store');
     const config = new Store();
 		console.log("Let's clear localstorage first...")
-		localStorage.removeItem('firstime', 'true');
-		localStorage.removeItem('setup', 'true');
-		localStorage.removeItem('theme', 'true');
-		localStorage.removeItem('version');
+                localStorage.clear();
 		console.log("Just wait a bit...")
 		// if all above fails, lets do some ensurement.
 		fs.unlinkSync(config.path)
