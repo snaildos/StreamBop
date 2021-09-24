@@ -1,10 +1,12 @@
 # Changelog
 
-<a name="1.2.1"></a>
-## 1.2.1 (2021-09-24)
+<a name="1.3.0"></a>
+## 1.3.0 (2021-09-24)
 
 ### Miscellaneous
 
+-  Update package.json [[8f5d6c4](https://github.com/snaildos/StreamBop/commit/8f5d6c4ad9b067720654cecc575c3255e47d3b9f)]
+-  Update CHANGELOG.md [[16aabf3](https://github.com/snaildos/StreamBop/commit/16aabf303d4bd201fea05be721b7a3641729d052)]
 -  Fix opaque bug [[9b87adf](https://github.com/snaildos/StreamBop/commit/9b87adf38ffcaaafa23ccc654c62847348000ba1)]
 -  Streambop breaks after some time [patch] [[ffc7c30](https://github.com/snaildos/StreamBop/commit/ffc7c30f0a325a1b31cb86c9461068d8f6bad2a1)]
 -  Patch Setup and Reset bugs [[175a7e5](https://github.com/snaildos/StreamBop/commit/175a7e54b0d0c42e7b999d4b602623c5852d7291)]
