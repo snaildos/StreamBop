@@ -1,10 +1,15 @@
 # Changelog
 
 <a name="1.2.1"></a>
-## 1.2.1 (2021-09-22)
+## 1.2.1 (2021-09-24)
 
 ### Miscellaneous
 
+-  Fix opaque bug [[9b87adf](https://github.com/snaildos/StreamBop/commit/9b87adf38ffcaaafa23ccc654c62847348000ba1)]
+-  Streambop breaks after some time [patch] [[ffc7c30](https://github.com/snaildos/StreamBop/commit/ffc7c30f0a325a1b31cb86c9461068d8f6bad2a1)]
+-  Patch Setup and Reset bugs [[175a7e5](https://github.com/snaildos/StreamBop/commit/175a7e54b0d0c42e7b999d4b602623c5852d7291)]
+-  More UI/UIX changes [[7176205](https://github.com/snaildos/StreamBop/commit/71762056f23275b00c3ad19fc0b7edaccf636244)]
+-  Update CHANGELOG.md [[528fa54](https://github.com/snaildos/StreamBop/commit/528fa54cf76749a2aff4f2b59b764a226236c686)]
 -  Merge pull request [#26](https://github.com/snaildos/StreamBop/issues/26) from snaildos/renovate/electron-15.x [[95c4ee9](https://github.com/snaildos/StreamBop/commit/95c4ee97d2ffef32b7718bb9750d295586b87637)]
 -  Update dependency electron to v15 [[bf317ea](https://github.com/snaildos/StreamBop/commit/bf317ea6a758ddcb7eb24df1cf1e6fc567772656)]
 -  Update CHANGELOG.md [[ae4ba9c](https://github.com/snaildos/StreamBop/commit/ae4ba9c693802c0fc7404e2843953c7e2081e23e)]
