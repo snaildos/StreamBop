@@ -87,6 +87,7 @@ function createWindow() {
       nodeIntegration: true,
       devTools: isDev,
       nativeWindowOpen: true,
+      backgroundThrottling: false,
       contextIsolation: false
     },
   });
@@ -144,7 +145,6 @@ const createNewstrm = () => {
       isClosable: false,
       minimizable: false,
       height: 600,
-      backgroundThrottling: false,
       alwaysOnTop: false,
       frame: true,
       fullscreen: false,
@@ -153,6 +153,7 @@ const createNewstrm = () => {
         nodeIntegration: true,
         devTools: isDev,
         nativeWindowOpen: true,
+        backgroundThrottling: false,
         contextIsolation: false
       },
     })
