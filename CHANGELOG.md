@@ -1,10 +1,13 @@
 # Changelog
 
 <a name="1.3.0"></a>
-## 1.3.0 (2021-09-24)
+## 1.3.0 (2021-09-25)
 
 ### Miscellaneous
 
+-  Faster loading times! [[995f98a](https://github.com/snaildos/StreamBop/commit/995f98a6004cb5ae33ee39828c727ea21f707300)]
+-  Final fix. [[f52fc2c](https://github.com/snaildos/StreamBop/commit/f52fc2c86f4eb1ad74a34912811a1cf7dddda6a0)]
+-  Update CHANGELOG.md [[cac157a](https://github.com/snaildos/StreamBop/commit/cac157ae9841267f48e52562d6b66caf16cd75de)]
 -  Update package.json [[8f5d6c4](https://github.com/snaildos/StreamBop/commit/8f5d6c4ad9b067720654cecc575c3255e47d3b9f)]
 -  Update CHANGELOG.md [[16aabf3](https://github.com/snaildos/StreamBop/commit/16aabf303d4bd201fea05be721b7a3641729d052)]
 -  Fix opaque bug [[9b87adf](https://github.com/snaildos/StreamBop/commit/9b87adf38ffcaaafa23ccc654c62847348000ba1)]
