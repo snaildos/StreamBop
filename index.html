@@ -493,8 +493,8 @@ $('.sus').slideToggle(2000)
     const loudness = require('mwl-loudness')
     function streaming()  {
       $('.1').hide()
-      $('.welcome').slideToggle(4000)
-      $('.streaming').slideDown(4000)
+      $('.welcome').slideToggle(1000)
+      $('.streaming').slideDown(1000)
     }
 
     function reload()  {
@@ -506,7 +506,7 @@ $('.sus').slideToggle(2000)
       ipcRenderer.send('strm');
       $('.nt3').show()
       $('.streaming').slideUp(100)
-      $('.isstrm').slideToggle(2000)
+      $('.isstrm').slideToggle(1000)
     }
 
     function strmstart32()  {
