@@ -12,6 +12,11 @@ const Store = require('electron-store');
 
 const config = new Store();
 
+// Start the software
+console.log("Software ready for start!");
+require('./lib/core.js');
+
+
 function die() {
 console.log("Unloading temp variables...");
 config.set('oldVariable', "null")
