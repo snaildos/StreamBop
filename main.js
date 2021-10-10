@@ -3,6 +3,10 @@ const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { trackEvent } = require('./lib/analytics.js');
 const { watchFile } = require('fs');
+const glasstron = require('glasstron');
+const electron = require('electron');
+electron.app.commandLine.appendSwitch("enable-transparent-visuals");
+
 // is dev
   var isDev = require('isdev')
 // Notify
@@ -81,9 +85,9 @@ console.log("Loading screen ready.");
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+  mainWindow = new glasstron.BrowserWindow({
+    width: 900,
+    height: 700,
     show: false,
     fullscreen: false,
     modal: true,
@@ -96,6 +100,8 @@ function createWindow() {
       contextIsolation: false
     },
   });
+  mainWindow.blurType = "acrylic";
+  mainWindow.setBlur(true);
   console.log("More configuration is being sent now.")
   console.log("We are going to send a google analytics streambop.started event")
   trackEvent('streambop.started', 'StreamBop sucessfully started!');

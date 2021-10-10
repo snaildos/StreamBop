@@ -217,10 +217,11 @@ body {
     background-size: 400% 400%;
     box-sizing: border-box;
       margin: 0;
+      overflow: hidden;
       padding: 20px;
       font-family: sans-serif;
-      background-color: #000000;
       text-align: center;
+      background-color: #000000;
 }
     #notification {
       position: fixed;
@@ -357,7 +358,7 @@ input.vertical {
   bottom: 0;
   right: 0;
   overflow: auto;
-  background: #000000; /* Just to visualize the extent */
+  background: #000000;
 }
 
 #cookie{
@@ -919,13 +920,13 @@ document.getElementById('textInput').value=100;
   }
   </script>
 
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content" style="background-color: rgb(70, 70, 70);">
-      <div class="w3-container" style="background-color: rgb(70, 70, 70);">
+  <div id="id01" class="w3-modal w3-round">
+    <div class="w3-modal-content w3-round" style="background-color: rgb(70, 70, 70);">
+      <div class="w3-container w3-round" style="background-color: rgb(70, 70, 70);">
             <button type="button" style="background-color: rgb(70, 70, 70); color: rgb(221, 19, 19);" class="close" onclick="document.getElementById('id01').style.display='none'">&times;</button>
             <h4 class="modal-title"><h2>StreamBop Settings</h2></h4>
           </div>
-          <div class="modal-body" style="background-color: rgb(70, 70, 70);">
+          <div class="modal-body w3-round" style="background-color: rgb(70, 70, 70);">
             <h4>Please click what settings you want to change.</h4>
             <h4>If you don't want to change StreamBop settings, press the "More Settings" to change Account settings, encoder settings, and more.</h4>
             <span class="hiddentext" style="font-size:20px;cursor:pointer;color:red;display:none;" onclick="openNav()">&#9776; More settings</span>
