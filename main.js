@@ -139,7 +139,7 @@ internetAvailable({
     console.log("Ok! Window init, let's check for updates...")
     autoUpdater.checkForUpdatesAndNotify();
     console.log("Checking for updates... Waiting for a reply back...");
-  };
+  }
 
 // After Preload
 console.log("Main screen ready.");
