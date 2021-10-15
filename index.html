@@ -591,8 +591,10 @@ $('.sus').slideToggle(2000)
         }
 
     function UpdateSystemvolume(val) {
+          var volset = false
 	  document.getElementById('systemvol').value=val;
 	  loudness.setVolume(val)
+          var volset = true
         }
 
     function setup34()  {
@@ -606,7 +608,7 @@ $('.sus').slideToggle(2000)
       $('.set').slideDown(1)
     }
 
-    // Volume caching system
+    // Music Caching System
     setInterval(()=>{
     axios.get('http://api.snaildos.com/radio').then((value) => {
       np3 = value.data.playing
@@ -614,7 +616,7 @@ $('.sus').slideToggle(2000)
     })
     console.log(name)
     config.set('song', name)
-  },10000);
+  },15000);
 
   function storenam()  {
     trackEvent('streambop.started', 'Setup completed sucessfully');
@@ -898,11 +900,14 @@ onselectstart="return false;" >
 ETA startup time:</b>
 <h2><div id="countdown"></div></h2>
 <script>
+var volset = true
 var contvar = document.getElementById("countdown")
 async function changeVolumeToCurrent() {
+  if (volset == true) {
   var vol = await loudness.getVolume()
   document.getElementById("sysvolbar").value = vol;
   document.getElementById("systemvol").value = vol;
+}
 }
 </script>
 <p>
@@ -913,13 +918,13 @@ async function changeVolumeToCurrent() {
 
 <div class="w3-center mixer" id="containermixer">
 <div class="w3-center streamvolume">
-    <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
+    <input class="vertical" type="range" name="rangeInput" class="fader" min="1" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
     <input type="text" id="textInput" style="font-size:10px;" class="w3-black mixerdialogue w3-round-xlarge" value="Drag Slider!" readonly></input>
     <b>(%) Music Volume</b>
 <p>
 </div>
 <div class="w3-center sysvolume">
-    <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
+    <input class="vertical" type="range" name="rangeInput" class="fader" min="1" max="100" onchange="UpdateSystemvolume(this.value);" id="sysvolbar"></input>
     <input type="text" style="font-size:10px;" id="systemvol" class="w3-black mixerdialogue w3-round-xlarge" value="Drag Slider!" readonly></input>
    <b>(%) System Volume!</b>
 </div>
