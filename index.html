@@ -111,7 +111,7 @@ h1  {
   color: black;
   overflow-x: hidden;
   background: transparent; 
-  color: rgba(255, 255, 255, 0.5);
+  color: black;
   float: left;
 }
 
@@ -124,12 +124,12 @@ h1  {
   transform: translateY(-50%);
   margin: 0 auto;
   background: transparent; 
-  color: rgba(255, 255, 255, 0.5);
+  color: black;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
   -webkit-appearance: none;
-  background: rgba(59,173,227,1);
+  background: #E6892C;
   border: 2px solid black;
   padding: 10px;
   border-radius: 25px;
@@ -152,7 +152,7 @@ input[type=range]::-moz-range-track {
   border: 2px solid black;
   padding: 10px;
   border-radius: 25px;
-  background: rgba(59,173,227,1);
+  background: #E6892C;
   background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
   background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
   background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
@@ -174,7 +174,7 @@ input[type=range]::-webkit-slider-thumb {
   max-width: 80px;
   position: relative;
   bottom: 11px;
-  background-color: #1d1c25;
+  background-color: #E6892C;
   cursor: -webkit-grab;
   -webkit-transition: border 1000ms ease;
   transition: border 1000ms ease;
@@ -189,42 +189,42 @@ input[type=range]::-moz-range-thumb {
   max-width: 80px;
   position: relative;
   bottom: 11px;
-  background-color: #1d1c25;
+  background-color: #E6892C;
   cursor: -moz-grab;
   -moz-transition: border 1000ms ease;
   transition: border 1000ms ease;
 }
 
 .range.blue::-webkit-slider-thumb {
-   border-color: rgb(28, 36, 39);
+   border-color: #E6892C;
 }
 
 .range.ltpurple::-webkit-slider-thumb {
-   border-color: rgb(44, 60, 139);
+   border-color: #E6892C;
 }
 
 .range.purple::-webkit-slider-thumb {
-   border-color: rgb(152,68,183);
+   border-color: #E6892C;
 }
 
 .range.pink::-webkit-slider-thumb {
-   border-color: rgb(255,53,127);
+   border-color: #E6892C;
 }
 
 .range.blue::-moz-range-thumb {
-   border-color: rgb(191, 227, 59);
+   border-color: #E6892C;
 }
 
 .range.ltpurple::-moz-range-thumb {
-   border-color: rgb(60, 75, 148);
+   border-color: #E6892C;
 }
 
 .range.purple::-moz-range-thumb {
-   border-color: rgb(152,68,183);
+   border-color: #E6892C;
 }
 
 .range.pink::-moz-range-thumb {
-   border-color: rgb(255,53,127);
+   border-color: #E6892C;
 }
 
 input[type=range]::-webkit-slider-thumb:active {
@@ -313,9 +313,13 @@ input.vertical {
 
     .settings {
   position: absolute;
-  top: 30px;
+  bottom: 30px;
   right: 16px;
   font-size: 18px;
+}
+
+.set {
+z-index: -1
 }
 
 /* The side navigation menu */
@@ -367,6 +371,11 @@ input.vertical {
   color: rgb(255, 255, 255);
 }
 
+.customred {
+   color: #9E1049;
+   background: #9E1049; 
+}
+
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
@@ -400,6 +409,10 @@ input.vertical {
   right: 0;
   overflow: auto;
   background: #000000;
+}
+
+.black {
+color: black;
 }
 
 #cookie{
@@ -516,7 +529,7 @@ var downloadTimer = setInterval(function(){
             ipcRenderer.send('strm.hide')
             ipcRenderer.send('strm.reload')
             config.set('setupan', false)
-            $('.set').slideToggle(4)
+            $('#set').slideUp(1)
             $('.button').slideToggle(1000)
             settingsload()
 },1500);  
@@ -580,10 +593,12 @@ $('.sus').slideToggle(2000)
     function setup34()  {
       player.pause()
       $('.nt3').hide()
+      $('.set').show()
       $('.nt4').hide()
       $('.isstrm').slideUp(4)
-      $('.set').slideToggle(4)
       ipcRenderer.send('strm.setup');
+      $('.set').show()
+      $('.set').slideDown(1)
     }
 
     // Volume caching system
@@ -639,15 +654,28 @@ return false;
 <div class="sidebar">
 <div class="sidebarcont">
   <div class="welcome">
-  <h2 class="w3-center">What are we doing today?</h2>
+  <h2 class="w3-center black">What are we doing today?</h2>
   <div>
-    <button class="w3-center w3-button w3-red w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
-    <button class="w3-center w3-button w3-red w3-round-xlarge 1 hidden"><h1 class="white">Coming Soon...</h1></button>
+    <button class="w3-center w3-button customred w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
+    <button class="w3-center w3-button customred w3-round-xlarge 1 hidden"><h1 class="white">Coming Soon...</h1></button>
   </div>
   </div>
+
+  <div class="streaming">
+  <button class="w3-center w3-button customred w3-round-xlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
+  <button class="w3-center w3-button customred w3-round-xlarge 2" onclick="costume()"><h3>Customize</h3></button>
+</div>
+
+ <div class="isstrm">
+  <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="reload()"><h3>Main Menu!</h3></button>
+  <button class="w3-center w3-button customred w3-round-xlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
+  <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
+</div>
+
 </div>
 </div>
-<div class="content">
+<div class="content w3-round">
 <h1 class="hidden">h</h1>
 <div id="sus" class="sus"><h1>Loading...</h1></div>
   <div id="cookie">
@@ -688,8 +716,6 @@ return false;
 
 <div id="streaming" class="streaming">
   <h1>Welcome to the streaming panel!</h1>
-  <button class="w3-center w3-button w3-red w3-round-xlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
-  <button class="w3-center w3-button w3-red w3-round-xlarge 2" onclick="costume()"><h3>Customize</h3></button>
 </div>
 
 <script>
@@ -711,7 +737,8 @@ function toggle(button) {
 }
 </script>
 
-<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;" 
+<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.9);
+     transform-origin: 0% 0% 0px;z-index: 0;" 
 unselectable="on"
 onselectstart="return false;" >
 <h1 class="w3-center">Welcome to the customizer!</h1>
@@ -823,6 +850,26 @@ onselectstart="return false;" >
 </script>
 
 </div>
+
+<div id="set" class="set">
+  <h1>Welcome!</h1>
+  <p></p>
+</p>
+  <p class="white">
+  Let's setup StreamBop,
+  First, create a window capture in OBS, and select "StreamBop Viewer!"
+  After doing that, you will want to press filters, Color key, then select magenta and adjust the similarity to your preference.
+  Once complete, apply the changes, and move the StreamBop window, into the sides or corners of the screen. When complete, press done.
+  The setup can be viewed anytime you want.</p>
+  </p>
+    <button class="w3-button w3-white" onclick="reload()">Done</button>
+  </p>
+
+  <p>
+  <button class="w3-center w3-button customred w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+</button>
+</div>
+
 <div id="isstrm" class="isstrm">
   <h1>Welcome to the streaming panel!</h1>
   <p>Welcome to the streaming panel. 
@@ -839,10 +886,6 @@ onselectstart="return false;" >
   },5000);
 </script>
 <h1 class="hidden">h</h1>
-  <button class="w3-center w3-button w3-red w3-round-xlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
-  <button class="w3-center w3-button w3-red w3-round-xlarge nt3" onclick="reload()"><h3>Return to main menu!</h3></button>
-  <button class="w3-center w3-button w3-red w3-round-xlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
-  <button class="w3-center w3-button w3-red w3-round-xlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
 <p>
 </p>
 <h1 class="hidden">s</h1>
@@ -861,6 +904,8 @@ async function changeVolumeToCurrent() {
 </p>
 <h3 class="w3-center">Mixer</h3>
 <p>
+
+
 <div class="w3-center mixer" id="containermixer">
 <div class="w3-center streamvolume">
     <input class="vertical" type="range" name="rangeInput" class="fader" min="0" max="100" onchange="updateTextInput(this.value);" id="volu23"></input>
@@ -887,24 +932,6 @@ player.volume(1)
 document.getElementById('volu23').value="100"
 document.getElementById('textInput').value=100;
 </script>
-<div id="set" class="set">
-  <h1>Welcome!</h1>
-  <p></p>
-</p>
-  <p class="white">
-  Let's setup StreamBop,
-  First, create a window capture in OBS, and select "StreamBop Viewer!"
-  After doing that, you will want to press filters, Color key, then select magenta and adjust the similarity to your preference.
-  Once complete, apply the changes, and move the StreamBop window, into the sides or corners of the screen. When complete, press done.
-  The setup can be viewed anytime you want.</p>
-  </p>
-    <button class="w3-button w3-white" onclick="reload()">Done</button>
-  </p>
-
-  <p>
-  <button class="w3-center w3-button w3-red w3-roundxlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
-</button>
-</div>
 
 
   <div id="notification" class="hidden">
