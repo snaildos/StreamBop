@@ -371,6 +371,10 @@ z-index: -1
   color: rgb(255, 255, 255);
 }
 
+.custom {
+  z-index: 0;
+}
+
 .customred {
    color: #9E1049;
    background: #9E1049; 
@@ -407,6 +411,7 @@ z-index: -1
   left: 0;
   bottom: 0;
   right: 0;
+  z-index: 100;
   overflow: auto;
   background: #000000;
 }
@@ -651,6 +656,7 @@ return false;
   </script>
 </head>
 <body>
+<div id="sus" class="sus"><h1>Loading...</h1></div>
 <div class="sidebar">
 <div class="sidebarcont">
   <div class="welcome">
@@ -677,7 +683,6 @@ return false;
 </div>
 <div class="content w3-round">
 <h1 class="hidden">h</h1>
-<div id="sus" class="sus"><h1>Loading...</h1></div>
   <div id="cookie">
     <div id="cookie-wrapper">
       <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
