@@ -70,6 +70,12 @@ function sleep(ms) {
         }
 
         function a() {
+                 config.set("analytics", "true")
+                 $('.cls2').hide()
+                 $('.cls3').fadeIn(1)
+                }
+
+        function ignore() {
                  $('.cls2').hide()
                  $('.cls3').fadeIn(12)
                 }
@@ -79,7 +85,7 @@ function sleep(ms) {
                 font-size: 50px;
             }
             body {
-                background-color: #320585;
+                background-color: black;
             }
     
             .hidden  {
@@ -118,11 +124,11 @@ const config = new Store();
             <div class="divs">
                 <center>
                 <div class="cls1"><h2 class="main" class="w3-center">Welcome to the setup of StreamBop!<p><p><button id="1" class="ctrl w3-center w3-light-blue w3-center">Let's setup!</button><h2 class="hidden">h</h2></p></h2></div>
-                <div class="cls2"><h2 class="main" class="w3-center">This software is alpha, and may not function correctly..<p><button onclick="a()" class="ctrl w3-center w3-light-blue w3-center">Ok!</button><p></p><h2 class="hidden">h</h2></p></h2> <p></div>
+                <div class="cls2"><h2 class="main" class="w3-center">Do you want to opt into sending anonymous statistical infomation to SnailDOS?<p><button onclick="a()" class="ctrl w3-center w3-light-blue w3-center">Opt me in!</button><p>The following infomation will be sent: "Geolocation, If streambop started, and these events, streambop.started, streambop.running, streambop.setup.complete". When agreeing, these may be subject to change without notice, however, we will try to notify you. This option is OPTIONAL but recommended since we can diagnose and fix issues faster.</p><p></p><button onclick="ignore()" class="ctrl w3-center w3-light-blue w3-center">No thanks, please don't opt me into anonymouse statistcal data!</button><h2 class="hidden">h</h2></p></h2> <p></div>
                 <div class="cls3"><h4 class="main" class="w3-center"><h2 class="w3-center">Customization Time:</h2>
                     <h3 class="w3-center"> What mode do YOU want? </h3>
 
-                    <button class="w3-center w3-black w3-button w3-round-large" onclick="light()">Dark Mode!</button>
+                    <button class="w3-center w3-white w3-button w3-round-large" onclick="light()">Dark Mode!</button>
                 </div>
 
                     <div class="cls4"><h4 class="main" class="w3-center">Let's get start!<p></p><p>

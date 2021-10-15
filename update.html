@@ -14,9 +14,14 @@
 		}
 		</style>
     <style>
+p,h1,h2,h3 {
+color: white;
+}
+
 body {
-	background: linear-gradient(-45deg, #000000, #383838, #918f8f, #dddddd);
+	background: black;
 	animation: gradient 12s ease infinite;
+        height: auto;
 }
 
 @keyframes gradient {
@@ -40,7 +45,7 @@ body {
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
 		config.set("ori", "left")
-		localStorage.setItem('version', '1.3.0');
+		localStorage.setItem('version', '1.3.1');
 	</script>
 	<div class="bs-example">
 		<h2 class="w3-center">Updating StreamBop!</h2>
