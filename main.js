@@ -18,20 +18,15 @@ console.log("RPC lib init.");
 
 // Blur Service
 if (process.platform == 'darwin') { 
-  app.whenReady().then(() => { // macOS
     global.blurType = "vibrancy";
     global.windowFrame = 'false'
-})}
-else if(process.platform == 'win32'){ 
-  app.whenReady().then(() => { // Windows
+} else if(process.platform == 'win32'){ 
     global.blurType = "acrylic";
-    global.windowFrame = 'false' // The effect won't work properly if the frame is enabled on Windows
-})}
-else{ 
-  app.whenReady().then(() => { // Linux
+    global.windowFrame = 'false'
+} else { 
     global.blurType = "blurbehind";
     global.windowFrame = 'true'
-})}
+}
 
 const Store = require('electron-store');
 
@@ -129,6 +124,7 @@ function createWindow() {
   console.log("We just sent the event. Now let's continue loading")
   mainWindow.setMenuBarVisibility(false)
   mainWindow.setResizable(false)
+  mainWindow.frame(global.WindowFrame)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(6000)
