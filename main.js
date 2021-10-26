@@ -12,6 +12,27 @@ electron.app.commandLine.appendSwitch("enable-transparent-visuals");
 // Notify
 const { Notification } = require('electron')
 
+// Start the libaries
+require('./lib/rpc.js');
+console.log("RPC lib init.");
+
+// Blur Service
+if (process.platform == 'darwin') { 
+  app.whenReady().then(() => { // macOS
+    global.blurType = "vibrancy";
+    global.windowFrame = 'false'
+})}
+else if(process.platform == 'win32'){ 
+  app.whenReady().then(() => { // Windows
+    global.blurType = "acrylic";
+    global.windowFrame = 'false' // The effect won't work properly if the frame is enabled on Windows
+})}
+else{ 
+  app.whenReady().then(() => { // Linux
+    global.blurType = "blurbehind";
+    global.windowFrame = 'true'
+})}
+
 const Store = require('electron-store');
 
 const config = new Store();
@@ -91,6 +112,8 @@ function createWindow() {
     show: false,
     fullscreen: false,
     modal: true,
+    blur: true,
+    blurType: global.blurType,
     icon: 'snailfm.ico',
     webPreferences: {
       nodeIntegration: true,
@@ -100,8 +123,6 @@ function createWindow() {
       contextIsolation: false
     },
   });
-  mainWindow.blurType = "acrylic";
-  mainWindow.setBlur(true);
   console.log("More configuration is being sent now.")
   console.log("We are going to send a google analytics streambop.started event")
   trackEvent('streambop.started', 'StreamBop sucessfully started!');
