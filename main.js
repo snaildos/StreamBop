@@ -93,12 +93,16 @@ const createLoadingScreen = () => {
   loadingScreen.setResizable(false);
   loadingScreen.loadFile('splash.html');
   loadingScreen.on('closed', () => (loadingScreen = null));
-  loadingScreen.show();
+  loadingScreen.hide();
+  loadingScreen.show()
 };
 console.log("Loading screen ready.");
 
 // Start the main program
 let mainWindow;
+
+// Convert boolean to string
+var windowframz = (global.windowFrame === 'true');
 
 function createWindow() {
   mainWindow = new glasstron.BrowserWindow({
@@ -107,6 +111,7 @@ function createWindow() {
     show: false,
     fullscreen: false,
     modal: true,
+    frame: windowframz,
     blur: true,
     blurType: global.blurType,
     icon: 'snailfm.ico',
@@ -119,12 +124,11 @@ function createWindow() {
     },
   });
   console.log("More configuration is being sent now.")
+  mainWindow.setResizable(false);
   console.log("We are going to send a google analytics streambop.started event")
   trackEvent('streambop.started', 'StreamBop sucessfully started!');
   console.log("We just sent the event. Now let's continue loading")
   mainWindow.setMenuBarVisibility(false)
-  mainWindow.setResizable(false)
-  mainWindow.frame(global.WindowFrame)
   mainWindow.loadFile('index.html');
   mainWindow.on('maximize', () => mainWindow.unmaximize());
   wait(6000)
