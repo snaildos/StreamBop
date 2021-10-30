@@ -3,6 +3,10 @@
   <script src="https://cdn.snaildos.com/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
   <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+  <script>
+      const { ipcRenderer } = require('electron');
+  </script>
   <title>Loading...</title>
   <style>
     
@@ -98,6 +102,7 @@ body {
       </progress>
       <div class="progress-info">init</div>
     </div>
+    <button class="w3-black w3-center w3-roundxlarge" onclick="ipcRenderer.send('loadingscreenexit')">Exit StreamBop</button>
   </div>
   </body>
   <script>

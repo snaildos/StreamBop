@@ -26,6 +26,7 @@ window.location.href = "update.html";
 });
 })(jQuery);
 </script>
+<link rel="stylesheet" href="./titlebar.css">
 <script>
   // oobe
   (function($){
@@ -458,6 +459,14 @@ hr.dashed {
   border-top: 3px dashed #bbb;
 }
 
+.content {
+  margin-top: 35px;
+}
+
+.sidebar {
+  margin-top: 10px;
+}
+
 /* Dotted border */
 hr.dotted {
   border-top: 3px dotted #bbb;
@@ -482,6 +491,7 @@ button {
   color: black;
 }
   </style>
+
   <script>
     const Store = require('electron-store');
     const config = new Store();
@@ -616,7 +626,7 @@ $('.sus').slideToggle(2000)
     })
     console.log(name)
     config.set('song', name)
-  },15000);
+  },2000);
 
   function storenam()  {
     trackEvent('streambop.started', 'Setup completed sucessfully');
@@ -658,6 +668,12 @@ return false;
   </script>
 </head>
 <body>
+  <header data-for-os="windows" id="titlebar" class="titlebar">
+    <div id="window-controls">
+      <div onclick="ipcRenderer.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./icons/titlebar/min-w-10.png 1x, ./icons/titlebar/min-w-12.png 1.25x, ./icons/titlebar/min-w-15.png 1.5x, ./icons/titlebar/min-w-15.png 1.75x, ./icons/titlebar/min-w-20.png 2x, ./icons/titlebar/min-w-20.png 2.25x, ./icons/titlebar/min-w-24.png 2.5x, ./icons/titlebar/min-w-30.png 3x, ./icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
+      <div onclick="ipcRenderer.send('close')" class="button" id="close-button"><img class="icon" srcset="./icons/titlebar/close-w-10.png 1x, ./icons/titlebar/close-w-12.png 1.25x, ./icons/titlebar/close-w-15.png 1.5x, ./icons/titlebar/close-w-15.png 1.75x, ./icons/titlebar/close-w-20.png 2x, ./icons/titlebar/close-w-20.png 2.25x, ./icons/titlebar/close-w-24.png 2.5x, ./icons/titlebar/close-w-30.png 3x, ./icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
+    </div>
+  </header>
 <div id="sus" class="sus"><h1>Loading...</h1></div>
 <div class="sidebar">
 <div class="sidebarcont">

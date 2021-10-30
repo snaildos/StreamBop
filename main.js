@@ -272,3 +272,7 @@ ipcMain.on('strm.reload', () => {
   strm.reload();
 });
 
+ipcMain.on('minimize', () => {mainWindow.minimize()})
+ipcMain.on('restore', () => {mainWindow.restore()})
+ipcMain.on('close', () => {mainWindow.close()})
+ipcMain.on('loadingscreenexit', () => {mainWindow.close(); loadingScreen.close()})
