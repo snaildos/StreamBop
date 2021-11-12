@@ -1,5 +1,44 @@
 # Changelog
 
+<a name="1.3.1"></a>
+## 1.3.1 (2021-11-11)
+
+### Miscellaneous
+
+-  Logo Update [[08e0130](https://github.com/snaildos/StreamBop/commit/08e0130664190f0bd035e771eae34eb76362576f)]
+-  Merge pull request [#34](https://github.com/snaildos/StreamBop/issues/34) from snaildos/renovate/electron-15.x [[c72feb2](https://github.com/snaildos/StreamBop/commit/c72feb2bf4a9bf4cc6fd90993ff4c83d6e34287f)]
+-  Update dependency electron to v15.3.1 [[182beaa](https://github.com/snaildos/StreamBop/commit/182beaa894683e1c4eb93abf3430e635bd69b4ee)]
+-  Title Bar Addition! [[840792f](https://github.com/snaildos/StreamBop/commit/840792f7470bf1cf9c8660cf35f72e010aa3694b)]
+-  StreamBop Transperancy [[0c21476](https://github.com/snaildos/StreamBop/commit/0c2147695e47f9bcfda46435d59d1587fbb80bc2)]
+-  Update main.js [[886dc3b](https://github.com/snaildos/StreamBop/commit/886dc3b6ebc90b37216048a9bf4454e6873135be)]
+-  Fix Transparency! [[4cae7d2](https://github.com/snaildos/StreamBop/commit/4cae7d24f617d49bc6b4acecaf37c08105432713)]
+-  Merge pull request [#32](https://github.com/snaildos/StreamBop/issues/32) from snaildos/renovate/axios-0.x [[16faaa8](https://github.com/snaildos/StreamBop/commit/16faaa82abe96be823f92b31495f57fb2793782a)]
+-  Merge pull request [#33](https://github.com/snaildos/StreamBop/issues/33) from snaildos/renovate/electron-15.x [[d4752af](https://github.com/snaildos/StreamBop/commit/d4752af53c906160e851663546e495f31543fa7f)]
+-  Update dependency electron to v15.3.0 [[24358cb](https://github.com/snaildos/StreamBop/commit/24358cb0be7e914333a787fb630bcae5c2feb3b1)]
+-  Update dependency axios to v0.24.0 [[4c95980](https://github.com/snaildos/StreamBop/commit/4c95980327fbbb611d536b4fd4a03e923a27b571)]
+-  Merge pull request [#31](https://github.com/snaildos/StreamBop/issues/31) from snaildos/renovate/electron-15.x [[438fe3b](https://github.com/snaildos/StreamBop/commit/438fe3b45200ea60a825c113733ee7937edb0738)]
+-  Merge pull request [#30](https://github.com/snaildos/StreamBop/issues/30) from snaildos/renovate/axios-0.x [[afffb43](https://github.com/snaildos/StreamBop/commit/afffb43adf6d5e13d6d01a67f1e4b438b4730591)]
+-  Update dependency electron to v15.2.0 [[97e5761](https://github.com/snaildos/StreamBop/commit/97e5761268478086b47062ead2f2d3bf25b17270)]
+-  Update dependency axios to v0.23.0 [[2457a82](https://github.com/snaildos/StreamBop/commit/2457a821fc6e7650845fd6096da663fa3d8c1d9e)]
+-  Update analytics.js [[37ca11e](https://github.com/snaildos/StreamBop/commit/37ca11e455d9314807d27c96f8cad6d3ce97b020)]
+-  Major Visual Changes [Opt in for analytics, Package Update, Fix Update screen, made setup better] [[7784e38](https://github.com/snaildos/StreamBop/commit/7784e384b7409b813a83995663d29b1be1768a8f)]
+-  Fix a general typo on the mixer section. [[1edcb5b](https://github.com/snaildos/StreamBop/commit/1edcb5b1aefbd0e76585c433ab1416a139128772)]
+-  BUG FIX: Allow sound volume to be muted [[2e3669b](https://github.com/snaildos/StreamBop/commit/2e3669b268918d14b4a715fe26dc982c01206781)]
+-  BUG FIX: Mixer isn&#x27;t working [[3b20b3c](https://github.com/snaildos/StreamBop/commit/3b20b3c04542a2bd87097eadf5c69307d10786de)]
+-  Fix the broken loading screen [[5da1186](https://github.com/snaildos/StreamBop/commit/5da11860f9e2e115d43c2b00c0f300ceeaf74b04)]
+-  Add all buttons to sidebar [[b4424a5](https://github.com/snaildos/StreamBop/commit/b4424a5d32081e3ed57513ebb941c4ea8ef6d003)]
+-  First prototype [[a83204a](https://github.com/snaildos/StreamBop/commit/a83204a05dd82181d03c6c88ebcf288a54cbd745)]
+-  Better splash [[eac16e6](https://github.com/snaildos/StreamBop/commit/eac16e690ac9b377f7c8652d0bfac3e550bf72f5)]
+-  Minor Changes [[bbb17d0](https://github.com/snaildos/StreamBop/commit/bbb17d07b342a4365477a2551781b068456107be)]
+-  Make StreamBop transparent. [[1b04c3e](https://github.com/snaildos/StreamBop/commit/1b04c3e18e5c9b7169bc067f3127a33938fd668e)]
+-  Merge pull request [#27](https://github.com/snaildos/StreamBop/issues/27) from snaildos/renovate/axios-0.x [[4cc1349](https://github.com/snaildos/StreamBop/commit/4cc1349c51b8bcaf2d25a5b91057d27f1439be14)]
+-  Merge pull request [#28](https://github.com/snaildos/StreamBop/issues/28) from snaildos/renovate/electron-15.x [[790be96](https://github.com/snaildos/StreamBop/commit/790be96991e54ff6d84d421d7bfaa57a5a83119e)]
+-  Merge pull request [#29](https://github.com/snaildos/StreamBop/issues/29) from snaildos/renovate/electron-builder-22.x [[7e52647](https://github.com/snaildos/StreamBop/commit/7e5264798d929f198d54ea2144fd1925f0240637)]
+-  Update dependency electron to v15.1.2 [[3b20817](https://github.com/snaildos/StreamBop/commit/3b20817981f8f3500cae9a275a481e1c9e9b11dc)]
+-  Update dependency electron-builder to v22.13.1 [[bf3f4c3](https://github.com/snaildos/StreamBop/commit/bf3f4c3c2ca7ef140fa270ae7aa8641f4d0dd91f)]
+-  Update dependency axios to v0.22.0 [[5ca5401](https://github.com/snaildos/StreamBop/commit/5ca5401039cf9d65efc97d5a01e4667a349e6371)]
+
+
 <a name="1.3.0"></a>
 ## 1.3.0 (2021-09-25)
 

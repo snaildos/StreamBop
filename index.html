@@ -422,32 +422,17 @@ color: black;
 }
 
 #cookie{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(167, 23, 23); /* Fallback color */
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+  background-color: black;
 }
-    #cookie-wrapper{
-        display: flex;
-        flex-direction: row;
-        padding: .6rem 0;
-    }
-
-        #cookie-content{
-            border-right: 1px solid #1e67af;
-        }
-
-        #cookie-ok{
-            border: 0;
-            background: none;
-            color: rgb(255, 0, 212);
-        }
 
 .fga {
   margin: auto;
@@ -705,13 +690,15 @@ return false;
     <div id="cookie-wrapper">
       <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
         <p></p>
+        <br>
         <h1>Enter your Channel name, or the name you want to be known under...</h1>
         <p></p>
         <h2>
         <h>Press enter when complete.</h>
+        <br>
         <p></p>
-      </p><form class="" onsubmit="storenam(); return false;" style="background-color: grey;"> 
-        <input class="name" style="background-color: grey;" id="name" name="name" type="name" maxlength="16" id="email" required="true" placeholder="" />
+      </p><form class="" onsubmit="storenam(); return false;"> 
+        <input class="name" style="background-color: rgb(41, 41, 41);" id="name" name="name" type="name" maxlength="16" id="email" required="true" placeholder="" />
         </form>
       </h2>
         <button class="hidden" id="cookie-ok">Let's go!</button>

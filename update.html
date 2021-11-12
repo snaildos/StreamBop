@@ -8,10 +8,9 @@
 <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
 <script src="https://cdn.snaildos.com/jquery.min.js"></script>
 <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
 	<title>Updating StreamBop...</title>
 	<style type="text/css">
-		.bs-example{
-		}
 		</style>
     <style>
 p,h1,h2,h3 {
@@ -23,52 +22,95 @@ body {
 	animation: gradient 12s ease infinite;
         height: auto;
 }
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50%;
+  width: 100%;
+}
 
-@keyframes gradient {
-	0% {
-		background-position: 100% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 100% 50%;
-	}
+.progress-bar__container {
+  width: 80%;
+  height: 2rem;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  will-change: transform;
+  box-shadow: 0 0 5px #e76f51;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: "";
+  background-color: #e76f51;
+  top:0;
+  bottom: 0;
+  left: -100%;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  color: white;
+  font-family: sans-serif;
 }
     </style>
 </head>
 <body>
 	<script>
-					const fs = require('fs');
-		    const Store = require('electron-store');
-    const config = new Store();
+		const fs = require('fs');
+		const Store = require('electron-store');
+        const config = new Store();
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
 		config.set("ori", "left")
 		localStorage.setItem('version', '1.3.1');
 	</script>
-	<div class="bs-example">
-		<h2 class="w3-center">Updating StreamBop!</h2>
-		<div class="progress">
-			<div class="progress-bar" id="bar">
-				<span class="sr-only">src</span>
+		<div class="container">
+			<div class="progress-bar__container">
+			  <div class="progress-bar">
+				<span class="progress-bar__text">Updating...</span>
+			  </div>
 			</div>
-		</div>
+		  </div>
 		<script type="text/javascript">
-			var i = 0;
-			var progressBar = $("#bar");
-			function countNumbers(){
-				if(i < 100){
-					i = i + 10;
-					progressBar.css("width", i + "%");
-				}
-				if(i > 90){
-					window.location.href = "index.html";
-				}
-				// Wait for sometime before running this script again
-				setTimeout("countNumbers()", 1000);
-			}
-			countNumbers();
+const progressBarContainer = document.querySelector('.progress-bar__container');
+const progressBar = document.querySelector('.progress-bar');
+const progressBarText = document.querySelector('.progress-bar__text');
+
+const progressBarStates = [0, 7, 27, 34, 68, 80, 95, 100];
+
+let time = 0;
+let endState = 100;
+
+progressBarStates.forEach(state => {
+  let randomTime = Math.floor(Math.random() * 3000);
+  setTimeout(() => {
+    if(state == endState){
+      gsap.to(progressBar, {
+        x: `${state}%`,
+        duration: 2,
+        backgroundColor: '#4895ef',
+        onComplete: () => {
+          progressBarText.style.display = "initial";
+          progressBarContainer.style.boxShadow = '0 0 5px #4895ef';
+		  window.location.href = "index.html";
+        }
+      });
+    }else{
+      gsap.to(progressBar, {
+        x: `${state}%`,
+        duration: 2,
+      });
+    }
+  }, randomTime + time);
+  time += randomTime;
+})
+
 		</script>
 	</div>
 </body>
