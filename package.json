@@ -22,8 +22,8 @@
     "electron": "15.3.1",
     "electron-builder": "22.13.1",
     "gitmoji-changelog": "2.2.1",
-    "bufferutil": "^4.0.3",
-    "utf-8-validate": "^5.0.4"
+    "bufferutil": "4.0.5",
+    "utf-8-validate": "5.0.7"
   },
   "dependencies": {
     "axios": "0.24.0",
