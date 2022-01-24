@@ -1,10 +1,15 @@
 # Changelog
 
-<a name="1.3.1"></a>
-## 1.3.1 (2022-01-24)
+<a name="1.5.0"></a>
+## 1.5.0 (2022-01-24)
 
 ### Miscellaneous
 
+-  Skip tons of versions [[3431e7b](https://github.com/snaildos/StreamBop/commit/3431e7bdb6cb6698069096a01adc1ddfde6d0d66)]
+-  Update Icons For Deployment [[fee4fb5](https://github.com/snaildos/StreamBop/commit/fee4fb5bf3ac1302170e5a52f66147c4b16685f6)]
+-  Update package.json [[9507be2](https://github.com/snaildos/StreamBop/commit/9507be2f732f17c7972ebf3fa1fbbd52553ab3d5)]
+-  Changelog [[97c3415](https://github.com/snaildos/StreamBop/commit/97c3415a8b9a072d16304b09019e9b7b58bd7079)]
+-  More bug fixes / Styling [[401611d](https://github.com/snaildos/StreamBop/commit/401611d8636b9fe36de8dc14de49018de9be8a28)]
 -  Style Fix&#x27;s [[7ddf711](https://github.com/snaildos/StreamBop/commit/7ddf7114b2ee667578b83de1c8e0d12a8912320f)]
 -  Merge pull request [#44](https://github.com/snaildos/StreamBop/issues/44) from snaildos/renovate/bufferutil-4.x [[8bb5e9b](https://github.com/snaildos/StreamBop/commit/8bb5e9bc5ea56e62a0c6cb2dd37018a16de2b91e)]
 -  Merge pull request [#47](https://github.com/snaildos/StreamBop/issues/47) from snaildos/renovate/gitmoji-changelog-2.x [[741d84b](https://github.com/snaildos/StreamBop/commit/741d84bcbec9f60c2be5d86288871bd5d6650b18)]
