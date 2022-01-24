@@ -1,10 +1,40 @@
 # Changelog
 
 <a name="1.3.1"></a>
-## 1.3.1 (2021-11-11)
+## 1.3.1 (2022-01-24)
 
 ### Miscellaneous
 
+-  Style Fix&#x27;s [[7ddf711](https://github.com/snaildos/StreamBop/commit/7ddf7114b2ee667578b83de1c8e0d12a8912320f)]
+-  Merge pull request [#44](https://github.com/snaildos/StreamBop/issues/44) from snaildos/renovate/bufferutil-4.x [[8bb5e9b](https://github.com/snaildos/StreamBop/commit/8bb5e9bc5ea56e62a0c6cb2dd37018a16de2b91e)]
+-  Merge pull request [#47](https://github.com/snaildos/StreamBop/issues/47) from snaildos/renovate/gitmoji-changelog-2.x [[741d84b](https://github.com/snaildos/StreamBop/commit/741d84bcbec9f60c2be5d86288871bd5d6650b18)]
+-  Merge pull request [#46](https://github.com/snaildos/StreamBop/issues/46) from snaildos/renovate/utf-8-validate-5.x [[3f12cec](https://github.com/snaildos/StreamBop/commit/3f12cec6cb1b0cbb4618cbc9dd00c8cbf690ce3f)]
+-  Merge pull request [#45](https://github.com/snaildos/StreamBop/issues/45) from snaildos/renovate/electron-16.x [[4c85cc4](https://github.com/snaildos/StreamBop/commit/4c85cc495f94e0eaaf8a3b61be6b72c92679c742)]
+-  Update dependency bufferutil to v4.0.6 [[23b8e3b](https://github.com/snaildos/StreamBop/commit/23b8e3b361be1fc5e8577831e2d8bee4497f0a97)]
+-  Update dependency gitmoji-changelog to v2.3.0 [[2b050af](https://github.com/snaildos/StreamBop/commit/2b050af1487a22993c0b948c0b9d321c9d003f0e)]
+-  Update dependency utf-8-validate to v5.0.8 [[ecc6094](https://github.com/snaildos/StreamBop/commit/ecc60946f26a9a6d238f476136206688787eb2f7)]
+-  Update dependency electron to v16.0.7 [[645889c](https://github.com/snaildos/StreamBop/commit/645889c205a733e145e1405409b8f22784abf88a)]
+-  Update index.html [[a0cd771](https://github.com/snaildos/StreamBop/commit/a0cd7711f5ffe4e2e23a6faa1013323c613732ac)]
+-  Merge pull request [#43](https://github.com/snaildos/StreamBop/issues/43) from snaildos/renovate/electron-16.x [[3635bb9](https://github.com/snaildos/StreamBop/commit/3635bb967cd2a0a0e428d53050490e929f10e428)]
+-  Update dependency electron to v16.0.5 [[8a60472](https://github.com/snaildos/StreamBop/commit/8a604723d01ce937130bd197dffea7f38415704b)]
+-  Merge pull request [#42](https://github.com/snaildos/StreamBop/issues/42) from snaildos/renovate/electron-16.x [[6c91615](https://github.com/snaildos/StreamBop/commit/6c91615e8f20bb236a2fccfaf873332217ab32fe)]
+-  Update dependency electron to v16.0.4 [[c9fe8ad](https://github.com/snaildos/StreamBop/commit/c9fe8ade112f32eab10b6501bfedb29dd462de6e)]
+-  MAJOR visual tweaks [[d886236](https://github.com/snaildos/StreamBop/commit/d8862360806423bfa9c64d6d80fb4b9e0b00e644)]
+-  Merge pull request [#41](https://github.com/snaildos/StreamBop/issues/41) from snaildos/renovate/electron-16.x [[0db8f5a](https://github.com/snaildos/StreamBop/commit/0db8f5ac6a1dde3bc7f4cebd2fed0ea0543ce6a2)]
+-  Update dependency electron to v16.0.3 [[f8ff742](https://github.com/snaildos/StreamBop/commit/f8ff74223b587b71c6e7b9034abfad8717735de5)]
+-  Merge pull request [#39](https://github.com/snaildos/StreamBop/issues/39) from snaildos/renovate/electron-builder-22.x [[6b61a2e](https://github.com/snaildos/StreamBop/commit/6b61a2ea8eb05e7599b588c9f180a0d3be69a4f1)]
+-  Merge pull request [#40](https://github.com/snaildos/StreamBop/issues/40) from snaildos/renovate/electron-updater-4.x [[b805121](https://github.com/snaildos/StreamBop/commit/b8051214d8221caa72b96360b4cd539cfba71389)]
+-  Create codeql-analysis.yml [[e197a8d](https://github.com/snaildos/StreamBop/commit/e197a8d1f60193b51beb42174cd3e6ddf24b6933)]
+-  Update dependency electron-updater to v4.6.1 [[78643d0](https://github.com/snaildos/StreamBop/commit/78643d05518f5f4bd7be04f132db04b424848016)]
+-  Update dependency electron-builder to v22.14.5 [[7eee09d](https://github.com/snaildos/StreamBop/commit/7eee09d6ee89c197a67bd9fbf485992d1ef38d9f)]
+-  Merge pull request [#38](https://github.com/snaildos/StreamBop/issues/38) from snaildos/renovate/electron-16.x [[523d64e](https://github.com/snaildos/StreamBop/commit/523d64ed0b83f285f2efa19e1fca5a68a95cb99b)]
+-  Update dependency electron to v16 [[e9c8a25](https://github.com/snaildos/StreamBop/commit/e9c8a25490cb002e6e349f5a6f5e4d992874bcdd)]
+-  Merge pull request [#36](https://github.com/snaildos/StreamBop/issues/36) from snaildos/imgbot [[d77c6b8](https://github.com/snaildos/StreamBop/commit/d77c6b8ffd07899fcff16a93741cf24a65dc8706)]
+-  [ImgBot] Optimize images [[fbf377d](https://github.com/snaildos/StreamBop/commit/fbf377dcf040bb38468274a4fb8c9dc14a5e4d60)]
+-  Stop Rate limits [[19f6406](https://github.com/snaildos/StreamBop/commit/19f6406607c46512c82d1d339485bb242861fb0a)]
+-  Merge pull request [#35](https://github.com/snaildos/StreamBop/issues/35) from snaildos/renovate/pin-dependencies [[24d4bb4](https://github.com/snaildos/StreamBop/commit/24d4bb4890a27fd426b9726bf354496ef1bb17d7)]
+-  Logo Change &amp; Changelog &amp; New Loading &amp; Better Setup &amp; Better OOBE [[7c77868](https://github.com/snaildos/StreamBop/commit/7c77868f0826e602933e95e759738c0988a722dc)]
+-  Pin dependencies [[7e9e95a](https://github.com/snaildos/StreamBop/commit/7e9e95a71accbbe4c82b76ce578cdc24d8176773)]
 -  Logo Update [[08e0130](https://github.com/snaildos/StreamBop/commit/08e0130664190f0bd035e771eae34eb76362576f)]
 -  Merge pull request [#34](https://github.com/snaildos/StreamBop/issues/34) from snaildos/renovate/electron-15.x [[c72feb2](https://github.com/snaildos/StreamBop/commit/c72feb2bf4a9bf4cc6fd90993ff4c83d6e34287f)]
 -  Update dependency electron to v15.3.1 [[182beaa](https://github.com/snaildos/StreamBop/commit/182beaa894683e1c4eb93abf3430e635bd69b4ee)]
