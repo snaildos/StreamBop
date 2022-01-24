@@ -495,7 +495,7 @@ id="vid1"
 class="hidden"
 width="0" height="0"
 poster="play.png"
-data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=vce-j1f6CVQ"}] }'
+data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=qWkUK3vNL1o"}] }'
 >
 </video>
   <script>
@@ -526,17 +526,18 @@ var downloadTimer = setInterval(function(){
 }
 </script>
   <script>
-          setTimeout(function(){
+    $( document ).ready(function() {
+      setTimeout(function(){
             $('.nt4').hide()
             $('.custom').slideToggle(2)
             $('.nt3').hide()
-            $('.isstrm').slideToggle(1000)
-            $('.button').slideToggle(1000)
+            $('.isstrm').slideToggle(100)
+            $('.button').slideToggle(100)
             ipcRenderer.send('strm.hide')
             ipcRenderer.send('strm.reload')
             config.set('setupan', false)
             $('#set').slideUp(1)
-            $('.button').slideToggle(1000)
+            $('.button').slideToggle(100)
             settingsload()
 },1500);  
 
@@ -547,7 +548,8 @@ setTimeout(function(){
 
 setTimeout(function(){
 $('.sus').slideToggle(2000)
-},2000); 
+},800); 
+});
   </script>
     <script>
     const { trackEvent } = require('./lib/analytics.js');
@@ -679,11 +681,13 @@ return false;
   <div class="streaming">
   <button class="w3-center w3-button customred w3-round-xlarge 2" onclick="startstream()"><h3>Start Music</h3></button>
   <br>
+  <br>
   <button class="w3-center w3-button customred w3-round-xlarge 2" onclick="costume()"><h3>Customize</h3></button>
 </div>
 
  <div class="isstrm">
   <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <br>
   <br>
   <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="reload()"><h3>Main Menu!</h3></button>
   <br>
