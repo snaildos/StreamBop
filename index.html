@@ -315,8 +315,8 @@ input.vertical {
 
     .settings {
   position: absolute;
-  bottom: 30px;
-  right: 16px;
+  bottom: 36px;
+  right: 20px;
   font-size: 18px;
 }
 
@@ -389,6 +389,11 @@ z-index: -1
   right: 25px;
   font-size: 36px;
   margin-left: 50px;
+}
+
+.textglos {
+  background-color: white;
+  border-radius: 10px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -664,7 +669,7 @@ return false;
 <div class="sidebar">
 <div class="sidebarcont">
   <div class="welcome">
-  <h2 class="w3-center black">What are we doing today?</h2>
+  <h2 class="w3-center textglos black">What are we doing today?</h2>
   <div>
     <button class="w3-center w3-button customred w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
     <button class="w3-center w3-button customred w3-round-xlarge 1 hidden"><h1 class="white">Coming Soon...</h1></button>
@@ -679,8 +684,11 @@ return false;
 
  <div class="isstrm">
   <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="strmstart32()"><h3>Start</h3></button>
+  <br>
   <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="reload()"><h3>Main Menu!</h3></button>
+  <br>
   <button class="w3-center w3-button customred w3-round-xlarge nt4" onclick="strmstop32()"><h3>Stop</h3></button>
+  <br>
   <button class="w3-center w3-button customred w3-round-xlarge nt3" onclick="setup34()"><h3>Setup</h3></button>
 </div>
 
@@ -749,7 +757,7 @@ function toggle(button) {
 }
 </script>
 
-<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.8);
+<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.87);
      transform-origin: 0% 0% 0px;z-index: 0;" 
 unselectable="on"
 onselectstart="return false;" >
