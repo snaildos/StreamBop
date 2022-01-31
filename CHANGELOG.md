@@ -1,5 +1,18 @@
 # Changelog
 
+<a name="1.5.1"></a>
+## 1.5.1 (2022-01-31)
+
+### Miscellaneous
+
+-  Bump version [[439e75b](https://github.com/snaildos/StreamBop/commit/439e75b0d07f946b8f6e558ccbde6af7ef31039d)]
+-  Merge pull request [#49](https://github.com/snaildos/StreamBop/issues/49) from snaildos/renovate/electron-16.x [[f77199c](https://github.com/snaildos/StreamBop/commit/f77199c06030407fcd894776a30423602f787708)]
+-  Merge pull request [#50](https://github.com/snaildos/StreamBop/issues/50) from snaildos/renovate/axios-0.x [[4a46e74](https://github.com/snaildos/StreamBop/commit/4a46e74dfa78bc2c97da7cbf4753aaf9f6e08059)]
+-  Update YouTube Stream URL [[85a0132](https://github.com/snaildos/StreamBop/commit/85a0132e7d6de15ff98f5afa5bca167aa859b60b)]
+-  Update dependency axios to v0.25.0 [[83297fd](https://github.com/snaildos/StreamBop/commit/83297fd2a9bd63ace9ecfbde1eb6c3368813f885)]
+-  Update dependency electron to v16.0.8 [[e0877ef](https://github.com/snaildos/StreamBop/commit/e0877efb6b0ac9c6812bcee0ac65dc4ea28b71c2)]
+
+
 <a name="1.5.0"></a>
 ## 1.5.0 (2022-01-24)
 
