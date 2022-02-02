@@ -95,6 +95,10 @@ const createLoadingScreen = () => {
   loadingScreen.on('closed', () => (loadingScreen = null));
   loadingScreen.hide();
   loadingScreen.show()
+  setTimeout(() => {
+    console.log("Main WIN.REQ has been sent now.")
+    createWindow()
+  }, 700);
 };
 console.log("Loading screen ready.");
 
@@ -209,10 +213,6 @@ app.on('ready', () => {
   createLoadingScreen();
   console.log("Send check for updates signal...");
   console.log("Alright, lets go!");
-  setTimeout(() => {
-    console.log("Main WIN.REQ has been sent now.")
-    createWindow();
-  }, 3000);
 })
 
 
