@@ -444,8 +444,8 @@ hr.dashed {
 }
 
 .sidebar {
-  background-color: white;;
-  opacity: 0.3 !important;
+  background-color: grey;
+  opacity: 0.4 !important;
   border-radius: 10px;
 }
 
@@ -470,11 +470,9 @@ button {
   color: black;
 }
   </style>
-
   <script>
     const Store = require('electron-store');
     const config = new Store();
-     // config
      config.set('on', false)
      config.set("setupan", false);
 </script>
@@ -659,7 +657,7 @@ return false;
 <div class="sidebar">
 <div class="sidebarcont">
   <div class="welcome">
-  <h2 class="w3-center textglos black">What are we doing today?</h2>
+  <h2 class="w3-center textglos white">What are we doing today?</h2>
   <div>
     <button class="w3-center w3-button customred w3-round-xlarge 1" onclick="streaming()"><h1 class="white">Streaming</h1></button>
     <button class="w3-center w3-button customred w3-round-xlarge 1 hidden"><h1 class="white">Coming Soon...</h1></button>
@@ -874,7 +872,7 @@ onselectstart="return false;" >
   Once complete, apply the changes, and move the StreamBop window, into the sides or corners of the screen. When complete, press done.
   The setup can be viewed anytime you want.</p>
   </p>
-    <button class="w3-button w3-white" onclick="reload()">Done</button>
+    <button class="w3-button w3-white w3-round-xlarge" onclick="reload()">Done</button>
   </p>
 
   <p>
