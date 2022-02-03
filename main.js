@@ -98,7 +98,7 @@ const createLoadingScreen = () => {
   setTimeout(() => {
     console.log("Main WIN.REQ has been sent now.")
     createWindow()
-  }, 700);
+  }, 2500);
 };
 console.log("Loading screen ready.");
 
