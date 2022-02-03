@@ -55,7 +55,7 @@ app.quit()
 
 function neterr() {
   const notification = {
-    title: 'SnailPortal',
+    title: 'StreamBop',
     body: 'No valid network connection! Please reconnect!'
   }
   new Notification(notification).show()
