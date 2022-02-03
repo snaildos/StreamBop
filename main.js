@@ -8,7 +8,7 @@ const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
 
 // is dev
-  var isDev = require('isdev')
+var isDev = require('isdev')
 // Notify
 const { Notification } = require('electron')
 
@@ -32,15 +32,14 @@ const Store = require('electron-store');
 
 const config = new Store();
 
-// Start the software
 console.log("Software ready for start!");
 require('./lib/core.js');
 
 
 function die() {
-console.log("Unloading temp variables...");
-config.set('oldVariable', "null")
-config.set('testVariable', "null")
+console.log("Unregistering variables...");
+config.set('oldVariable', "off")
+config.set('testVariable', "off")
 mainWindow.removeAllListeners('closed');
 strm.removeAllListeners('closed');
 strm.close()
