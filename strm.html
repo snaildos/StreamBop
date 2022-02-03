@@ -175,16 +175,13 @@ function closeNav() {
       <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
       <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
         <script>
-const Store = require('electron-store');
+  const Store = require('electron-store');
+  const config = new Store();
+  config.set('on', false)
+  config.set('oldVariable', "init_load")
+  config.set('testVariable', "init_load")
 
-const config = new Store();
- config.set('on', false)
-</script>
-<script>
-  config.set('oldVariable', "test")
-  config.set('testVariable', "kk")
-</script>
-<script>
+var nva = document.getElementById('myNav')
 const { ipcRenderer } = require('electron');
 var xr = 3
 var timeleft = 10;
@@ -237,23 +234,23 @@ async function checkStart() {
        $('.working').slideUp(1000)
        config.set('cal', true)
        preparegraphic()
-           config.set('stoplock', true)
-    config.set('onlock', false)
+       config.set('stoplock', true)
+       config.set('onlock', false)
     async function nots() {
-    await timeout(13000);
-    console.log("Start.")
-    await noti()
-    config.set('cal', true)
-    noti()
-    config.set('stoplock', true)
-    await timeout(5000);
+       await timeout(13000);
+       console.log("Start.")
+       await noti()
+       config.set('cal', true)
+       noti()
+       config.set('stoplock', true)
+       await timeout(5000);
     }
     nots()
     }
-      window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
+      window.setTimeout(checkStart, 250);
     } else {
       console.log("Waiting for thumbs up... I am bored...")
-      window.setTimeout(checkStart, 100); /* this checks the flag every 100 milliseconds*/
+      window.setTimeout(checkStart, 250);
     }}
 checkStart()
 
@@ -263,7 +260,7 @@ function checkAlwaysOn() {
   if(config.get('alwayson')) {
   $('.bck1').slideDown(1000)
   $('.working').slideDown(1000)
-   setInterval(()=>{
+  setInterval(()=>{
       document.getElementById('npvs').innerText = config.get('song') || 'Nothing'
   },10000);
       window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
@@ -294,8 +291,8 @@ async function checkStop() {
         $('.waiting').slideDown(1000)
         $('.bck1').slideUp(1000)
         $(".1").show()
-       closeNav()
-       config.set('cal', true)
+        closeNav()
+        config.set('cal', true)
         $(".err").show()
         timeleft == 10;
         $(".bock").hide()
@@ -304,7 +301,7 @@ async function checkStop() {
         $('.working').slideUp(1000)
         config.set('stoplock', false)
         config.set('onlock', true)
-      window.setTimeout(checkStop, 600); /* this checks the flag every 100 milliseconds*/
+        window.setTimeout(checkStop, 600); /* this checks the flag every 100 milliseconds*/
      }
     }}
 checkStop();
@@ -377,9 +374,6 @@ setInterval(()=>{
     <h2><div id="countdown"></div></h2>  
   </div>
 </div>
-<script>
-var nva = document.getElementById('myNav')
-</script>
 <div id="g33" class="gr3">
     <div id="waiting" class="waiting">
     <h1>Welcome to StreamBop viewer</h1>
