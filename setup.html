@@ -4,23 +4,17 @@
         <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
         <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
         <script src="https://cdn.snaildos.com/jquery.min.js"></script>
-        <script
-  src="https://cdn.snaildos.com/jquery.min.js"></script>
+        <script src="https://cdn.snaildos.com/jquery.min.js"></script>
         <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./titlebar.css">
         <style>
             body {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+            user-select: none;
 }
         </style>
     </head>
     <body>
-        <script>
+    <script>
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -121,10 +115,16 @@ const config = new Store();
             </script>
         </head>
         <body>
+            <header data-for-os="windows" id="titlebar" class="titlebar">
+                <div id="window-controls">
+                  <div onclick="ipcRenderer.send('minimize')" class="button" id="min-button"><img class="icon" srcset="./icons/titlebar/min-w-10.png 1x, ./icons/titlebar/min-w-12.png 1.25x, ./icons/titlebar/min-w-15.png 1.5x, ./icons/titlebar/min-w-15.png 1.75x, ./icons/titlebar/min-w-20.png 2x, ./icons/titlebar/min-w-20.png 2.25x, ./icons/titlebar/min-w-24.png 2.5x, ./icons/titlebar/min-w-30.png 3x, ./icons/titlebar/min-w-30.png 3.5x" draggable="false" /></div>
+                  <div onclick="ipcRenderer.send('close')" class="button" id="close-button"><img class="icon" srcset="./icons/titlebar/close-w-10.png 1x, ./icons/titlebar/close-w-12.png 1.25x, ./icons/titlebar/close-w-15.png 1.5x, ./icons/titlebar/close-w-15.png 1.75x, ./icons/titlebar/close-w-20.png 2x, ./icons/titlebar/close-w-20.png 2.25x, ./icons/titlebar/close-w-24.png 2.5x, ./icons/titlebar/close-w-30.png 3x, ./icons/titlebar/close-w-30.png 3.5x" draggable="false" /></div>
+                </div>
+              </header>
             <div class="divs">
                 <center>
-                <div class="cls1"><h2 class="main" class="w3-center">Welcome to the setup of StreamBop!<p><p><button id="1" class="ctrl w3-center w3-blue w3-center">Let's setup!</button><h2 class="hidden">h</h2></p></h2></div>
-                <div class="cls2"><h2 class="main" class="w3-center">Do you want to opt into sending anonymous statistical infomation to SnailDOS?<p><button onclick="a()" class="ctrl w3-center w3-blue w3-center">Opt me in!</button><p>The following infomation will be sent: "Geolocation, If streambop started, and these events, streambop.started, streambop.running, streambop.setup.complete".</p><p></p><button onclick="ignore()" class="ctrl w3-center w3-blue w3-center">Opt out!</button><h2 class="hidden">h</h2></p></h2> <p></div>
+                <div class="cls1"><h2 class="main" class="w3-center">Welcome to the setup of StreamBop!<p><p><button id="1" class="ctrl w3-center w3-button w3-white w3-round-medium w3-center">Start Setup!</button><h2 class="hidden">h</h2></p></h2></div>
+                <div class="cls2"><h2 class="main" class="w3-center">Do you want to opt into sending anonymous statistical infomation to SnailDOS?<p><button onclick="a()" class="ctrl w3-center w3-button w3-white w3-round-medium w3-center">Opt me in!</button><p>The following infomation will be sent: "Geolocation, If streambop started, and these events, streambop.started, streambop.running, streambop.setup.complete".</p><p></p><button onclick="ignore()" class="ctrl w3-center w3-button w3-white w3-round-medium w3-center">Opt out!</button><h2 class="hidden">h</h2></p></h2> <p></div>
                 <div class="cls3"><h4 class="main" class="w3-center"><h2 class="w3-center">Customization Time:</h2>
                     <h3 class="w3-center"> What mode do YOU want? </h3>
 
