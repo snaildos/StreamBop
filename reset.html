@@ -6,6 +6,7 @@
 		    window.jQuery = window.$ = require('jquery');
 	</script>
 <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
 <script src="https://cdn.snaildos.com/jquery.min.js"></script>
 <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
 	<title>Resetting StreamBop...</title>
@@ -16,20 +17,7 @@
 		</style>
     <style>
 body {
-	background: linear-gradient(-45deg, #e9c9bf, #46051e, #23a6d5, #651b96);
-	animation: gradient 12s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+	background: black;
 }
     </style>
 </head>
@@ -45,7 +33,7 @@ body {
 		fs.unlinkSync(config.path)
 
 	</script>
-	<div class="bs-example">
+	<div class="bs-example w3-center">
 		<h2>Resetting SnailBop...</h2>
 		<div class="progress">
 			<div class="progress-bar" id="bar">
