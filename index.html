@@ -476,14 +476,25 @@ button {
      config.set('on', false)
      config.set("setupan", false);
 </script>
-<video class="hidden"
+<video
 id="vid1"
 class="hidden"
 width="0" height="0"
-poster="play.png"
-data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=ueUkFMqGutA"}] }'
->
+data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=PfK213zXvvU"}] }'
+>  
 </video>
+  <script>
+    async function init() {
+        axios.get('http://api.snaildos.com/radio').then((value) => {
+      config.set('url', value.data.url)
+      var url = config.get("url")
+player.src({ type: 'video/youtube', src: url });
+player.load()
+player.play()
+$("#4").show()
+})}
+init()
+  </script>
   <script>
     videojs("vid1", {
     controlBar: {
