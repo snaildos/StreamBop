@@ -1,5 +1,31 @@
 # Changelog
 
+<a name="1.5.2"></a>
+## 1.5.2 (2022-02-05)
+
+### Added
+
+- ✨ Mixer Improv [[faf3177](https://github.com/snaildos/StreamBop/commit/faf31778ba16c4bc4a13bd41dd470a915e84f78c)]
+
+### Miscellaneous
+
+-  Add the auto URL fetch [No more constant Updates] [[f936c48](https://github.com/snaildos/StreamBop/commit/f936c4850d96c8ad7110ae56eacef167e97c2923)]
+-  Fix a locale error [[ba974df](https://github.com/snaildos/StreamBop/commit/ba974dfe54472423c7e31068f38eef80e3db54ca)]
+-  Unload temp variables more clear [[5f65c5e](https://github.com/snaildos/StreamBop/commit/5f65c5e3565a0486d6e21e4fe0cad68ace50eac0)]
+-  Improve loading screen [[8faa741](https://github.com/snaildos/StreamBop/commit/8faa741b46c28065eb1d8a14e11dfad4191f8aac)]
+-  Clean Up Code [[477df18](https://github.com/snaildos/StreamBop/commit/477df18edb6126651a144400a33764526fb1bed6)]
+-  More cleanup! [[195a143](https://github.com/snaildos/StreamBop/commit/195a143f3734b85ed0061b4c66b29d8f7199b27d)]
+-  Update First time setup [[02dfc3d](https://github.com/snaildos/StreamBop/commit/02dfc3d5db7e75d505594dedbe5aa949465110ee)]
+-  Initial Setup &amp;&amp; Loading Improvments [[8db7e90](https://github.com/snaildos/StreamBop/commit/8db7e90339b16d6cec76d650c8198fa7de6d33c4)]
+-  Page UI improvments [[91e7cc7](https://github.com/snaildos/StreamBop/commit/91e7cc71dbaeb58f6eb79fd799ca39bb15988d73)]
+-  Color Improvments [[c27723f](https://github.com/snaildos/StreamBop/commit/c27723f44ddcf1c3df32d2f2db557bd571527000)]
+-  UI changes [[58f2ef4](https://github.com/snaildos/StreamBop/commit/58f2ef463fb5ce7bfce3bd87174cea9e8b361dfe)]
+-  Minor Loading Optmization [[b47ce8a](https://github.com/snaildos/StreamBop/commit/b47ce8ae9fa4788e5b8f41590bdabc44e10c8ed1)]
+-  Merge pull request [#51](https://github.com/snaildos/StreamBop/issues/51) from snaildos/renovate/electron-17.x [[c381c91](https://github.com/snaildos/StreamBop/commit/c381c91190f31cd598cf3a0cc088ed6450dc5b3c)]
+-  Name Changes &amp; Version Bump [[bb5691c](https://github.com/snaildos/StreamBop/commit/bb5691cfa1f14b72ba4ddb7baa7883209f10c2b0)]
+-  Update dependency electron to v17 [[22b78f0](https://github.com/snaildos/StreamBop/commit/22b78f0469ffccdbf26b294b38401f8a27d8af1d)]
+
+
 <a name="1.5.1"></a>
 ## 1.5.1 (2022-01-31)
 
