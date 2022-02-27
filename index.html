@@ -134,98 +134,27 @@ input[type=range]::-webkit-slider-runnable-track {
   border: 2px solid black;
   padding: 10px;
   border-radius: 25px;
-  background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-  background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
   height: 2px;
 }
-
-input[type=range]:focus {
-  outline: none;
-}
-
 input[type=range]::-moz-range-track {
   -moz-appearance: none;
   border: 2px solid black;
   padding: 10px;
   border-radius: 25px;
   background: #E6892C;
-  background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%, rgba(255,53,127,1)));
-  background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+  background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
   height: 2px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  border: 2px solid;
-  border-radius: 50%;
-  height: 25px;
-  border: 2px solid black;
-  border-radius: 25px;
-  width: 25px;
-  max-width: 80px;
-  position: relative;
-  bottom: 11px;
-  background-color: #E6892C;
-  cursor: -webkit-grab;
-  -webkit-transition: border 1000ms ease;
-  transition: border 1000ms ease;
-}
-
-input[type=range]::-moz-range-thumb {
-  -moz-appearance: none;
-  border: 2px solid black;
-  border-radius: 25px;
-  height: 25px;
-  width: 25px;
-  max-width: 80px;
-  position: relative;
-  bottom: 11px;
-  background-color: #E6892C;
-  cursor: -moz-grab;
-  -moz-transition: border 1000ms ease;
-  transition: border 1000ms ease;
-}
-
-.range.blue::-webkit-slider-thumb {
-   border-color: #E6892C;
-}
-
-.range.ltpurple::-webkit-slider-thumb {
-   border-color: #E6892C;
-}
-
-.range.purple::-webkit-slider-thumb {
-   border-color: #E6892C;
-}
-
-.range.pink::-webkit-slider-thumb {
-   border-color: #E6892C;
-}
-
-.range.blue::-moz-range-thumb {
-   border-color: #E6892C;
-}
-
-.range.ltpurple::-moz-range-thumb {
-   border-color: #E6892C;
-}
-
-.range.purple::-moz-range-thumb {
-   border-color: #E6892C;
-}
-
-.range.pink::-moz-range-thumb {
-   border-color: #E6892C;
 }
 
 input[type=range]::-webkit-slider-thumb:active {
@@ -758,11 +687,10 @@ function toggle(button) {
 }
 </script>
 
-<div id="custom" class="custom"  style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.87);
-     transform-origin: 0% 0% 0px;z-index: 0;" 
+<div id="custom" class="custom w3-center"  style="-moz-user-select: none; <div id="custom" class="custom w3-center" style="-moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.87);-webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none; transform: scale(0.87);transform-origin: 0% 0% 0px;z-index: 0;" 
 unselectable="on"
-onselectstart="return false;" >
-<h1 class="w3-center">Welcome to the customizer!</h1>
+onselectstart="return false;" >text-align: center;
+<h1 class="w3-center">Welcome to the customizer!</h1>h
 <hr class="rounded">
 <centered>
   <label>
