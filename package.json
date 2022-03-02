@@ -1,6 +1,6 @@
 {
   "name": "StreamBop",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "StreamBop allows you to stream and have this application automatically play music and credit them for you! No copyright music too!",
   "main": "main.js",
   "repository": {

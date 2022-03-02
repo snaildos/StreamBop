@@ -1,5 +1,24 @@
 # Changelog
 
+<a name="next"></a>
+## next
+
+### Miscellaneous
+
+-  Codecleanup &amp; Refactor [[d4cabe9](https://github.com/snaildos/StreamBop/commit/d4cabe9d0eadc7b992165c311b6dd41f6db20086)]
+-  Close StreamBop viewer when resetting occurs. [[67e8e7b](https://github.com/snaildos/StreamBop/commit/67e8e7b3d06a31858dceb00703402cce573d43db)]
+-  Fixing some code leaks [[8744f5e](https://github.com/snaildos/StreamBop/commit/8744f5e1ebc00964713042f6652bfa573f50e9b4)]
+-  Visual improvments [[5fdad67](https://github.com/snaildos/StreamBop/commit/5fdad67c65f3cd3607af51dd85def7204d7dd89e)]
+-  Merge pull request [#52](https://github.com/snaildos/StreamBop/issues/52) from snaildos/renovate/electron-builder-22.x [[ebd5809](https://github.com/snaildos/StreamBop/commit/ebd5809e735934a6d385edcc76abb9cddd134804)]
+-  Merge pull request [#53](https://github.com/snaildos/StreamBop/issues/53) from snaildos/renovate/electron-updater-4.x [[8f06782](https://github.com/snaildos/StreamBop/commit/8f067825d496708542b507d014aad5737e4af555)]
+-  Merge pull request [#54](https://github.com/snaildos/StreamBop/issues/54) from snaildos/renovate/axios-0.x [[953e9af](https://github.com/snaildos/StreamBop/commit/953e9afdcd7422359df17c4b01cf8c298f4c04be)]
+-  Merge pull request [#55](https://github.com/snaildos/StreamBop/issues/55) from snaildos/renovate/electron-17.x [[90c1c35](https://github.com/snaildos/StreamBop/commit/90c1c357fdcd6c24860250bd9c05f5aaa67603ad)]
+-  Update dependency electron-builder to v22.14.13 [[e8c13d5](https://github.com/snaildos/StreamBop/commit/e8c13d5226a6646bf7321d9e5918630629d28f19)]
+-  Update dependency electron to v17.1.0 [[e9efb34](https://github.com/snaildos/StreamBop/commit/e9efb34863afa5218e71c0a9d3b2f470b7e563a4)]
+-  Update dependency axios to v0.26.0 [[a39fe70](https://github.com/snaildos/StreamBop/commit/a39fe707994cfb4afee891150fd7425ca4403a74)]
+-  Update dependency electron-updater to v4.6.5 [[0366bf2](https://github.com/snaildos/StreamBop/commit/0366bf257304e9c07ef4c9d10c60b1b3e366771a)]
+
+
 <a name="1.5.2"></a>
 ## 1.5.2 (2022-02-05)
 
