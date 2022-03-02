@@ -38,8 +38,8 @@ require('./lib/core.js');
 
 function die() {
 console.log("Unregistering variables...");
-config.set('oldVariable', "off")
-config.set('testVariable', "off")
+config.set('newDiff', "unloaded")
+config.set('oldDiff', "unloaded")
 mainWindow.removeAllListeners('closed');
 strm.removeAllListeners('closed');
 strm.close()
@@ -252,17 +252,17 @@ ipcMain.on('strm.hide', () => {
 });
 
 ipcMain.on('strm.start', () => {
-  console.log("on")
+  console.log("StreamBop viewer activated")
   config.set("on", true);
 });
 
 ipcMain.on('strm.stop', () => {
-  console.log("off")
+  console.log("StreamBop viewer off")
   config.set("on", false);
 });
 
 ipcMain.on('strm.setup', () => {
-  console.log("redr")
+  console.log("StreamBop viewer setup mode")
   config.set("on", false);
   config.set("setupan", true);
 });

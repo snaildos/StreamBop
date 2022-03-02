@@ -178,8 +178,8 @@ function closeNav() {
   const Store = require('electron-store');
   const config = new Store();
   config.set('on', false)
-  config.set('oldVariable', "init_load")
-  config.set('testVariable', "init_load")
+  config.set('newDiff', "init_load")
+  config.set('oldDiff', "init_load")
 
 var nva = document.getElementById('myNav')
 const { ipcRenderer } = require('electron');
@@ -344,12 +344,12 @@ setInterval(()=>{
   console.log("Checking!")
   var np3 = config.get('song');
 
-  config.set('testVariable', config.get('song'));
-  if (config.get('testVariable') == config.get('oldVariable')) {
+  config.set('oldDiff', config.get('song'));
+  if (config.get('oldDiff') == config.get('newDiff')) {
   console.log("Waiting for change..")
 } else {
-  config.set('testVariable', config.get('song'));
-  config.set('oldVariable', config.get('song'));
+  config.set('oldDiff', config.get('song'));
+  config.set('newDiff', config.get('song'));
   noti()
 }
   console.log(np3)
@@ -360,7 +360,7 @@ setInterval(()=>{
 setInterval(()=>{
   var npv3 = config.get('name')
   console.log(npv3)
-  console.log(config.get('oldVariable') + ' ' + config.get('testVariable'));
+  console.log(config.get('newDiff') + ' ' + config.get('oldDiff'));
   document.getElementById('np').innerText = npv3 || 'FTCHING...'
   },100);
         </script>
