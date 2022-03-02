@@ -1,10 +1,11 @@
 # Changelog
 
-<a name="next"></a>
-## next
+<a name="1.5.3"></a>
+## 1.5.3 (2022-03-02)
 
 ### Miscellaneous
 
+-  Bump Version [[b5a4405](https://github.com/snaildos/StreamBop/commit/b5a4405954db0162cb3a693f9f4a6d09c938e00e)]
 -  Codecleanup &amp; Refactor [[d4cabe9](https://github.com/snaildos/StreamBop/commit/d4cabe9d0eadc7b992165c311b6dd41f6db20086)]
 -  Close StreamBop viewer when resetting occurs. [[67e8e7b](https://github.com/snaildos/StreamBop/commit/67e8e7b3d06a31858dceb00703402cce573d43db)]
 -  Fixing some code leaks [[8744f5e](https://github.com/snaildos/StreamBop/commit/8744f5e1ebc00964713042f6652bfa573f50e9b4)]
