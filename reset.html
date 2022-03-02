@@ -23,11 +23,14 @@ body {
 </head>
 <body>
 	<script>
-			const fs = require('fs');
-		    const Store = require('electron-store');
-    const config = new Store();
+		const { ipcRenderer } = require('electron');
+	    const fs = require('fs');
+		const Store = require('electron-store');
+        const config = new Store();
+		ipcRenderer.send('strm.hide')
+        ipcRenderer.send('strm.reload')
 		console.log("Let's clear localstorage first...")
-                localStorage.clear();
+        localStorage.clear();
 		console.log("Just wait a bit...")
 		// if all above fails, lets do some ensurement.
 		fs.unlinkSync(config.path)
