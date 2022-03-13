@@ -1,7 +1,7 @@
 {
   "name": "StreamBop",
   "version": "1.5.3",
-  "description": "StreamBop allows you to stream and have this application automatically play music and credit them for you! No copyright music too!",
+  "description": "Stream with StreamBop! Auto music, auto music credit overlay, themes, mixers and more. StreamBop is the best tool for streamers!",
   "main": "main.js",
   "repository": {
     "type": "git",
