@@ -5,32 +5,10 @@
   <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
   <script>
-      const { ipcRenderer } = require('electron');
+    const { ipcRenderer } = require('electron');
   </script>
   <title>Loading...</title>
   <style>
-    
-    @keyframes flickerAnimation {
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-}
-@-o-keyframes flickerAnimation{
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-}
-@-moz-keyframes flickerAnimation{
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-}
-@-webkit-keyframes flickerAnimation{
-  0%   { opacity:1; }
-  50%  { opacity:0; }
-  100% { opacity:1; }
-}
-
 body {
   background-color: #C94545;
 }
@@ -60,13 +38,6 @@ body {
     user-select: none;
 }
 
-.animate-flicker {
-   -webkit-animation: flickerAnimation 1s infinite;
-   -moz-animation: flickerAnimation 1s infinite;
-   -o-animation: flickerAnimation 1s infinite;
-    animation: flickerAnimation 1s infinite;
-}
-
 #progress-bar {
   width: 300px;
   margin: 50px;
@@ -92,7 +63,7 @@ body {
   </head>
   <body>
     <div id="wrapper">
-    <div class="animate-flicker cont1 inner1"><img src="./ui/logo.png" height="80" width="420"></img></div>
+    <div class="cont1 inner1"><img src="./ui/logo.png" height="80" width="420"></img></div>
     <p></p>
     <div id="progress-bar" class="inner2">
       <progress class="progress progress-striped progress-success" value="1" max="100">
