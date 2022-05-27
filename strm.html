@@ -1,140 +1,141 @@
 <html>
     <head>
-        <title>StreamBop Viewer! Select me as a source in OBS!</title>
-        <style>
-          body {
-            user-select: none; /* supported by Chrome and Opera */
-            background-color: #fc51fc;
-          }
-          .flipped {
+    <title>StreamBop Viewer! Select me as a source in OBS!</title>
+    <style>
+  body {
+    user-select: none; 
+    background-color: #fc51fc;
+  }
+ 
+  .flipped {
     transform: scale(-1, 1);
     -moz-transform: scale(-1, 1);
     -webkit-transform: scale(-1, 1);
     -o-transform: scale(-1, 1);
     -khtml-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
-}
+  }
 
-            .gr3  {
-                animation: coe 30s infinite;
-                background-color: #fc51fc;
-                user-select: none; /* supported by Chrome and Opera */
-            }
+  .gr3  {
+    animation: coe 30s infinite;
+    background-color: #fc51fc;
+    user-select: none; 
+  }
 
-            .bck1  {
-                z-index: -50;
-            }
+  .bck1  {
+    z-index: -50;
+  }
 
-            .emboss-txt  {
-                animation: color-change 1s infinite;
-            }
+  .emboss-txt  {
+    animation: color-change 1s infinite;
+  }
 
 
-            .stopan {
-animation-play-state: paused;
-}
+  .stopan {
+  animation-play-state: paused;
+  }
 
-.overlay {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1000000000000;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-}
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000000000000;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
 
-.overlay-content {
-  position: relative;
-  top: 25%;
-  color: white;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
+  .overlay-content {
+    position: relative;
+    top: 25%;
+    color: white;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
 
-            .sus  {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  overflow: auto;
-  background: rgb(255, 255, 255); /* Just to visualize the extent */
-}
+  .sus  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    background: rgb(255, 255, 255); /* Just to visualize the extent */
+  }
 
-.working{
-        z-index: 9;
-        margin: 18px;
-        color: black;
-    }
+  .working {
+    z-index: 9;
+    margin: 18px;
+    color: black;
+  }
 
-    .working3{
-        z-index: 109;
-        margin: 18px;
-        color: black;
-    }
+  .working3{
+    z-index: 109;
+    margin: 18px;
+    color: black;
+  }
 
-            @keyframes color-change {
-  0% { color: red; }
-  50% { color: blue; }
-  100% { color: red; }
-}
+  @keyframes color-change {
+    0% { color: red; }
+    50% { color: blue; }
+    100% { color: red; }
+  }
 
-@keyframes coe  {
-  0% { background-color: red; }
-  50% { background-color: blue; }
-  100% { background-color: red; }
-}
+  @keyframes coe  {
+    0% { background-color: red; }
+    50% { background-color: blue; }
+    100% { background-color: red; }
+  }
 
-body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
-}
+  body::-webkit-scrollbar {
+      display: none;
+  }
 
-.waiting  {
-  position: absolute;
+  .waiting  {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
 
-.working  {
-  position: absolute;
+  .working  {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
 
-.working3  {
-  position: absolute;
+  .working3  {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
 
-.body  {
-  position: absolute;
+  .body  {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-}
+  }
 
-.box{
-        width: 90%;
-        height: 90%;            
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+  .box{
+    width: 90%;
+    height: 90%;            
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
-.bock{
+  .bock{
     width: 100%;
     height: 100%;
     position: relative;
@@ -142,9 +143,9 @@ body::-webkit-scrollbar {
     background-color: magenta;
     left: 0;
     z-index: 100;
-}
+  }
 
-.setup{
+  .setup{
     width: 100%;
     height: 100%;
     position: relative;
@@ -152,29 +153,29 @@ body::-webkit-scrollbar {
     background-color: magenta;
     left: 0;
     z-index: 100;
-}
-    </style>
-<div class="hidden" id="temp"></div>
-<script>
-var nva = document.getElementById('temp')
-function openNav() {
-  nva.style.width = "100%";
-}
+  }
+  </style>
+  <div class="hidden" id="temp"></div>
+  <script>
+  var nva = document.getElementById('temp')
+  function openNav() {
+    nva.style.width = "100%";
+  }
 
-function closeNav() {
-  nva.style.width = "0%";
-  timeleft = 10;
-}
-</script>
-      <script>
-        window.jQuery = window.$ = require('jquery');
-        const axios = require('axios')
-    </script>
-      <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
-      <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
-      <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
-      <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
-        <script>
+  function closeNav() {
+    nva.style.width = "0%";
+    timeleft = 10;
+  }
+  </script>
+  <script>
+    window.jQuery = window.$ = require('jquery');
+    const axios = require('axios')
+  </script>
+  <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+  <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+  <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js'></script>
+  <script>
   const Store = require('electron-store');
   const config = new Store();
   config.set('on', false)
