@@ -1,71 +1,70 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
 <html>
-<head>
+  <head>
 	<script>
-		    window.jQuery = window.$ = require('jquery');
+		window.jQuery = window.$ = require('jquery');
 	</script>
-<link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
-<script src="https://cdn.snaildos.com/jquery.min.js"></script>
-<script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
-<script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-<link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
-	<title>Updating StreamBop...</title>
-	<style type="text/css">
-		</style>
-    <style>
-p,h1,h2,h3 {
-color: white;
-}
+  <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
+  <script src="https://cdn.snaildos.com/jquery.min.js"></script>
+  <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
+  <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
+  <title>Updating StreamBop...</title>
+  <style>
+  p,h1,h2,h3 {
+    color: white;
+  }
 
-body {
-	background: black;
-	animation: gradient 12s ease infinite;
-        height: auto;
-}
-.container {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50%;
-  width: 100%;
-}
+  body {
+    background: black;
+    animation: gradient 12s ease infinite;
+    height: auto;
+  }
 
-.progress-bar__container {
-  width: 80%;
-  height: 2rem;
-  border-radius: 2rem;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.5s;
-  will-change: transform;
-  box-shadow: 0 0 5px #e76f51;
-}
+  .container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 100%;
+  }
 
-.progress-bar {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  content: "";
-  background-color: #e76f51;
-  top:0;
-  bottom: 0;
-  left: -100%;
-  border-radius: inherit;
-  display: flex;
-  justify-content: center;
-  align-items:center;
-  color: white;
-  font-family: sans-serif;
-}
-    </style>
-</head>
-<body>
+  .progress-bar__container {
+    width: 80%;
+    height: 2rem;
+    border-radius: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+    will-change: transform;
+    box-shadow: 0 0 5px #e76f51;
+  }
+
+  .progress-bar {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background-color: #e76f51;
+    top:0;
+    bottom: 0;
+    left: -100%;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    font-family: sans-serif;
+  }
+  </style>
+  </head>
+  <body>
 	<script>
 		const fs = require('fs');
 		const Store = require('electron-store');
-        const config = new Store();
+    const config = new Store();
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
 		localStorage.setItem('version', '1.5.2');
@@ -82,40 +81,39 @@ body {
 			</div>
 		  </div>
 		<script type="text/javascript">
-const progressBarContainer = document.querySelector('.progress-bar__container');
-const progressBar = document.querySelector('.progress-bar');
-const progressBarText = document.querySelector('.progress-bar__text');
+  const progressBarContainer = document.querySelector('.progress-bar__container');
+  const progressBar = document.querySelector('.progress-bar');
+  const progressBarText = document.querySelector('.progress-bar__text');
 
-const progressBarStates = [0, 7, 27, 34, 68, 80, 95, 100];
+  const progressBarStates = [0, 7, 27, 34, 68, 80, 95, 100];
 
-let time = 0;
-let endState = 100;
+  let time = 0;
+  let endState = 100;
 
-progressBarStates.forEach(state => {
-  let randomTime = Math.floor(Math.random() * 3000);
-  setTimeout(() => {
-    if(state == endState){
-      gsap.to(progressBar, {
-        x: `${state}%`,
-        duration: 2,
-        backgroundColor: '#4895ef',
-        onComplete: () => {
-          progressBarText.style.display = "initial";
-          progressBarContainer.style.boxShadow = '0 0 5px #4895ef';
-		  window.location.href = "index.html";
-        }
-      });
-    }else{
-      gsap.to(progressBar, {
-        x: `${state}%`,
-        duration: 2,
-      });
-    }
-  }, randomTime + time);
-  time += randomTime;
-})
-
-		</script>
+  progressBarStates.forEach(state => {
+    let randomTime = Math.floor(Math.random() * 3000);
+    setTimeout(() => {
+      if(state == endState){
+        gsap.to(progressBar, {
+          x: `${state}%`,
+          duration: 2,
+          backgroundColor: '#4895ef',
+          onComplete: () => {
+            progressBarText.style.display = "initial";
+            progressBarContainer.style.boxShadow = '0 0 5px #4895ef';
+        window.location.href = "index.html";
+          }
+        });
+      }else{
+        gsap.to(progressBar, {
+          x: `${state}%`,
+          duration: 2,
+        });
+      }
+    }, randomTime + time);
+    time += randomTime;
+  })
+	</script>
 	</div>
-</body>
+  </body>
 </html>
