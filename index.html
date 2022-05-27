@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <head>
   <script>
-    const { ipcRenderer } = require('electron');
-    window.jQuery = window.$ = require('jquery');
-    const axios = require('axios')
+  const { ipcRenderer } = require('electron');
+  window.jQuery = window.$ = require('jquery');
+  const axios = require('axios')
 </script>
-    <script>
-    // Needs window render
-    require('./renderer.js')
+  <script>
+  // Needs window render
+  require('./renderer.js')
   </script>
 <script>
   // update check
   (function($){
-$(document).ready(function() {
+  $(document).ready(function() {
 
-var version = localStorage.getItem('version');
+  var version = localStorage.getItem('version');
 
-if(version == '1.5.2'){
-console.log("Update Ready")
-} else {
-console.log('Latest update is not ready.')
-window.location.href = "update.html";
-}
+  if(version == '1.5.2'){
+  console.log("Update Ready")
+  } else {
+  console.log('Latest update is not ready.')
+  window.location.href = "update.html";
+  }
 
-});
-})(jQuery);
+  });
+  })(jQuery);
 </script>
 <link rel="stylesheet" href="./titlebar.css">
 <script>
   // oobe
   (function($){
-$(document).ready(function() {
+  $(document).ready(function() {
 
-var consent = localStorage.getItem('setup');
+  var consent = localStorage.getItem('setup');
 
-if(consent != 'true'){
-  $('#cookie').fadeIn();
-  confetti.start()
-}
+  if(consent != 'true'){
+    $('#cookie').fadeIn();
+    confetti.start()
+  }
 
-$('#cookie-ok').click(function(event){
-  $('#cookie').fadeOut();
-  confetti.stop()
-  window.location.replace("setup.html");
-});
+  $('#cookie-ok').click(function(event){
+    $('#cookie').fadeOut();
+    confetti.stop()
+    window.location.replace("setup.html");
+  });
 
-});
-})(jQuery);
+  });
+  })(jQuery);
 </script>
 </script>
 <script src="./lib/confetti.min.js"></script>
@@ -59,132 +59,133 @@ $('#cookie-ok').click(function(event){
   <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
   <title>StreamBop</title>
   <style>
-    
     html, body {
-  user-select: none;
-  width: 100%;
-  height:100%;
-  position: relative;
-}
-
-.center { margin: 0 auto; width: 400px; }
-
-h1  {
-  color: black;
-}
-
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
+      user-select: none;
+      width: 100%;
+      height:100%;
+      position: relative;
     }
-    50% {
-        background-position: 100% 50%;
+
+    .center { margin: 0 auto; width: 400px; }
+
+    h1  {
+      color: black;
     }
-    100% {
-        background-position: 0% 50%;
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
     }
-}
 
-.inline {
-  display: inline-block;
-  text-align: center !important;
-  float: left; margin-right: 4%; width: 46%;
-}
+    .inline {
+      display: inline-block;
+      text-align: center !important;
+      float: left;
+      margin-right: 4%; width: 46%;
+    }
 
-.range {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 200px;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 25px;
-  margin-top: 10px;
-  transform: translate(-50%, -50%);
-}
+    .range {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 200px;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 25px;
+      margin-top: 10px;
+      transform: translate(-50%, -50%);
+    }
 
-.sidebar {
-  height: 100%;
-  width: 250px !important;
-  max-width: 250px;
-  color: black;
-  overflow-x: hidden;
-  background: transparent; 
-  color: black;
-  float: left;
-}
+    .sidebar {
+      height: 100%;
+      width: 250px !important;
+      max-width: 250px;
+      color: black;
+      overflow-x: hidden;
+      background: transparent; 
+      color: black;
+      float: left;
+    }
 
-.sidebarcont {
-  position: relative;
-  width: 249px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin: 0 auto;
-  background: transparent; 
-  color: black;
-}
+    .sidebarcont {
+      position: relative;
+      width: 249px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      margin: 0 auto;
+      background: transparent; 
+      color: black;
+    }
 
-input[type=range]::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  background: #E6892C;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 25px;
-  background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
-  height: 2px;
-}
-input[type=range]::-moz-range-track {
-  -moz-appearance: none;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 25px;
-  background: #E6892C;
-  background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
-  height: 2px;
-}
+    input[type=range]::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      background: #E6892C;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 25px;
+      background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+      height: 2px;
+    }
 
-input[type=range]::-webkit-slider-thumb:active {
-  cursor: -webkit-grabbing;
-}
+    input[type=range]::-moz-range-track {
+      -moz-appearance: none;
+      border: 2px solid black;
+      padding: 10px;
+      border-radius: 25px;
+      background: #E6892C;
+      background: -moz-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -webkit-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -o-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: -ms-linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      background: linear-gradient(45deg, rgb(160, 59, 227) 0%, rgb(189, 87, 230) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ', GradientType=1 );
+      height: 2px;
+    }
 
-input[type=range]::-moz-range-thumb:active {
-  cursor: -moz-grabbing;
-}
+    input[type=range]::-webkit-slider-thumb:active {
+      cursor: -webkit-grabbing;
+    }
 
-body {
-    background-size: 400% 400%;
-    box-sizing: border-box;
-    overflow: hidden;
-    font-family: sans-serif;
-    text-align: center;
-    background: transparent; 
-    color: rgba(255, 255, 255, 0.5);
-    margin: auto;
-}
+    input[type=range]::-moz-range-thumb:active {
+      cursor: -moz-grabbing;
+    }
 
-.container {
-  width: 80%;
-  height: 200px;
-  background: aqua;
-  margin: auto;
-  padding: 10px;
-}
+    body {
+        background-size: 400% 400%;
+        box-sizing: border-box;
+        overflow: hidden;
+        font-family: sans-serif;
+        text-align: center;
+        background: transparent; 
+        color: rgba(255, 255, 255, 0.5);
+        margin: auto;
+    }
 
-.content {
+    .container {
+      width: 80%;
+      height: 200px;
+      background: aqua;
+      margin: auto;
+      padding: 10px;
+    }
+
+    .content {
       background-color: #000000;
       height: 90%;
       margin-left: 250px !important;
@@ -195,7 +196,7 @@ body {
       margin-right: 2%;
       border-top-right-radius: 20px;
       border-bottom-right-radius: 20px;
-}
+    }
 
     #notification {
       position: fixed;
@@ -208,33 +209,34 @@ body {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     }
 
-#containermixer{
-  margin: 0;
-  width: 300px;
-  padding-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
+    #containermixer{
+      margin: 0;
+      width: 300px;
+      padding-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
     .hidden {
       display: none;
     }
 
-.sysvolume{
-  width: 150px;
-  height: 170px;
-  float: left;
-}
-.streamvolume{
-  width: 150px;
-  height: 170px;
-  float: right;
-}
+    .sysvolume{
+      width: 150px;
+      height: 170px;
+      float: left;
+    }
 
-input.vertical {
-	-webkit-appearance: slider-vertical;
-	writing-mode: bt-lr;
-}
+    .streamvolume{
+      width: 150px;
+      height: 170px;
+      float: right;
+    }
+
+    input.vertical {
+      -webkit-appearance: slider-vertical;
+      writing-mode: bt-lr;
+    }
 
     .video-stream html5-main-video  {
       display: none;
@@ -245,159 +247,159 @@ input.vertical {
     }
 
     .settings {
-  position: absolute;
-  bottom: 36px;
-  right: 20px;
-  font-size: 18px;
-}
+      position: absolute;
+      bottom: 36px;
+      right: 20px;
+      font-size: 18px;
+    }
 
-.set {
-z-index: -1
-}
+    .set {
+    z-index: -1
+    }
 
-.sidenav {
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0; 
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 60px; 
-  transition: 0.5s; 
-}
+    .sidenav {
+      height: 100%; 
+      width: 0; 
+      position: fixed; 
+      z-index: 1; 
+      top: 0; 
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 60px; 
+      transition: 0.5s; 
+    }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #000000;
-  display: block;
-  transition: 0.3s;
-}
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #000000;
+      display: block;
+      transition: 0.3s;
+    }
 
-[type=radio] {
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+    [type=radio] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-[type=radio] + img {
-  cursor: pointer;
-}
+    [type=radio] + img {
+      cursor: pointer;
+    }
 
-[type=radio]:checked + img {
-  outline: 5px solid rgb(25, 0, 255);
-}
+    [type=radio]:checked + img {
+      outline: 5px solid rgb(25, 0, 255);
+    }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
 
-.white  {
-  color: rgb(255, 255, 255);
-}
+    .white  {
+      color: rgb(255, 255, 255);
+    }
 
-.custom {
-  z-index: 0;
-}
+    .custom {
+      z-index: 0;
+    }
 
-.customred {
-   color: #9E1049;
-   background: #9E1049; 
-}
+    .customred {
+      color: #9E1049;
+      background: #9E1049; 
+    }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
 
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
+    #main {
+      transition: margin-left .5s;
+      padding: 20px;
+    }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
 
-.nowplay  {
-  font-size: 25px;
-}
+    .nowplay  {
+      font-size: 25px;
+    }
 
-.sus  {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 100;
-  overflow: auto;
-  background: #000000;
-}
+    .sus  {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 100;
+      overflow: auto;
+      background: #000000;
+    }
 
-.black {
-color: black;
-}
+    .black {
+    color: black;
+    }
 
-#cookie{
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto; 
-  background-color: black;
-}
+    #cookie{
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: black;
+    }
 
-.fga {
-  margin: auto;
-  margin: 10px;
-}
+    .fga {
+      margin: auto;
+      margin: 10px;
+    }
 
-hr.dashed {
-  border-top: 3px dashed #bbb;
-}
+    hr.dashed {
+      border-top: 3px dashed #bbb;
+    }
 
-.content {
-  margin-top: 35px;
-}
+    .content {
+      margin-top: 35px;
+    }
 
-.sidebar {
-  background-color: grey;
-  opacity: 0.4 !important;
-  border-radius: 10px;
-}
+    .sidebar {
+      background-color: grey;
+      opacity: 0.4 !important;
+      border-radius: 10px;
+    }
 
-hr.dotted {
-  border-top: 3px dotted #bbb;
-}
+    hr.dotted {
+      border-top: 3px dotted #bbb;
+    }
 
-p,h1,h2,h3,h4,h5,h6,b  {
-  color: white;
-}
+    p,h1,h2,h3,h4,h5,h6,b  {
+      color: white;
+    }
 
-hr.solid {
-  border-top: 3px solid #bbb;
-}
+    hr.solid {
+      border-top: 3px solid #bbb;
+    }
 
-hr.rounded {
-  border-top: 8px solid #bbb;
-  border-radius: 5px;
-}
+    hr.rounded {
+      border-top: 8px solid #bbb;
+      border-radius: 5px;
+    }
 
-button {
-  color: black;
-}
+    button {
+      color: black;
+    }
   </style>
   <script>
     const Store = require('electron-store');
@@ -414,15 +416,15 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
 </video>
   <script>
     async function init() {
-        axios.get('http://api.snaildos.com/radio').then((value) => {
+      axios.get('http://api.snaildos.com/radio').then((value) => {
       config.set('url', value.data.url)
       var url = config.get("url")
-player.src({ type: 'video/youtube', src: url });
-player.load()
-player.play()
-$("#4").show()
-})}
-init()
+      player.src({ type: 'video/youtube', src: url });
+      player.load()
+      player.play()
+      $("#4").show()
+      })}
+      init()
   </script>
   <script>
     videojs("vid1", {
@@ -436,21 +438,21 @@ function arel() {
 document.getElementById('id01').style.display='block'
 }
   </script>
-<script>
-var contvar = 3
-function strtcont()  {
-var timeleft = 10;
-var downloadTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(downloadTimer);
-    contvar.innerHTML = "Loaded!";
-  } else {
-    contvar.innerHTML = timeleft + " load time remaining...";
+  <script>
+  var contvar = 3
+  function strtcont()  {
+  var timeleft = 10;
+  var downloadTimer = setInterval(function(){
+    if(timeleft <= 0){
+      clearInterval(downloadTimer);
+      contvar.innerHTML = "Loaded!";
+    } else {
+      contvar.innerHTML = timeleft + " load time remaining...";
+    }
+    timeleft -= 1;
+  }, 1000);
   }
-  timeleft -= 1;
-}, 1000);
-}
-</script>
+  </script>
   <script>
     $( document ).ready(function() {
       setTimeout(function(){
@@ -520,10 +522,10 @@ $('.sus').slideToggle(2000)
         }
 
     function UpdateSystemvolume(val) {
-          var volset = false
-	  document.getElementById('systemvol').value=val;
-	  loudness.setVolume(val)
-          var volset = true
+      var volset = false
+	    document.getElementById('systemvol').value=val;
+	    loudness.setVolume(val)
+      var volset = true
         }
 
     function setup34()  {
@@ -550,9 +552,9 @@ $('.sus').slideToggle(2000)
   function storenam()  {
     trackEvent('streambop.started', 'Setup completed sucessfully');
     var username = $('#name').val();
-config.set("name", username);
-$("#cookie-ok").click()
-return false;
+    config.set("name", username);
+    $("#cookie-ok").click()
+    return false;
   }
 
   function costume()  {
@@ -583,7 +585,6 @@ return false;
                     console.log("Saved.")
             }
         }
-
   </script>
 </head>
 <body>
@@ -661,8 +662,6 @@ return false;
 
   <p id="version"></p>
 </div>
-
-
 
 <div id="streaming" class="streaming">
   <h1>Welcome to the streaming panel!</h1>

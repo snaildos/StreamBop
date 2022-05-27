@@ -9,56 +9,56 @@
   </script>
   <title>Loading...</title>
   <style>
-body {
-  background-color: #C94545;
-}
+    body {
+      background-color: #C94545;
+    }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-.cont01 {
-  width: 50px;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none;
-  pointer-events: none;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .cont01 {
+      width: 50px;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none;
+      pointer-events: none;
+    }
 
-body {
-  display: flex; /* establish flex container */
-    justify-content: center; /* center flex items horizontally, in this case */
-    align-items: center; /* center flex items vertically, in this case */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
+    body {
+      display: flex; /* establish flex container */
+        justify-content: center; /* center flex items horizontally, in this case */
+        align-items: center; /* center flex items vertically, in this case */
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
 
-#progress-bar {
-  width: 300px;
-  margin: 50px;
-}
-.progress {
-  height: 25px;
-  width: 300px;
-}
-.progress-info {
-    color: rgb(255, 238, 0);
-    text-align: center;
-    font-weight: bold;
-}
-#inner1 {
-   float:left; 
-}
+    #progress-bar {
+      width: 300px;
+      margin: 50px;
+    }
+    .progress {
+      height: 25px;
+      width: 300px;
+    }
+    .progress-info {
+        color: rgb(255, 238, 0);
+        text-align: center;
+        font-weight: bold;
+    }
+    #inner1 {
+      float:left; 
+    }
 
-#inner2{
-   float:left; 
-   clear: left;
-}
+    #inner2{
+      float:left; 
+      clear: left;
+    }
   </style>
   </head>
   <body>
@@ -77,7 +77,7 @@ body {
   </body>
   <script>
     var progressBarContainer = $('#progress-bar');
-var progressBar = {
+    var progressBar = {
     chain: [],
     progress: progressBarContainer.children('progress'),
     progressBar: progressBarContainer.find('.progress-bar'),
@@ -115,7 +115,7 @@ var progressBar = {
     }
 };
 
-progressBar.set(5, 'Startin');
+progressBar.set(5, 'Starting');
 progressBar.set(12, 'Checking things');
 progressBar.set(22, 'Having a beer');
 progressBar.set(52, 'Spinning Wheels');
@@ -126,6 +126,6 @@ progressBar.set(100, 'Complete');
 progressBar.set(150, 'StreamBop broken? Create a GitHub issue please!')
 progressBar.set(160, 'StreamBop broken? Create a GitHub issue please!')
 progressBar.set(170, 'StreamBop broken? Create a GitHub issue please!')
-progressBar.set(200, 'StreamBop failed to boot, please create a GitHub issue!')
+progressBar.set(200, 'StreamBop failed to load, please create a GitHub issue!')
 </script>
   </html>
