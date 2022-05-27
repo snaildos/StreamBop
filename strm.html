@@ -181,42 +181,43 @@ function closeNav() {
   config.set('newDiff', "init_load")
   config.set('oldDiff', "init_load")
 
-var nva = document.getElementById('myNav')
-const { ipcRenderer } = require('electron');
-var xr = 3
-var timeleft = 10;
-var downloadTimer = setInterval(function(){
- if (config.get('on')) {
-  if(timeleft <= 0){
-    xr.innerHTML = "Loaded!";
-    closeNav()
-    timeleft == 10
-  } else {
-    xr.innerHTML = timeleft + " load time remaining...";
-  }
-  timeleft -= 1;
-  } else {
-  console.log("Waiting for timer...")
-  }
-}, 1000);
-</script>
-<script>
-function timeout(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-}
+  var nva = document.getElementById('myNav')
+  const { ipcRenderer } = require('electron');
+  var xr = 3
+  var timeleft = 10;
+  var downloadTimer = setInterval(function(){
+  if (config.get('on')) {
+    if(timeleft <= 0){
+      xr.innerHTML = "Loaded!";
+      closeNav()
+      timeleft == 10
+    } else {
+      xr.innerHTML = timeleft + " load time remaining...";
+    }
+    timeleft -= 1;
+    } else {
+    console.log("Waiting for timer...")
+    }
+  }, 1000);
+  </script>
+  <script>
+    function timeout(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 
-            function Minimize()
-{
-window.innerWidth = 100;
-window.innerHeight = 100;
-window.screenX = screen.width;
-window.screenY = screen.height;
-alwaysLowered = true;
-}
-config.set('stoplock', false)
-config.set('onlock', true)
-config.set('on', false)
-async function checkStart() {
+                function Minimize()
+    {
+    window.innerWidth = 100;
+    window.innerHeight = 100;
+    window.screenX = screen.width;
+    window.screenY = screen.height;
+    alwaysLowered = true;
+    }
+
+    config.set('stoplock', false)
+    config.set('onlock', true)
+    config.set('on', false)
+    async function checkStart() {
     if (config.get('on') == true) {
     if (config.get('onlock')) {
        console.log("ok time to wake up, we are ready.")
@@ -236,14 +237,14 @@ async function checkStart() {
        preparegraphic()
        config.set('stoplock', true)
        config.set('onlock', false)
-    async function nots() {
-       await timeout(13000);
-       console.log("Start.")
-       await noti()
-       config.set('cal', true)
-       noti()
-       config.set('stoplock', true)
-       await timeout(5000);
+       async function nots() {
+        await timeout(13000);
+        console.log("Start.")
+        await noti()
+        config.set('cal', true)
+        noti()
+        config.set('stoplock', true)
+        await timeout(5000);
     }
     nots()
     }
@@ -252,118 +253,116 @@ async function checkStart() {
       console.log("Waiting for thumbs up... I am bored...")
       window.setTimeout(checkStart, 250);
     }}
-checkStart()
+    checkStart()
 
-
-
-function checkAlwaysOn() {
-  if(config.get('alwayson')) {
-  $('.bck1').slideDown(1000)
-  $('.working').slideDown(1000)
-  setInterval(()=>{
-      document.getElementById('npvs').innerText = config.get('song') || 'Nothing'
-  },10000);
-      window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
-    } else {
-      console.log("Not required...")
-      window.setTimeout(checkAlwaysOn, 2000); /* this checks the flag every 100 milliseconds*/
+    function checkAlwaysOn() {
+      if(config.get('alwayson')) {
+      $('.bck1').slideDown(1000)
+      $('.working').slideDown(1000)
+      setInterval(()=>{
+          document.getElementById('npvs').innerText = config.get('song') || 'Nothing'
+      },10000);
+          window.setTimeout(checkAlwaysOn, 2000);
+        } else {
+          console.log("Not required...")
+          window.setTimeout(checkAlwaysOn, 2000);
+        }
     }
-}
-checkAlwaysOn();
+    checkAlwaysOn();
 
-function noti()  {
-  $('.bck1').slideDown(1000)
-  $('.working').slideDown(1000)
-  setTimeout(function(){
-    $('.bck1').slideUp(1000)
-    $('.working').slideUp(1000)
-    }, 10000);
-}
+    function noti()  {
+      $('.bck1').slideDown(1000)
+      $('.working').slideDown(1000)
+      setTimeout(function(){
+        $('.bck1').slideUp(1000)
+        $('.working').slideUp(1000)
+        }, 10000);
+    }
 
-async function checkStop() {
-    window.setTimeout(checkStop, 500); /* this checks the flag every 100 milliseconds*/
+    async function checkStop() {
+    window.setTimeout(checkStop, 500);
     if(config.get('on')) {
       console.log("stop prot waiting...")
     } else {
-        if(config.get('stoplock')) {
-        console.log("Service stopped.")
-        $( "#g33" ).addClass( "gr3" )
-        $('.waiting').slideDown(1000)
-        $('.bck1').slideUp(1000)
-        $(".1").show()
-        closeNav()
-        config.set('cal', true)
-        $(".err").show()
-        timeleft == 10;
-        $(".bock").hide()
-        checkStart()
-        $('.bck1').slideUp(1000)
-        $('.working').slideUp(1000)
-        config.set('stoplock', false)
-        config.set('onlock', true)
-        window.setTimeout(checkStop, 600); /* this checks the flag every 100 milliseconds*/
+      if(config.get('stoplock')) {
+      console.log("Service stopped.")
+      $( "#g33" ).addClass( "gr3" )
+      $('.waiting').slideDown(1000)
+      $('.bck1').slideUp(1000)
+      $(".1").show()
+      closeNav()
+      config.set('cal', true)
+      $(".err").show()
+      timeleft == 10;
+      $(".bock").hide()
+      checkStart()
+      $('.bck1').slideUp(1000)
+      $('.working').slideUp(1000)
+      config.set('stoplock', false)
+      config.set('onlock', true)
+      window.setTimeout(checkStop, 600);
      }
     }}
-checkStop();
+    checkStop();
 
-function checkSetup() {
-    if(config.get('setupan') == true) {
+    function checkSetup() {
+      if(config.get('setupan') == true) {
       $( "#g33" ).removeClass( "gr3" )
-       $('.bck1').slideDown(1000)
-       $('.waiting').slideUp(1000)
-       $(".1").hide()
-       $(".err").hide()
-       config.set('cal', true)
-       $('.bck1').slideUp(1000)
-       $('.working').slideUp(1000)
+      $('.bck1').slideDown(1000)
+      $('.waiting').slideUp(1000)
+      $(".1").hide()
+      $(".err").hide()
+      config.set('cal', true)
+      $('.bck1').slideUp(1000)
+      $('.working').slideUp(1000)
       $('.setup').slideDown(100)
       window.setTimeout(checkSetup, 100);
-    } else {
-      console.log("No setup event...")
-      window.setTimeout(checkSetup, 100); /* this checks the flag every 100 milliseconds*/
+      } else {
+        console.log("No setup event...")
+        window.setTimeout(checkSetup, 100); /* this checks the flag every 100 milliseconds*/
+      }
     }
-}
-checkSetup();
+    checkSetup();
 
 
-setTimeout(function(){
-  $('.sus').slideUp(100)
-        $('.bck1').slideUp(100)
-        $('.setup').slideUp(100)
-        $(".bock").hide()
-        $("#fireset").hide()
-        $("#erset").hide()
-        $("#blueset").hide()
-        $("#yellowset").hide()
-},800);
+    setTimeout(function(){
+      $('.sus').slideUp(100)
+      $('.bck1').slideUp(100)
+      $('.setup').slideUp(100)
+      $(".bock").hide()
+      $("#fireset").hide()
+      $("#erset").hide()
+      $("#blueset").hide()
+      $("#yellowset").hide()
+    },800);
 
-setInterval(()=>{
-  if (config.get("alwayson")) {
-    console.log("We won't check, since we are always on!")
-  } else {
-  console.log("Checking!")
-  var np3 = config.get('song');
+    setInterval(()=>{
+      if (config.get("alwayson")) {
+        console.log("We won't check, since we are always on!")
+      } else {
+      console.log("Checking!")
+      var np3 = config.get('song');
 
-  config.set('oldDiff', config.get('song'));
-  if (config.get('oldDiff') == config.get('newDiff')) {
-  console.log("Waiting for change..")
-} else {
-  config.set('oldDiff', config.get('song'));
-  config.set('newDiff', config.get('song'));
-  noti()
-}
-  console.log(np3)
-  document.getElementById('npvs').innerText = np3 || 'Error.'
-}
-},500);
+      config.set('oldDiff', config.get('song'));
+      if (config.get('oldDiff') == config.get('newDiff')) {
+      console.log("Waiting for change..")
+    } else {
+      config.set('oldDiff', config.get('song'));
+      config.set('newDiff', config.get('song'));
+      noti()
+    }
+      console.log(np3)
+      document.getElementById('npvs').innerText = np3 || 'Error.'
+    }
+    },500);
 
-setInterval(()=>{
-  var npv3 = config.get('name')
-  console.log(npv3)
-  console.log(config.get('newDiff') + ' ' + config.get('oldDiff'));
-  document.getElementById('np').innerText = npv3 || 'FTCHING...'
-  },100);
-        </script>
+    setInterval(()=>{
+      var npv3 = config.get('name')
+      console.log(npv3)
+      console.log(config.get('newDiff') + ' ' + config.get('oldDiff'));
+      document.getElementById('np').innerText = npv3 || 'FTCHING...'
+      },100);
+    </script>
     </head>
 <body>
   <div id="sus" class="sus"><h1>Page loading...</h1></div>
@@ -377,7 +376,7 @@ setInterval(()=>{
 <div id="g33" class="gr3">
     <div id="waiting" class="waiting">
     <h1>Welcome to StreamBop viewer</h1>
-    <h1>Only this window should be setup in OBS...</h1>
+    <h1>This window should be setup in OBS...</h1>
     <h2><b>ITS NOT YOUR CONTORL PANEL.</b> Please move this window away, DO NOT minimize it or close it.</h2>
     <h2>Once done, go to the control panel and press "Start"!</h2>
     <h1>Waiting for start button to be pressed...</h1>
