@@ -1,10 +1,44 @@
 # Changelog
 
 <a name="1.5.3"></a>
-## 1.5.3 (2022-03-02)
+## 1.5.3 (2022-06-26)
+
+### Added
+
+- ✨ Restyle [[0fdab94](https://github.com/snaildos/StreamBop/commit/0fdab9468c00c1bdded75cc141dd207551ee1313)]
+- ✨ Restyle entire CSS [[af53a77](https://github.com/snaildos/StreamBop/commit/af53a77df562c8d97d2952004a20a007798ed68c)]
+- ✨ Code restyle and optimisation [[7284438](https://github.com/snaildos/StreamBop/commit/7284438ba0d1ff15aebc9ea09671fc9274486468)]
+- ✨ Restyle Code [[b4d71b5](https://github.com/snaildos/StreamBop/commit/b4d71b52b19bb4e7c30a019649fde99c153ce8ec)]
 
 ### Miscellaneous
 
+-  Merge pull request [#69](https://github.com/snaildos/StreamBop/issues/69) from snaildos/renovate/electron-19.x [[9d309cd](https://github.com/snaildos/StreamBop/commit/9d309cd665e5c8752b90d2e15e3d7b0905d6d374)]
+-  Merge pull request [#67](https://github.com/snaildos/StreamBop/issues/67) from snaildos/renovate/npm-electron-vulnerability [[a5a8c7b](https://github.com/snaildos/StreamBop/commit/a5a8c7b6b8e878beda5d3bde23954b80e67f387b)]
+-  Merge pull request [#68](https://github.com/snaildos/StreamBop/issues/68) from snaildos/renovate/electron-store-8.x [[5c8b8ca](https://github.com/snaildos/StreamBop/commit/5c8b8cad9c9eec62ee0fa20c79f5f98606636906)]
+-  Merge pull request [#65](https://github.com/snaildos/StreamBop/issues/65) from snaildos/renovate/electron-updater-5.x [[8d05f11](https://github.com/snaildos/StreamBop/commit/8d05f11698701ce9bad9b444f5a19f1194d4913b)]
+-  Merge pull request [#64](https://github.com/snaildos/StreamBop/issues/64) from snaildos/renovate/electron-builder-23.x [[9668eb9](https://github.com/snaildos/StreamBop/commit/9668eb9ddbb8ee566c90587138646c6a8f575752)]
+-  Merge pull request [#62](https://github.com/snaildos/StreamBop/issues/62) from snaildos/renovate/axios-0.x [[d8cb503](https://github.com/snaildos/StreamBop/commit/d8cb503922c41f3f137ed633ef6e19fadf9f85ee)]
+-  Merge pull request [#61](https://github.com/snaildos/StreamBop/issues/61) from snaildos/renovate/uuidv4-6.x [[eea0820](https://github.com/snaildos/StreamBop/commit/eea08200a78da8133417ffe27c9acc0cf7323241)]
+-  Update dependency electron to v19 [[58d5b87](https://github.com/snaildos/StreamBop/commit/58d5b872f5e2a203620c4e179fcccbf8e9e60931)]
+-  Update dependency electron-store to v8.0.2 [[b783b48](https://github.com/snaildos/StreamBop/commit/b783b48ef6bd6b012fc9b4f4b6e3341ba84e8716)]
+-  Update dependency electron to v17.2.0 [SECURITY] [[5b92196](https://github.com/snaildos/StreamBop/commit/5b92196eb7bf300235b7934df28885bdb9f74bb6)]
+-  Update dependency electron-updater to v5 [[c66ef2d](https://github.com/snaildos/StreamBop/commit/c66ef2d5b2388ab9ce810a2c0e7b152de97c6acb)]
+-  Update dependency electron-builder to v23 [[18cbbe0](https://github.com/snaildos/StreamBop/commit/18cbbe047b2e5eac20c1ce64fbbad46c65a3577d)]
+-  Update dependency axios to v0.27.2 [[51e2c51](https://github.com/snaildos/StreamBop/commit/51e2c51d1f8574f8c5236a6981cd8bb16ab601ba)]
+-  &quot;Stream Bop&quot; --&gt; StreamBop [[1ea6acc](https://github.com/snaildos/StreamBop/commit/1ea6acc27edbeda25ffe7951ff946a2ea0b494d8)]
+-  Remove flickeranimation [[3dae9cc](https://github.com/snaildos/StreamBop/commit/3dae9cc5ca330fe0bb7d4393076e780f13ed9795)]
+-  Update dependency uuidv4 to v6.2.13 [[67a1158](https://github.com/snaildos/StreamBop/commit/67a11584bcc6192f3512d6fd0b0754774fba948e)]
+-  Update README.md [[0196ff1](https://github.com/snaildos/StreamBop/commit/0196ff10bfd2b3d4ce18923573ebaf23b993bdd8)]
+-  Merge pull request [#57](https://github.com/snaildos/StreamBop/issues/57) from snaildos/renovate/electron-17.x [[14e86f8](https://github.com/snaildos/StreamBop/commit/14e86f89f607bdcb6646d758ada0d5ca1a3fe948)]
+-  Merge pull request [#56](https://github.com/snaildos/StreamBop/issues/56) from snaildos/renovate/axios-0.x [[ca787d7](https://github.com/snaildos/StreamBop/commit/ca787d757811d03eb6e09721f382847bf26b1aa3)]
+-  Merge pull request [#58](https://github.com/snaildos/StreamBop/issues/58) from snaildos/renovate/utf-8-validate-5.x [[1852d18](https://github.com/snaildos/StreamBop/commit/1852d1843e0f85e8b5355811165c15f715fa3a0f)]
+-  Merge pull request [#59](https://github.com/snaildos/StreamBop/issues/59) from snaildos/renovate/actions-checkout-3.x [[28e72a4](https://github.com/snaildos/StreamBop/commit/28e72a47c5081fa83f036d0b12fbb37351b4ff18)]
+-  Update package.json [[f07f0d6](https://github.com/snaildos/StreamBop/commit/f07f0d6f035c8bc97f6cdbcccb36f62a86b0f552)]
+-  Update actions/checkout action to v3 [[d4b950f](https://github.com/snaildos/StreamBop/commit/d4b950f252fb81b6e8b69c3c3a833a213c5c3224)]
+-  Update dependency utf-8-validate to v5.0.9 [[c9ca265](https://github.com/snaildos/StreamBop/commit/c9ca26525e565b2c19dfe71b8606b9522c92a3c1)]
+-  Update dependency electron to v17.1.2 [[bb08ec2](https://github.com/snaildos/StreamBop/commit/bb08ec2485169d9bffd1e2ff169e4e29b8d64814)]
+-  Update dependency axios to v0.26.1 [[63aadc4](https://github.com/snaildos/StreamBop/commit/63aadc4ab097cf5afbfe540d7e53b9dcb968bd56)]
+-  Update CHANGELOG.md [[03716e1](https://github.com/snaildos/StreamBop/commit/03716e14f301bbdb907495df1ea3af41bd4f755f)]
 -  Bump Version [[b5a4405](https://github.com/snaildos/StreamBop/commit/b5a4405954db0162cb3a693f9f4a6d09c938e00e)]
 -  Codecleanup &amp; Refactor [[d4cabe9](https://github.com/snaildos/StreamBop/commit/d4cabe9d0eadc7b992165c311b6dd41f6db20086)]
 -  Close StreamBop viewer when resetting occurs. [[67e8e7b](https://github.com/snaildos/StreamBop/commit/67e8e7b3d06a31858dceb00703402cce573d43db)]
