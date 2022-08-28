@@ -1,5 +1,25 @@
 # Changelog
 
+<a name="1.5.4"></a>
+## 1.5.4 (2022-08-28)
+
+### Miscellaneous
+
+-  Bump Version [[6277a3b](https://github.com/snaildos/StreamBop/commit/6277a3b6aab6a947c210963a2c02c5a518a7e787)]
+-  Merge pull request [#75](https://github.com/snaildos/StreamBop/issues/75) from snaildos/renovate/jquery-3.x [[0ab6509](https://github.com/snaildos/StreamBop/commit/0ab6509c320abf4e35b86892f9bdf5a0fbde09ee)]
+-  Merge pull request [#66](https://github.com/snaildos/StreamBop/issues/66) from snaildos/renovate/github-codeql-action-2.x [[8e07580](https://github.com/snaildos/StreamBop/commit/8e075800a3ecb60b0ffff5df77b2cd0d5501ee77)]
+-  Update dependency jquery to v3.6.1 [[a87b3e9](https://github.com/snaildos/StreamBop/commit/a87b3e91344fe1666615d8b6485b580f7d2db09d)]
+-  Merge pull request [#71](https://github.com/snaildos/StreamBop/issues/71) from snaildos/renovate/electron-builder-23.x [[c179fca](https://github.com/snaildos/StreamBop/commit/c179fca867650955fe7779c8e0c52662eb2450d9)]
+-  Merge pull request [#72](https://github.com/snaildos/StreamBop/issues/72) from snaildos/renovate/electron-store-8.x [[b43318f](https://github.com/snaildos/StreamBop/commit/b43318f4bfc0d2657a671acda0acdd82f277a4f2)]
+-  Merge pull request [#73](https://github.com/snaildos/StreamBop/issues/73) from snaildos/renovate/electron-updater-5.x [[3f5de89](https://github.com/snaildos/StreamBop/commit/3f5de89d77eeee8fc277ae4158701affe75d8f9b)]
+-  Merge pull request [#74](https://github.com/snaildos/StreamBop/issues/74) from snaildos/renovate/electron-20.x [[5d0355f](https://github.com/snaildos/StreamBop/commit/5d0355f3a1e97aa29ac82c3fe2024702be724fe8)]
+-  Update dependency electron-store to v8.1.0 [[19570b5](https://github.com/snaildos/StreamBop/commit/19570b583d58b0cae03bee70abd0310ece49a6f6)]
+-  Update dependency electron-builder to v23.3.3 [[9fb7c9a](https://github.com/snaildos/StreamBop/commit/9fb7c9a3876ee3c35278dddbbea7acce4cfd6a3b)]
+-  Update dependency electron to v20 [[542d68d](https://github.com/snaildos/StreamBop/commit/542d68d81eefd19f927a9684d5940d0f1e4fa9e6)]
+-  Update dependency electron-updater to v5.2.1 [[8ae433b](https://github.com/snaildos/StreamBop/commit/8ae433bdd969d9a4d36784632422ce3d3a3416cd)]
+-  Update github/codeql-action action to v2 [[7db5b7f](https://github.com/snaildos/StreamBop/commit/7db5b7fcf1ed69976b06d6fad1528e7645a08b58)]
+
+
 <a name="1.5.3"></a>
 ## 1.5.3 (2022-06-26)
 
