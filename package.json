@@ -23,7 +23,7 @@
     "electron-builder": "23.3.3",
     "gitmoji-changelog": "2.3.0",
     "bufferutil": "4.0.6",
-    "utf-8-validate": "5.0.9"
+    "utf-8-validate": "5.0.10"
   },
   "dependencies": {
     "axios": "0.27.2",
