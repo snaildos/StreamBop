@@ -2,7 +2,6 @@ const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { trackEvent } = require('./lib/analytics.js');
-const { watchFile } = require('fs');
 const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
 

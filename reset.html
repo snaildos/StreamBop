@@ -2,24 +2,23 @@
 <meta charset="UTF-8">
 <html>
 <head>
-	<script>
-		    window.jQuery = window.$ = require('jquery');
-	</script>
+<script>
+	 window.jQuery = window.$ = require('jquery');
+</script>
 <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
 <script src="https://cdn.snaildos.com/jquery.min.js"></script>
 <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
-	<title>Resetting StreamBop...</title>
-	<style type="text/css">
-		.bs-example{
-			margin: 20px;
-		}
-		</style>
-    <style>
-body {
-	background: black;
-}
-    </style>
+<title>Resetting StreamBop...</title>
+<style type="text/css">
+	.bs-example{
+		margin: 20px;
+	}
+
+	body {
+		background: black;
+	}
+</style>
 </head>
 <body>
 	<script>
@@ -32,7 +31,7 @@ body {
 		console.log("Let's clear localstorage first...")
         localStorage.clear();
 		console.log("Just wait a bit...")
-		// if all above fails, lets do some ensurement.
+		// If all above fails, lets do some ensurement.
 		fs.unlinkSync(config.path)
 
 	</script>
