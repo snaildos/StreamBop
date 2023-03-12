@@ -81,7 +81,7 @@ const createLoadingScreen = () => {
     })
   );
   loadingScreen.setResizable(false);
-  loadingScreen.loadFile('splash.html');
+  loadingScreen.loadFile('./src/pages/splash.html');
   loadingScreen.on('closed', () => (loadingScreen = null));
   loadingScreen.hide();
   loadingScreen.show()
@@ -145,7 +145,7 @@ internetAvailable({
 }).catch(function(){
     console.log("No internet");
     neterr()
-    mainWindow.loadFile('nonet.html');
+    mainWindow.loadFile('./src/pages/nonet.html');
 });
     mainWindow.show();
     console.log("Ok! Window init, let's check for updates...")
@@ -185,7 +185,7 @@ const createNewstrm = () => {
     })
   );
   strm.setResizable(false);
-  strm.loadFile('strm.html');
+  strm.loadFile('./src/pages/strm.html');
   strm.isMovable(false)
   strm.setMenuBarVisibility(false)
   strm.on('closed', () => (strmex()));

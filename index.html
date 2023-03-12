@@ -17,12 +17,12 @@
       console.log("Update Ready")
     } else {
       console.log('Latest update is not ready.')
-      window.location.href = "update.html";
+      window.location.href = "./src/pages/update.html";
     }
   });
   })(jQuery);
 </script>
-<link rel="stylesheet" href="./titlebar.css">
+<link rel="stylesheet" href="./src/css/titlebar.css">
 <script>
   // Out Of Box Experience
   (function($){
@@ -38,7 +38,7 @@
   $('#cookie-ok').click(function(event){
     $('#cookie').fadeOut();
     confetti.stop()
-    window.location.replace("setup.html");
+    window.location.replace("./src/pages/setup.html");
   });
 
   });
@@ -47,9 +47,9 @@
 </script>
 <script src="./lib/confetti.min.js"></script>
   <link rel="icon" href="snailfm.png">
-  <script src="./YoutubeJS/video.js"></script>
-  <link href="./YoutubeJS/video-js.css" rel="stylesheet">
-  <script src="./YoutubeJS/Youtube.js"></script>
+  <script src="./src/js/YoutubeJS/video.js"></script>
+  <link href="./src/js/YoutubeJS/video-js.css" rel="stylesheet">
+  <script src="./src/js/YoutubeJS/Youtube.js"></script>
   <link rel="stylesheet" href="https://cdn.snaildos.com/w3.css">
   <link rel="stylesheet" href="https://cdn.snaildos.com/bootstrap.min.css">
   <script src="https://cdn.snaildos.com/bootstrap.min.js"></script>
@@ -682,17 +682,17 @@ onselectstart="return false;">
   <centered>
     <label>
       <input type="radio" name="test" value="Fire" id="fire">
-      <img src="./ui/1.png" width="120" height="100" class="fga">
+      <img src="./src/ui/1.png" width="120" height="100" class="fga">
     </label>
 
     <label>
       <input type="radio" name="test" value="Blue" id="blue">
-      <img src="./ui/2.png" width="120" height="100" class="fga">
+      <img src="./src/ui/2.png" width="120" height="100" class="fga">
     </label>
 
     <label>
       <input type="radio" name="test" value="Yellow" id="yellow">
-      <img src="./ui/3.png" width="120" height="100" class="fga">
+      <img src="./src/ui/3.png" width="120" height="100" class="fga">
     </label>
     <div id="disp" style="color:yellow; font-size: 18px; font-weight: bold;"> Please select what theme you want!</div>
 
@@ -922,7 +922,7 @@ onselectstart="return false;">
             <span class="hiddentext" style="font-size:20px;cursor:pointer;color:red;display:none;" onclick="openNav()">&#9776; More settings</span>
             <button onclick="window.location.reload();" class="w3-btn w3-black w3-round">Reload</button>
             <p></p>
-            <a style="font-size:20px;cursor:pointer;color:red" href="reset.html">&#9776; Reset StreamBop</a>
+            <a style="font-size:20px;cursor:pointer;color:red" href="./src/pages/reset.html">&#9776; Reset StreamBop</a>
           </div>
       </div>
     </div>
