@@ -3,7 +3,6 @@ const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { trackEvent } = require('./lib/analytics.js');
 const { watchFile } = require('fs');
-const glasstron = require('glasstron');
 const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
 
@@ -16,20 +15,8 @@ const { Notification } = require('electron')
 require('./lib/rpc.js');
 console.log("RPC lib init.");
 
-// Blur Service
-if (process.platform == 'darwin') { 
-    global.blurType = "vibrancy";
-    global.windowFrame = 'false'
-} else if(process.platform == 'win32'){ 
-    global.blurType = "acrylic";
-    global.windowFrame = 'false'
-} else { 
-    global.blurType = "blurbehind";
-    global.windowFrame = 'true'
-}
-
+// Prepare database
 const Store = require('electron-store');
-
 const config = new Store();
 
 console.log("Software ready for start!");
@@ -47,6 +34,9 @@ app.quit()
 }
 
 function strmex() {
+console.log("Unregistering variables...");
+config.set('newDiff', "unloaded")
+config.set('oldDiff', "unloaded")
 app.removeAllListeners('window-all-closed');
 mainWindow.removeAllListeners('closed');
 mainWindow.close()
@@ -104,9 +94,6 @@ console.log("Loading screen ready.");
 // Start the main program
 let mainWindow;
 
-// Convert boolean to string
-var windowframz = (global.windowFrame === 'true');
-
 function createWindow() {
   mainWindow = new glasstron.BrowserWindow({
     width: 900,
@@ -114,7 +101,6 @@ function createWindow() {
     show: false,
     fullscreen: false,
     modal: true,
-    frame: windowframz,
     blur: true,
     blurType: global.blurType,
     icon: 'snailfm.ico',
@@ -126,7 +112,6 @@ function createWindow() {
       contextIsolation: false
     },
   });
-  console.log("More configuration is being sent now.")
   mainWindow.setResizable(false);
   console.log("We are going to send a google analytics streambop.started event")
   trackEvent('streambop.started', 'StreamBop sucessfully started!');
@@ -137,9 +122,9 @@ function createWindow() {
   wait(6000)
   console.log("Loaded sucess.")
   loadingScreen.close();
-mainWindow.on('closed', () => (
-die()
-));
+  mainWindow.on('closed', () => (
+  die()
+  ));
 // Don't tell me my code is messy, I know it is.
 if(isDev) {
   console.log("In Development!")
@@ -184,6 +169,9 @@ const createNewstrm = () => {
       frame: true,
       fullscreen: false,
       show: false,
+      frame: global.frame,
+      titleBarStyle: global.titleBarStyle,
+      trafficLightPosition: { x: 24, y: 25 },
       webPreferences: {
         nodeIntegration: true,
         devTools: isDev,
