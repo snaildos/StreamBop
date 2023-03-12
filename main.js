@@ -2,6 +2,8 @@ const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { trackEvent } = require('./lib/analytics.js');
+const {TitlebarRespect} = require('electron-titlebar-respect')
+const glasstron = require('glasstron-clarity');
 const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
 
@@ -99,6 +101,8 @@ function createWindow() {
     height: 700,
     show: false,
     fullscreen: false,
+    frame: global.frame,
+    titleBarStyle: global.titleBarStyle,
     modal: true,
     blur: true,
     blurType: global.blurType,
