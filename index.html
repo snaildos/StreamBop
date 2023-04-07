@@ -661,12 +661,12 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
   // toggle always on
   function toggle(button) {
     if (button.value == "OFF") {
-      button.value = "ON";
+      button.value = "OFF";
       alert("Enabled Always on!")
       config.set("alwayson", true)
       document.getElementById("alwaysonid").innerHTML = "Always ON is currently ON.";
     } else {
-      button.value = "OFF";
+      button.value = "ON";
       alert("Disabled Always on!")
       config.set("alwayson", false)
       document.getElementById("alwaysonid").innerHTML = "Always ON is currently off.";
