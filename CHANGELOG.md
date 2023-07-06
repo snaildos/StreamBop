@@ -1,5 +1,58 @@
 # Changelog
 
+<a name="1.6.0"></a>
+## 1.6.0 (2023-07-06)
+
+### Miscellaneous
+
+-  Merge pull request [#93](https://github.com/snaildos/StreamBop/issues/93) from snaildos/development [[722b01e](https://github.com/snaildos/StreamBop/commit/722b01e31ba25c252bd679e42d4371349129c44b)]
+-  UPDATE: Cache [[e770541](https://github.com/snaildos/StreamBop/commit/e7705419fc3a14f491a76d1e2026cdc6a5edfc99)]
+-  FIX: Version Number [[dcf29e4](https://github.com/snaildos/StreamBop/commit/dcf29e4fd053bd466ceecfd23fa76b7880da39da)]
+-  FEAT: Winget [[af87e36](https://github.com/snaildos/StreamBop/commit/af87e369f8c38420260d0b93bddbe79b06f6bd58)]
+-  FIX: Compatibility [[0e5bb5d](https://github.com/snaildos/StreamBop/commit/0e5bb5db57dcc60f249c31b120be3dd76e76b515)]
+-  FEAT: Yarn Berry [[4d48f36](https://github.com/snaildos/StreamBop/commit/4d48f36d229e3fa2d84cfbcd8a165a8feeefbb6b)]
+-  Rewrite the fader function [[d66260d](https://github.com/snaildos/StreamBop/commit/d66260d56ef8817ead68f368de9f34a1cce447d5)]
+-  Standardize the config page [[ac24cb3](https://github.com/snaildos/StreamBop/commit/ac24cb342d5a66008c2dee286382611fa82d3cf3)]
+-  Update package.json [[b9a2101](https://github.com/snaildos/StreamBop/commit/b9a2101e75f8ad4fb74c29092a03f3b3f5b3b44d)]
+-  Merge pull request [#94](https://github.com/snaildos/StreamBop/issues/94) from snaildos/renovate/electron-23.x [[71a278e](https://github.com/snaildos/StreamBop/commit/71a278ec287b27cbaffb1b19a6a9b9bf5b269ffb)]
+-  Update dependency electron to v23.1.4 [[ac66e50](https://github.com/snaildos/StreamBop/commit/ac66e501f0f9511dabf588b7f7949e5a7bd44449)]
+-  Rewrite Entire Code Structure [[032c627](https://github.com/snaildos/StreamBop/commit/032c6277da466f6eb7ecb2b36dd1649aef1c4b92)]
+-  Update package.json [[391ae33](https://github.com/snaildos/StreamBop/commit/391ae33ead0c108915f9d2ffc5ead581bc52390d)]
+-  Transparency &amp; Frame Fixes [[2bffd9f](https://github.com/snaildos/StreamBop/commit/2bffd9f689d5e83e3c7bd6aef1656f22b6134729)]
+-  Rewrite all 1-2 year old code. [[f1cb988](https://github.com/snaildos/StreamBop/commit/f1cb988883664a459926e16e05f7d5d30870c893)]
+-  Rewrite Blur Module [[b967e35](https://github.com/snaildos/StreamBop/commit/b967e3535289e7a503f488aa2969f396f70ff181)]
+-  Merge pull request [#92](https://github.com/snaildos/StreamBop/issues/92) from snaildos/renovate/axios-1.x [[1c49e14](https://github.com/snaildos/StreamBop/commit/1c49e148c29ba34becdd9d2a85844a93dcffe753)]
+-  Merge pull request [#90](https://github.com/snaildos/StreamBop/issues/90) from snaildos/renovate/electron-23.x [[bd33517](https://github.com/snaildos/StreamBop/commit/bd3351735aea17d4d2853e9abe5712b572d75e68)]
+-  Merge pull request [#91](https://github.com/snaildos/StreamBop/issues/91) from snaildos/renovate/utf-8-validate-6.x [[5421c5a](https://github.com/snaildos/StreamBop/commit/5421c5a11e507cd1debcd40bdce27edd1cd3c93b)]
+-  Merge pull request [#89](https://github.com/snaildos/StreamBop/issues/89) from snaildos/renovate/jquery-3.x [[c114004](https://github.com/snaildos/StreamBop/commit/c114004d26972c9612f595e638b2846e175c62e6)]
+-  Update dependency axios to v1.3.4 [[aeae588](https://github.com/snaildos/StreamBop/commit/aeae588d66a344a4025e923c2af9207d625e37d1)]
+-  Update dependency utf-8-validate to v6 [[f650819](https://github.com/snaildos/StreamBop/commit/f650819ae8e99b9d1253733b574be34c2b0214a7)]
+-  Update dependency electron to v23 [[038d78c](https://github.com/snaildos/StreamBop/commit/038d78c17c29b4f4bc29161e97f43678beca96f0)]
+-  Update dependency jquery to v3.6.4 [[90a17cb](https://github.com/snaildos/StreamBop/commit/90a17cb95fb72719fd0bf2a86383d92b9d9caf53)]
+-  Merge pull request [#86](https://github.com/snaildos/StreamBop/issues/86) from snaildos/renovate/jquery-3.x [[9d7cc03](https://github.com/snaildos/StreamBop/commit/9d7cc03b2b3cdeae7603da2e5fbc6f0c7d44e2e8)]
+-  Merge pull request [#87](https://github.com/snaildos/StreamBop/issues/87) from snaildos/renovate/axios-1.x [[76fc914](https://github.com/snaildos/StreamBop/commit/76fc9148234cab5f3f4a2e6a518e976eafe7c415)]
+-  Merge pull request [#88](https://github.com/snaildos/StreamBop/issues/88) from snaildos/renovate/electron-22.x [[1b85cdd](https://github.com/snaildos/StreamBop/commit/1b85cddf91b1c5a9b2a95a4958d5a6e390e56c88)]
+-  Update dependency electron to v22 [[5c66d1f](https://github.com/snaildos/StreamBop/commit/5c66d1f5e6430c1b15dd6ecff2b7908cabb90032)]
+-  Update dependency axios to v1.2.1 [[2dd9311](https://github.com/snaildos/StreamBop/commit/2dd9311d6dc9bb8d034a10248936a0067a51e8b0)]
+-  Update dependency jquery to v3.6.2 [[fa1c611](https://github.com/snaildos/StreamBop/commit/fa1c611c776f6b3add0c96e1288ab6357777aa07)]
+-  Merge pull request [#84](https://github.com/snaildos/StreamBop/issues/84) from snaildos/renovate/electron-21.x [[d85ed06](https://github.com/snaildos/StreamBop/commit/d85ed06f95d99fbf1afe42f8c2cc3de662d34bd8)]
+-  Update dependency electron to v21.3.0 [[b85793b](https://github.com/snaildos/StreamBop/commit/b85793bae08e5d6a396cad4d6f21c9dfaa802d9c)]
+-  Merge pull request [#76](https://github.com/snaildos/StreamBop/issues/76) from snaildos/renovate/bufferutil-4.x [[4193b80](https://github.com/snaildos/StreamBop/commit/4193b80da38fe5688ff013171af1646cf7659928)]
+-  Merge pull request [#77](https://github.com/snaildos/StreamBop/issues/77) from snaildos/renovate/utf-8-validate-5.x [[aba02af](https://github.com/snaildos/StreamBop/commit/aba02af53f070f282ebd3805b07918086330e0f4)]
+-  Merge pull request [#79](https://github.com/snaildos/StreamBop/issues/79) from snaildos/renovate/electron-builder-23.x [[2d7c341](https://github.com/snaildos/StreamBop/commit/2d7c34189e0bf8320b2594bf0876c365d58fca69)]
+-  Merge pull request [#80](https://github.com/snaildos/StreamBop/issues/80) from snaildos/renovate/electron-updater-5.x [[6ff7a8f](https://github.com/snaildos/StreamBop/commit/6ff7a8f61fa9cce6fa2570d1ca72e6f9df9464f7)]
+-  Merge pull request [#81](https://github.com/snaildos/StreamBop/issues/81) from snaildos/renovate/universal-analytics-0.x [[8a6d6a5](https://github.com/snaildos/StreamBop/commit/8a6d6a5b9e25c1b564a7e6bc337285db9c23e8ca)]
+-  Merge pull request [#82](https://github.com/snaildos/StreamBop/issues/82) from snaildos/renovate/axios-1.x [[0961d32](https://github.com/snaildos/StreamBop/commit/0961d323d50aa5bd8de51481f0b048344ef58c21)]
+-  Merge pull request [#83](https://github.com/snaildos/StreamBop/issues/83) from snaildos/renovate/electron-21.x [[ad7f82d](https://github.com/snaildos/StreamBop/commit/ad7f82dcfa4af98317b8984af18276ad07859c9f)]
+-  Update dependency bufferutil to v4.0.7 [[4824e7f](https://github.com/snaildos/StreamBop/commit/4824e7f93b173524c66bfbe0f8944ecb742ca514)]
+-  Update dependency electron-builder to v23.6.0 [[990473d](https://github.com/snaildos/StreamBop/commit/990473dfd8c6e69cbc652f592ddfc8661eba5050)]
+-  Update dependency electron to v21 [[72cee75](https://github.com/snaildos/StreamBop/commit/72cee757847526c9dd1796894575b55c8cfd93a4)]
+-  Update dependency axios to v1 [[57ab317](https://github.com/snaildos/StreamBop/commit/57ab317178d699b9a3aad3a5d79fc8559af2321e)]
+-  Update dependency universal-analytics to v0.5.3 [[8b754e7](https://github.com/snaildos/StreamBop/commit/8b754e775e4a429dc8d6c9bf4079d4f5b3bc3d2e)]
+-  Update dependency electron-updater to v5.3.0 [[8ded8f9](https://github.com/snaildos/StreamBop/commit/8ded8f95143c617f4d0658478c0cf97438690efc)]
+-  Update dependency utf-8-validate to v5.0.10 [[482015a](https://github.com/snaildos/StreamBop/commit/482015a465544d8115685d7691d1f99927825d71)]
+
+
 <a name="1.5.4"></a>
 ## 1.5.4 (2022-08-28)
 

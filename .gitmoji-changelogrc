@@ -2,6 +2,6 @@
   "project": {
     "name": "StreamBop",
     "description": "Software to allow streamers to stream with nocopyright credit and autoplay music!",
-    "version": "1.0.0"
+    "version": "1.6.0"
   }
 }
