@@ -2,10 +2,11 @@ const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
 const { trackEvent } = require('./lib/analytics.js');
-const { watchFile } = require('fs');
-const glasstron = require('glasstron');
+const {TitlebarRespect} = require('electron-titlebar-respect')
+const glasstron = require('glasstron-clarity');
 const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
+TitlebarRespect({})
 
 // is dev
 var isDev = require('isdev')
@@ -16,20 +17,8 @@ const { Notification } = require('electron')
 require('./lib/rpc.js');
 console.log("RPC lib init.");
 
-// Blur Service
-if (process.platform == 'darwin') { 
-    global.blurType = "vibrancy";
-    global.windowFrame = 'false'
-} else if(process.platform == 'win32'){ 
-    global.blurType = "acrylic";
-    global.windowFrame = 'false'
-} else { 
-    global.blurType = "blurbehind";
-    global.windowFrame = 'true'
-}
-
+// Prepare database
 const Store = require('electron-store');
-
 const config = new Store();
 
 console.log("Software ready for start!");
@@ -47,6 +36,9 @@ app.quit()
 }
 
 function strmex() {
+console.log("Unregistering variables...");
+config.set('newDiff', "unloaded")
+config.set('oldDiff', "unloaded")
 app.removeAllListeners('window-all-closed');
 mainWindow.removeAllListeners('closed');
 mainWindow.close()
@@ -90,7 +82,7 @@ const createLoadingScreen = () => {
     })
   );
   loadingScreen.setResizable(false);
-  loadingScreen.loadFile('splash.html');
+  loadingScreen.loadFile('./src/pages/splash.html');
   loadingScreen.on('closed', () => (loadingScreen = null));
   loadingScreen.hide();
   loadingScreen.show()
@@ -104,17 +96,15 @@ console.log("Loading screen ready.");
 // Start the main program
 let mainWindow;
 
-// Convert boolean to string
-var windowframz = (global.windowFrame === 'true');
-
 function createWindow() {
   mainWindow = new glasstron.BrowserWindow({
     width: 900,
     height: 700,
     show: false,
     fullscreen: false,
+    frame: global.frame,
+    titleBarStyle: global.titleBarStyle,
     modal: true,
-    frame: windowframz,
     blur: true,
     blurType: global.blurType,
     icon: 'snailfm.ico',
@@ -126,7 +116,6 @@ function createWindow() {
       contextIsolation: false
     },
   });
-  console.log("More configuration is being sent now.")
   mainWindow.setResizable(false);
   console.log("We are going to send a google analytics streambop.started event")
   trackEvent('streambop.started', 'StreamBop sucessfully started!');
@@ -137,9 +126,9 @@ function createWindow() {
   wait(6000)
   console.log("Loaded sucess.")
   loadingScreen.close();
-mainWindow.on('closed', () => (
-die()
-));
+  mainWindow.on('closed', () => (
+  die()
+  ));
 // Don't tell me my code is messy, I know it is.
 if(isDev) {
   console.log("In Development!")
@@ -157,7 +146,7 @@ internetAvailable({
 }).catch(function(){
     console.log("No internet");
     neterr()
-    mainWindow.loadFile('nonet.html');
+    mainWindow.loadFile('./src/pages/nonet.html');
 });
     mainWindow.show();
     console.log("Ok! Window init, let's check for updates...")
@@ -184,6 +173,9 @@ const createNewstrm = () => {
       frame: true,
       fullscreen: false,
       show: false,
+      frame: global.frame,
+      titleBarStyle: global.titleBarStyle,
+      trafficLightPosition: { x: 24, y: 25 },
       webPreferences: {
         nodeIntegration: true,
         devTools: isDev,
@@ -194,7 +186,7 @@ const createNewstrm = () => {
     })
   );
   strm.setResizable(false);
-  strm.loadFile('strm.html');
+  strm.loadFile('./src/pages/strm.html');
   strm.isMovable(false)
   strm.setMenuBarVisibility(false)
   strm.on('closed', () => (strmex()));

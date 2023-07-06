@@ -67,11 +67,11 @@
     const config = new Store();
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
-		localStorage.setItem('version', '1.5.2');
+		localStorage.setItem('version', '1.6.0');
     config.delete("oldVariable")
     config.delete("newVariable")
 	</script>
-        <h1 class="w3-center">Updating StreamBop...</h1>
+    <h1 class="w3-center">Updating StreamBop...</h1>
 		<div class="container">
       <br>
 			<div class="progress-bar__container">
@@ -101,7 +101,7 @@
           onComplete: () => {
             progressBarText.style.display = "initial";
             progressBarContainer.style.boxShadow = '0 0 5px #4895ef';
-        window.location.href = "index.html";
+            window.location.href = "../../index.html";
           }
         });
       }else{
@@ -113,7 +113,7 @@
     }, randomTime + time);
     time += randomTime;
   })
-	</script>
-	</div>
-  </body>
+</script>
+</div>
+</body>
 </html>
