@@ -4,3 +4,5 @@ dist
 package-lock.json
 electron-builder.yml
 yarn.lock
+.yarn/unplugged
+.yarn/cache/*.zip
