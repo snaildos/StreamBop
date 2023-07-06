@@ -1,6 +1,6 @@
 {
   "name": "StreamBop",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "Stream with StreamBop! Auto music, auto music credit overlay, themes, mixers and more. StreamBop is the best tool for streamers!",
   "main": "main.js",
   "repository": {
