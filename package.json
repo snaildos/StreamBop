@@ -21,7 +21,7 @@
   "devDependencies": {
     "bufferutil": "4.0.7",
     "electron": "24.0.0",
-    "electron-builder": "23.6.0",
+    "electron-builder": "24.4.0",
     "gitmoji-changelog": "2.3.0",
     "utf-8-validate": "6.0.3"
   },
