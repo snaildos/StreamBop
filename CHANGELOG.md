@@ -1,5 +1,15 @@
 # Changelog
 
+<a name="1.6.1"></a>
+## 1.6.1 (2023-07-06)
+
+### Miscellaneous
+
+-  BUMP: Version [[2610356](https://github.com/snaildos/StreamBop/commit/2610356410bf315d2fa646f7859ac53e86b402ad)]
+-  FIX: Winget [[3192d96](https://github.com/snaildos/StreamBop/commit/3192d96ce65f63de4e8a711b0b106bfcdfae60dc)]
+-  FIX: Invalid CSS [[808f05a](https://github.com/snaildos/StreamBop/commit/808f05a901c43fb0de89c97160b3fb2a417b0bfd)]
+
+
 <a name="1.6.0"></a>
 ## 1.6.0 (2023-07-06)
 
