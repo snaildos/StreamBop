@@ -1,6 +1,5 @@
 html.linux #titlebar {display: none;}
 html.mac #titlebar {display: none;}
-html.windows .settings {top: 50px}
 
 #titlebar {
   display: block;
