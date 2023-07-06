@@ -6,6 +6,7 @@ const {TitlebarRespect} = require('electron-titlebar-respect')
 const glasstron = require('glasstron-clarity');
 const electron = require('electron');
 electron.app.commandLine.appendSwitch("enable-transparent-visuals");
+TitlebarRespect({})
 
 // is dev
 var isDev = require('isdev')
