@@ -30,7 +30,7 @@
   $(document).ready(function() {
     var version = localStorage.getItem('version');
 
-    if(version == '1.6.0'){
+    if(version == '1.6.1'){
       console.log("Update Ready")
     } else {
       console.log('Latest update is not ready.')
@@ -453,7 +453,6 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
   });
   </script>
   <script>
-    const { trackEvent } = require('./lib/analytics.js');
     const loudness = require('mwl-loudness')
     function streaming()  {
       $('.1').hide()
@@ -523,7 +522,6 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
     }, 4000);
 
   function storenam()  {
-    trackEvent('streambop.started', 'Setup completed sucessfully');
     var username = $('#name').val();
     config.set("name", username);
     $("#cookie-ok").click()
@@ -599,10 +597,10 @@ data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "
   <h1 class="hidden">h</h1>
     <div id="cookie">
       <div id="cookie-wrapper">
-        <div id="cookie-content" class="h1">Welcome to StreamBop! <p>Let's get started!</div>
+        <div id="cookie-content" class="h1">Welcome to StreamBop!</div>
           <p></p>
           <br>
-          <h1>Enter your Channel name, or the name you want to be known under...</h1>
+          <h1>Enter your channel username below</h1>
           <p></p>
           <h2>
           <h>Press enter when complete.</h>

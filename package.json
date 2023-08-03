@@ -36,7 +36,6 @@
     "isdev": "1.0.1",
     "jquery": "3.7.0",
     "mwl-loudness": "0.3.0",
-    "universal-analytics": "0.5.3",
     "uuidv4": "6.2.13"
   }
 }

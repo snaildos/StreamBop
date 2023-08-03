@@ -1,7 +1,6 @@
 const { autoUpdater } = require('electron-updater');
 const { SSL_OP_EPHEMERAL_RSA } = require('constants');
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { trackEvent } = require('./lib/analytics.js');
 const {TitlebarRespect} = require('electron-titlebar-respect')
 const glasstron = require('glasstron-clarity');
 const electron = require('electron');
@@ -116,16 +115,14 @@ function createWindow() {
       contextIsolation: false
     },
   });
-  mainWindow.setResizable(false);
-  console.log("We are going to send a google analytics streambop.started event")
-  trackEvent('streambop.started', 'StreamBop sucessfully started!');
-  console.log("We just sent the event. Now let's continue loading")
+  mainWindow.setResizable(false)
+  console.log("Window configured, starting")
   mainWindow.setMenuBarVisibility(false)
-  mainWindow.loadFile('index.html');
-  mainWindow.on('maximize', () => mainWindow.unmaximize());
+  mainWindow.loadFile('index.html')
+  mainWindow.on('maximize', () => mainWindow.unmaximize())
   wait(6000)
   console.log("Loaded sucess.")
-  loadingScreen.close();
+  loadingScreen.close()
   mainWindow.on('closed', () => (
   die()
   ));
