@@ -67,16 +67,18 @@
     const config = new Store();
 		console.log("Let's clear localstorage first...")
 		console.log("Just wait a bit...")
-		localStorage.setItem('version', '1.6.0');
+		localStorage.setItem('version', '1.6.1');
     config.delete("oldVariable")
     config.delete("newVariable")
+    config.delete("analytics")
 	</script>
+    <br></br>
     <h1 class="w3-center">Updating StreamBop...</h1>
 		<div class="container">
       <br>
 			<div class="progress-bar__container">
 			  <div class="progress-bar">
-				<span class="progress-bar__text">Updating...</span>
+				<span class="progress-bar__text"></span>
 			  </div>
 			</div>
 		  </div>
@@ -91,7 +93,7 @@
   let endState = 100;
 
   progressBarStates.forEach(state => {
-    let randomTime = Math.floor(Math.random() * 3000);
+    let randomTime = Math.floor(Math.random() * 2000);
     setTimeout(() => {
       if(state == endState){
         gsap.to(progressBar, {
