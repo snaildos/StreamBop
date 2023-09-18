@@ -20,7 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "bufferutil": "4.0.7",
-    "electron": "25.4.0",
+    "electron": "25.8.1",
     "electron-builder": "24.6.3",
     "gitmoji-changelog": "2.3.0",
     "utf-8-validate": "6.0.3"
